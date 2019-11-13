@@ -19,7 +19,8 @@
             <div id={{ printf "r%s" $id }} hidden=true>{{ . | safeHTML }}</div>
             <div id={{ $id }} class="typeit"></div>
             {{ with $.Scratch.Get "typeitMap" }}
-                {{ $.Scratch.Set "typeitMap" (dict $id (slice $id) | merge .) }}
+                <!-- {{ $.Scratch.Set "typeitMap" (dict $id (slice $id) | merge .) }} -->
+                {{ $.Scratch.Set "typeitMap" (dict $id (slice $id)) }}
             {{ else }}
                 {{ $.Scratch.Set "typeitMap" (dict $id (slice $id)) }}
             {{ end }}
