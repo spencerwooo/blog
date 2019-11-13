@@ -1,7 +1,7 @@
 ---
 title: "Batch Git Pull：分享一个维护多个 Git 仓库的小脚本"
 date: 2019-11-13T11:29:53+08:00
-draft: true
+draft: false
 featured_image: https://i.loli.net/2019/10/29/ZqySW1DFQvUs7G8.png
 ---
 
