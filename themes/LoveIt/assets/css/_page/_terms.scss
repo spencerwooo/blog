@@ -1,0 +1,83 @@
+.archive-item {
+  margin-left: 2rem;
+}
+
+.categories-card {
+  margin: 0 auto;
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 2.5rem;
+  line-height: 1.6rem;
+
+  .card-item {
+    font-size: .875rem;
+    text-align: left;
+    width: 45%;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 2rem;
+    min-height: 10rem;
+    padding: 0 2%;
+    position: relative;
+
+    .categories {
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+}
+
+.archive-item-link {
+  display: inline-block;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 95%;
+
+  &:hover {
+    color: $global-link-hover-color;
+    background-color: transparent;
+  }
+
+  .dark-theme & {
+    color: $global-link-color-dark;
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+
+    &:hover {
+      color: $global-link-hover-color-dark;
+      text-decoration: none;
+      transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+    }
+  }
+}
+
+.archive-item-date {
+  float: right;
+  text-align: right;
+  color: $global-font-secondary-color;
+
+  .dark-theme & {
+    color: $global-font-secondary-color-dark;
+  }
+}
+
+.more-post {
+  text-align: right;
+}
+
+.categories {
+  h3 {
+    display: inline-block;
+  }
+
+  span {
+    float: right;
+    padding-right: 1rem;
+  }
+}

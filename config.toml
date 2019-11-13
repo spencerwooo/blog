@@ -1,0 +1,153 @@
+baseURL = "https://blog.spencerwoo.com"
+# languageCode = "zh"
+title = "👑 Spencer's Blog"
+theme = "LoveIt"
+enableGitInfo = false
+hasCJKLanguage = true
+paginate = 8
+enableEmoji = true
+enableRobotsTXT = true
+googleAnalytics = "UA-111664763-2"
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+pygmentsOptions = "linenos=table"
+pygmentsCodefences = true
+pygmentsUseClasses = true
+pygmentsCodefencesGuessSyntax = true
+
+staticDir = ["static", "themes/LoveIt/assets/others"]
+
+[author]                                              #### Author Info
+  name = "Spencer Woo"
+
+[sitemap]                                             #### Sitemap Info
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[Permalinks]
+  posts = "/:year/:month/:filename/"
+
+[menu]
+  [[menu.main]]
+    identifier = "portfolio"
+    name = "🎉 Portfolio"
+    url = "https://spencerwoo.com/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "posts"
+    name = "📰 Posts"
+    url = "/posts/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "tags"
+    name = "🔖 Tags"
+    url = "/tags/"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "categories"
+    name = "🎀 Categories"
+    url = "/categories/"
+    weight = 4
+
+[params]
+  version = "5.x"
+  description = "Spencer's Blog"
+  keywords = ["Spencer Woo", "Spencer", "Woo", "Blog"]
+  home_mode = "post"
+  avatar = "/images/avatar.jpeg"
+  subtitle = "CS 在读 / 少数派资深作者 / Arch Linux 精神用户 / 人民艺术家"
+  socialShare = false
+  since = 2019
+  icp = ''
+  license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+  gitRepo = "https://github.com/spencerwooo/blog"
+
+  linkToMarkdown = true
+                                                      #### site verification code for Google/Bing/Yandex/Pinterest/Baidu
+  google_verification = ""
+  bing_verification = ""
+  yandex_verification = ""
+  pinterest_verification = ""
+  baidu_verification = ""
+
+  [params.cdn]
+    fontawesome_free_css = ''
+    animate_css = ''
+    gitalk_css = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">'
+    gitalk_js = '<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>'
+    valine_js = ''
+    jquery_js = ''
+    lazysizes_js = ''
+    smooth_scroll_js = ''
+    katex_css = ''
+    katex_js = ''
+    katex_auto_render_js = ''
+    mermaid_js = ''
+    echarts_macarons_js = ''
+    echarts_js = ''
+    typeit_js = ''
+    jquery_countdown_js = ''
+    aplayer_css = ''
+    aplayer_js = ''
+    meting_js = ''
+
+  [params.gravatar]
+    email = ""
+
+  [params.social]
+    GitHub = "spencerwooo"
+    Twitter = "realSpencerWoo"
+    Email = "spencerwoo98@gmail.com"
+    Telegram = "Spencer_Woo"
+
+  [params.share]
+    enable = false
+
+  [params.publisher]                                     # Publisher Info just for SEO
+    name = "Spencer Woo"
+    [params.publisher.logo]
+      url = "/logo.png"
+      width = 127
+      height = 40
+
+  [params.logo]                                          # Website Log Info just for SEO
+    url = "/logo.png"
+    width = 127
+    height = 40
+
+  [params.image]                                         # Website Image Info just for SEO
+    url = "/cover.png"
+    width = 800
+    height = 600
+
+  [params.gitalk]                                        # Gittalk Comment Config (https://github.com/gitalk/gitalk)
+    owner = "spencerwooo"
+    repo = "comments"
+    clientId = "fd641fd7507d903acbfc"
+    clientSecret = "da7d0476d848a139a787a286df419e7bf7c334a5"
+
+[privacy]                                             #### Privacy Info (https://gohugo.io/about/hugo-and-gdpr/)
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+
+  [privacy.youtube]
+    privacyEnhanced = true
+
+[mediaTypes]                                          #### Options to make hugo output .md files.
+  [mediaTypes."text/plain"]
+    suffixes = ["md"]
+
+[outputFormats.MarkDown]                              #### Options to make hugo output .md files.
+  mediaType = "text/plain"
+  isPlainText = true
+  isHTML = false
+
+[outputs]                                             #### Options to make hugo output .md files.
+  home = ["HTML", "RSS"]
+  page = ["HTML", "MarkDown"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML"]

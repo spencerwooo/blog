@@ -1,0 +1,30 @@
+/** Layout **/
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 98vh;
+  width: 100%;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.footer {
+  height: 2rem;
+  width: 100%;
+  text-align: center;
+  line-height: 1.5rem;
+  padding-top: 2rem;
+}
+
+.notfound {
+  font-size: 2rem;
+  transform: translateY(35vh);
+  text-align: center;
+}

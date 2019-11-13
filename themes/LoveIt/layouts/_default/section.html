@@ -1,0 +1,23 @@
+{{ define "title" }}{{ T "all" | humanize}}{{ T .Section | default .Section | humanize }} | {{ .Site.Title }}{{ end -}}
+
+{{ define "content" -}}
+    {{ $data := .Data -}}
+    <div class="post-warp archive">
+        <h2 class="post-title animated pulse faster">
+                {{ T "all" | humanize}}{{ T .Section | default .Section | humanize }}
+        </h2>
+
+        {{- range (.Paginate (.Pages.GroupByDate "2006")).PageGroups -}}
+            <h3>{{ .Key }}</h3>
+            {{- range .Pages -}}
+                <article class="archive-item">
+                    <a href="{{ .RelPermalink }}" class="archive-item-link">{{ .Title }}</a>
+                    <span class="archive-item-date">
+                        {{- .Date.Format (.Site.Params.dateFormatToUse | default "01-02") -}}
+                    </span>
+                </article>
+            {{- end -}}
+        {{- end -}}
+        {{- partial "paginator.html" . -}}
+    </div>
+{{- end }}

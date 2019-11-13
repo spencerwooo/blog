@@ -1,0 +1,101 @@
+# Translations for Simplified Chinese
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# === Post ===
+[posts]
+other = "文章"
+# === Post ===
+
+# === Taxonomy ===
+[all]
+other = "所有"
+
+[tag]
+other = "标签"
+
+[tags]
+other = "标签"
+
+[category]
+other = "分类"
+
+[categories]
+other = "分类"
+# === Taxonomy ===
+
+# === Pagination ===
+[More]
+other = "更多"
+# === Pagination ===
+
+# === partials/footer.html ===
+[powered]
+other = "由 %s 强力驱动"
+
+[theme]
+other = "主题 - "
+# === partials/footer.html ===
+
+# === posts/single.html ===
+[toc]
+other = "目录"
+
+[publish]
+other = "发布于"
+
+[included]
+other = "收录于"
+
+[wordCount]
+other = "约 {{ .Count }} 字"
+
+[readingTime]
+other = "预计阅读 {{ .Count }} 分钟"
+
+[pageviews]
+other = "<span class=leancloud-visitors-count></span> 次阅读"
+
+[author]
+other = "作者"
+
+[lastMod]
+other = "本文于 %s 更新"
+
+[license]
+other = "采用 %s 协议发布"
+
+[seeMarkDown]
+other = "阅读原始文档"
+
+[back]
+other = "返回"
+
+[home]
+other = "主页"
+
+[readmore]
+other = "阅读全文"
+
+[day]
+other = "天"
+
+[hour]
+other = "时"
+
+[minute]
+other = "分"
+
+[second]
+other = "秒"
+
+[return]
+other = "返回"
+# === posts/single.html ===
+
+# === 404.html ===
+[pageNotFound]
+other = "页面没找到"
+
+[backToHome]
+other = "回到主页"
+# === 404.html ===

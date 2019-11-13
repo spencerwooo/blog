@@ -1,0 +1,55 @@
+/* iPads (landscape) ----------- */
+@media only screen and (max-width: 1300px) {
+  .post-warp {
+    max-width: 560px;
+
+    .post-toc {
+      margin-left: 580px;
+    }
+  }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (max-width: 1080px) {
+  .navbar {
+    .navbar-container {
+      margin: 0 2rem;
+    }
+  }
+
+  .post-warp {
+    max-width: 80%;
+
+    .post-toc {
+      display: none;
+    }
+
+    .post-toc-mobile {
+      display: block;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar {
+    display: none;
+  }
+
+  .navbar-mobile {
+    display: block;
+  }
+
+  .post-warp {
+    max-width: 100%;
+
+    .categories-card {
+      .card-item {
+        width: 95%;
+      }
+    }
+  }
+
+  .dynamic-to-top {
+    display: none !important;
+  }
+}

@@ -1,0 +1,93 @@
+  /** pagination **/
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  white-space: nowrap;
+  width: 100%;
+  padding-top: 1rem;
+
+  a {
+    -webkit-font-smoothing: antialiased;
+    font-size: .8rem;
+    color: #bfbfbf;
+    letter-spacing: .1rem;
+    font-weight: 700;
+    padding: 5px 5px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  li {
+    padding-bottom: 3px;
+    margin: 0 20px;
+    box-sizing: border-box;
+    position: relative;
+    display: inline;
+
+    &.disabled {
+      display: none;
+    }
+
+    &:hover a {
+      color: $pagination-link-active-color;
+    }
+
+    .dark-theme &:hover a {
+      color: $pagination-link-active-color-dark;
+    }
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 3px;
+      background: $pagination-link-active-color;
+      transition: 0.3s;
+      bottom: 0px;
+    }
+
+    .dark-theme &:before,
+    .dark-theme &:after {
+      background: $pagination-link-active-color-dark;
+    }
+
+    &:before .active,
+    &:after .active {
+      width: 100%;
+    }
+
+    &:before {
+      left: 50%;
+    }
+
+    &:after {
+      right: 50%;
+    }
+
+    &:hover {
+
+      &:before,
+      &:after {
+        width: 50%;
+      }
+    }
+
+    &.active {
+      a {
+        color: $pagination-link-active-color;
+      }
+
+      .dark-theme & a {
+        color: $pagination-link-active-color-dark;
+      }
+
+      &:before,
+      &:after {
+        width: 60%;
+      }
+    }
+  }
+}

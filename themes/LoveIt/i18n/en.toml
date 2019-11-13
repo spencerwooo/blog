@@ -1,0 +1,98 @@
+# Translations for English
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# === Post ===
+[posts]
+other = "Posts"
+# === Post ===
+
+# === Taxonomy ===
+[all]
+other = "all "
+
+[tag]
+other = "Tag"
+
+[tags]
+other = "Tags"
+
+[category]
+other = "Category"
+
+[categories]
+other = "Categories"
+# === Taxonomy ===
+
+# === Pagination ===
+[More]
+other = "More"
+# === Pagination ===
+
+# === partials/footer.html ===
+[powered]
+other = "Powered by %s"
+
+[theme]
+other = "Theme - "
+# === partials/footer.html ===
+
+# === posts/single.html ===
+[toc]
+other = "Table of Contents"
+
+[publish]
+other = "published on"
+
+[included]
+other = "included in"
+
+[wordCount]
+other = "about {{ .Count }} words"
+
+[readingTime]
+other = "{{ .Count }} min"
+
+[pageviews]
+other = "<span class=leancloud-visitors-count></span> pageviews"
+
+[author]
+other = "Author"
+
+[lastMod]
+other = "This article is updated with %s"
+
+[license]
+other = "Published under the %s license"
+
+[back]
+other = "Back"
+
+[home]
+other = "Home"
+
+[readmore]
+other = "Read More"
+
+[day]
+other = "d"
+
+[hour]
+other = "hr"
+
+[minute]
+other = "min"
+
+[second]
+other = "sec"
+
+[return]
+other = "return"
+# === posts/single.html ===
+
+# === 404.html ===
+[pageNotFound]
+other = "Page not found"
+
+[backToHome]
+other = "Back to Home"
+# === 404.html ===
