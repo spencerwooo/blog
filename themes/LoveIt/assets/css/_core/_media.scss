@@ -25,7 +25,8 @@
     }
 
     .post-toc-mobile {
-      display: block;
+      // display: block;
+      display: none;
     }
   }
 }
@@ -37,6 +38,7 @@
 
   .navbar-mobile {
     display: block;
+    border-top: #ca2c2a 5px solid;
   }
 
   .post-warp {

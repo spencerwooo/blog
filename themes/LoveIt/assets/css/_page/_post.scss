@@ -8,6 +8,7 @@
 .post-meta {
   font-size: .88rem;
   color: rgba(85, 85, 85, 0.52941) !important;
+  padding: 1rem 0;
 
   span {
     display: inline-block;
@@ -197,8 +198,9 @@
 
   p {
     font-size: 1rem;
-    margin: .5rem 0 .5rem 0;
-    text-align: justify;
+    margin: 1rem 0 1rem 0;
+    line-height: 2rem;
+    // text-align: justify;
   }
 
   a {
