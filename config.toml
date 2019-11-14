@@ -52,6 +52,12 @@ staticDir = ["static", "themes/LoveIt/assets/others"]
     url = "/categories/"
     weight = 4
 
+  [[menu.main]]
+    identifier = "RSS"
+    name = "📮 RSS"
+    url = "https://blog.spencerwoo.com/posts/index.xml"
+    weight = 5
+
 [params]
   version = "5.x"
   description = "Spencer's Blog"
