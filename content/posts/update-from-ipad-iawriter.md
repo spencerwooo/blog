@@ -8,7 +8,7 @@ show_description: true
 tags: ["iPad", "Git"]
 categories: ["技术"]
 
-featured_image: ""
+featured_image: "https://i.loli.net/2019/11/14/zE2BNisaexXb6JL.png"
 featured_image_preview: ""
 
 comment: true
@@ -24,11 +24,11 @@ autoCollapseToc: true
 
 为什么我又换回了静态博客？Listed 确实不错，但是我在给与之配套的笔记应用 Standard Notes 充值一年会员之后，发现 Standard Notes 真的不行。不论是应用本身的响应还是界面的设计，Standard Notes 都和 Bear 等一众笔记应用相距甚远。Listed 博客需要会员才能自定义域名，并且 Listed 本身也没有评论系统，只有一个类似留言板的 Guestbook，难过。
 
-> 另外，我还专门问了问开发者为什么 Listed 不支持评论：
->
-> ![](https://i.loli.net/2019/11/14/1xTfD4cSAwsYeVE.jpg)
->
-> // 我猜是开发者被垃圾评论骂怕了 😂
+另外，我还专门问了问开发者为什么 Listed 不支持评论：
+
+![和 Listed/Standard Notes 作者的交流](https://i.loli.net/2019/11/14/Cm4Lc78TPbZrkBe.png)
+
+// 我猜是开发者被垃圾评论骂怕了 😂
 
 就这样，Hugo 就变成了目前我的博客部署引擎首选。
 
