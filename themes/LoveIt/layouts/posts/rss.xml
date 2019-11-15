@@ -1,6 +1,7 @@
 <rss xmlns:webfeeds="http://webfeeds.org/rss/1.0" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" >
     <channel>
-        <title>{{ with .Title }}{{ . }} on {{ end }}{{ .Site.Title }}</title>
+        <!-- <title>{{ with .Title }}{{ . }} on {{ end }}{{ .Site.Title }}</title> -->
+        <title>👑 Spencer Woo's Blog</title>
         <link>{{ .Permalink }}</link>
         <description>Recent content {{ with .Title }}in {{ . }} {{ end }}on {{ .Site.Title }}</description>
         <webfeeds:icon>https://blog.spencerwoo.com/images/avatar.jpeg</webfeeds:icon>
