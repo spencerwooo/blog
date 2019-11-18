@@ -13,8 +13,8 @@ featured_image_preview: ''
 comment: true
 toc: true
 autoCollapseToc: true
-
 ---
+
 之前，我就曾经介绍过我是如何利用 iPad 对部署在 GitHub 上面的静态博客进行更新的。这篇文章即使到现在也有一定的借鉴意义，文章归档于：[使用 Working Copy 在 iPad 上面更新博客 | 一次随缘的更新](https://archive.spencerwoo.com/posts/2019/06/09/from-my-ipad.html)。
 
 现在，我重新部署了我的静态博客，利用 Hugo 进行构建。宣称全球最快的静态网站渲染引擎 —— Hugo 着实让我博客的编译和部署过程快人一步。借助于方便的 Netlify，只要配置好 CI 的编译命令和环境变量，我们就只需要专注于博客本身的撰写，而不必对博客其他属性进行过多的担心。这样的部署方法，让 iPad 都可以直接发表博文。
