@@ -10,7 +10,7 @@ tags:
 - Server
 categories:
 - Play with servers
-featured_image: https://i.loli.net/2019/10/29/ZqySW1DFQvUs7G8.png
+featured_image: https://i.loli.net/2019/11/20/hbFSq6CwI1VNfJL.png
 featured_image_preview: ''
 comment: true
 toc: true
