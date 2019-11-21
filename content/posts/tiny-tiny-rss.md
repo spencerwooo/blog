@@ -35,13 +35,15 @@ Tiny Tiny RSS 是一个非常优秀的开源免费 RSS 服务引擎，可以直�
 
 在容器、HTTPS 证书自动签署和虚拟化技术极度发达的今天，整个部署过程非常方便简单。我接下来只利用 iPad 进行讲解演示我们的部署过程。请大家坐和放宽，我们立刻开始。
 
-### 准备工作
+## 准备工作
 
 在开始之前，首先我们需要准备一个位于公网的服务器，以及一个可以通过 SSH 连接到服务器上的本地设备。这里我使用我同（bai）学（piao）的已经备案的阿里云服务器作为运行 Tiny Tiny RSS 的服务器，并使用 iPad 和 Blink Shell（一个支持 SSH 协议的 iOS 终端 App）作为我的操作设备。Blink Shell 是 iPad 上面最好用的 SSH/Mosh 工具，推荐大家使用。我们在 Blink Shell 中配置好服务器私钥，通过 SSH 登录服务器。
 
 ![利用 Blink Shell 登录至服务器](https://i.loli.net/2019/11/19/iyk8KrUBYzodPqS.jpg)
 
-### 利用 Docker 部署 Tiny Tiny RSS
+## 利用 Docker 部署 Tiny Tiny RSS
+
+### 安装 Docker
 
 Docker 是非常优秀的虚拟化容器，借助于 Docker 我们可以方便的部署 Tiny Tiny RSS，首先我们在服务器上安装 Docker 本体。在服务器上面执行下面命令来安装 Docker：
 
@@ -63,6 +65,8 @@ sudo systemctl start docker
 
 *参考资料：[Get Docker Engine - Community for CentOS | Docker Documentation](https://docs.docker.com/install/linux/docker-ce/centos/)*
 
+### 安装 docker-compose
+
 接下来我们安装 `docker-compose`：一个管理和启动多个 Docker 容器的工具。由于 Tiny Tiny RSS 依赖有 PostgreSQL 的数据库服务以及 [mercury_fulltext](https://github.com/HenryQW/mercury_fulltext) 的全文抓取服务等等，这些服务我们都借助于 Docker 部署，因此利用 `docker-compose` 就会大大降低我们的部署难度。
 
 我们继续，在服务器上面执行下面的命令来安装 `docker-compose`：
@@ -82,6 +86,8 @@ chmod +x /usr/local/bin/docker-compose
 最后我们运行 `docker-compose --version` 来检查安装是否成功。如果有如下输出，说明我们的 `docker-compose` 安装成功：
 
 ![检查 docker-compose 安装情况](https://i.loli.net/2019/11/20/6j3QgG1FszTPp5Y.jpg)
+
+### 安装 Tiny Tiny RSS 及其周边服务
 
 准备工作已经全部完成，接下来我们下载由 Awesome-TTRSS 配置的 Tiny Tiny RSS 服务的 docker-compose 配置文件：
 
@@ -136,9 +142,11 @@ docker-compose rm
 docker-compose up -d
 ```
 
-### 安装 Nginx 作为 Docker 容器的反向代理
+## 安装 Nginx 作为 Docker 容器的反向代理
 
 事实上，到上一步，如果我们访问 `{服务器 IP}:181`，应该可以直接看到 Tiny Tiny RSS 的 Web 前端，但是 Tiny Tiny RSS 并不能直接配置 SSL 证书，也就没法添加 HTTPS 支持。我们利用 Nginx 作为反向代理服务器，即可方便的给 Tiny Tiny RSS 单独绑定一个我们希望的域名，并利用 Let’s Encrypt 来部署 HTTPS。
+
+### 安装 Nginx
 
 首先我们来安装 Nginx，以 CentOS 为例，我们直接执行下面命令即可：
 
@@ -159,6 +167,8 @@ sudo systemctl status nginx
 ```
 
 ![检查 Nginx 运行状态](https://i.loli.net/2019/11/20/gakiyznx5NhXT16.jpg)
+
+### 签署 SSL 证书，部署 HTTPS
 
 之后，我们利用 Let’s Encrypt 提供的 `certbot` 直接为 Nginx 配置 SSL 证书。首先，我们执行下面的命令安装 `certbot`：
 
@@ -231,11 +241,25 @@ Nginx 的配置文件位于 `/etc/nginx/nginx.conf`，我们打开这一文件�
 
 Tiny Tiny RSS 的默认管理员账户密码是 admin 和 password，请在第一时间进行修改。
 
-## 尾巴
+## 配置 Tiny Tiny RSS
 
 ![Tiny Tiny RSS 配置、主题](https://i.loli.net/2019/11/20/cis6yUboY2KStEn.jpg)
 
-Tiny Tiny RSS 的配置到这里就基本结束了，我相信你通过上面的配置一定已经在自己的服务器上部署成功了 Tiny Tiny RSS 服务，并为它添加了 HTTPS 的支持。Tiny Tiny RSS 的功能非常丰富，主题、过滤器、Mercury 以及其他插件的配置，我们另外进行介绍。感谢阅读。
+如果上面步骤没有问题的话，我们在服务器上面所部署的 Tiny Tiny RSS 本身就已经包含了：
+
+- Mercury 全文提取服务（默认未开启）
+- OpenCC 繁简自动转换服务（默认未开启）
+- Fever 格式输出插件（默认已开启，用来和 Reeder 等客户端进行连接）
+- 包括 Feedly、RSSHub 在内的多款主题
+- 等等……
+
+我们不需要多余的配置，开箱即可使用上面的主题和插件，根本不需要操心其他服务的部署和安装。我们登录自己的 Tiny Tiny RSS，在右上角「设置→ 插件」中即可启用上述插件，在「设置 → 主题」处就可以更改我们部署的 Tiny Tiny RSS 所用的主题。这些插件和主题在 [如何搭建属于自己的 RSS 服务，高效精准获取信息](https://sspai.com/post/41302) 中已经介绍了使用方法，这里我就不再赘述了。
+
+如果有同学对上面的配置还有问题，请直接参考 [Awesome TTRSS 的官方文档：🐋 Awesome TTRSS | 插件](https://ttrss.henry.wang/zh/#%E6%8F%92%E4%BB%B6)
+
+## 小结
+
+Tiny Tiny RSS 的配置到这里就基本结束了，我相信你通过上面的配置一定已经在自己的服务器上部署成功了 Tiny Tiny RSS 服务，并为它添加了域名和 HTTPS 的支持。另外，Tiny Tiny RSS 还自带了账号系统，可以邀请其他志同道合的朋友们一起使用我们自己部署的 Tiny Tiny RSS。感谢阅读。
 
 📖 关联阅读：
 
