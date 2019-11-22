@@ -9,7 +9,7 @@ tags:
 - Tech
 - Server
 categories:
-- Play with servers
+- 服务器能拿来干什么
 featured_image: https://i.loli.net/2019/11/20/hbFSq6CwI1VNfJL.png
 featured_image_preview: ''
 comment: true
@@ -212,29 +212,29 @@ Nginx 的配置文件位于 `/etc/nginx/nginx.conf`，我们打开这一文件�
 	![Nginx upstream 服务声明](https://i.loli.net/2019/11/20/XLAlTsegadr5cPE.jpg)
 
 - 在刚刚 `certbot` 为我们生成好的响应域名 `server` 项下，注释掉第一行定义 `root` 的内容，并将 `location /` 项修改为：
-	
+
 	```
 	location / {
 		proxy_redirect off;
 		proxy_pass http://ttrssdev;
-		
+
 		proxy_set_header  Host                $http_host;
 		proxy_set_header  X-Real-IP           $remote_addr;
 		proxy_set_header  X-Forwarded-Ssl     on;
 		proxy_set_header  X-Forwarded-For     $proxy_add_x_forwarded_for;
 		proxy_set_header  X-Forwarded-Proto   $scheme;
 		proxy_set_header  X-Frame-Options     SAMEORIGIN;
-		
+
 		client_max_body_size        100m;
 		client_body_buffer_size     128k;
-		
+
 		proxy_buffer_size           4k;
 		proxy_buffers               4 32k;
 		proxy_busy_buffers_size     64k;
 		proxy_temp_file_write_size  64k;
 	}
 	```
-	
+
 	![Nginx 配置文件：反向代理配置](https://i.loli.net/2019/11/20/LVXAFOfywRB2inr.jpg)
 
 这样，我们再次执行 `sudo systemctl restart nginx` 重启 Nginx 服务，一切顺利的话，我们就可以通过我们刚刚签署 SSL 证书的域名访问我们部署好的 Tiny Tiny RSS 服务了！鼓掌 👏
