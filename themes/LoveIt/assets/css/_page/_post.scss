@@ -183,11 +183,38 @@
     }
   }
 
-  h3::before,
-  h4::before,
-  h5::before,
+  h3::before {
+    content: "##";
+    margin-right: .3125rem;
+    color: $post-link-color;
+
+    .dark-theme & {
+      color: $post-link-color-dark;
+    }
+  }
+
+  h4::before {
+    content: "###";
+    margin-right: .3125rem;
+    color: $post-link-color;
+
+    .dark-theme & {
+      color: $post-link-color-dark;
+    }
+  }
+
+  h5::before {
+    content: "####";
+    margin-right: .3125rem;
+    color: $post-link-color;
+
+    .dark-theme & {
+      color: $post-link-color-dark;
+    }
+  }
+
   h6::before {
-    content: "|";
+    content: "#####";
     margin-right: .3125rem;
     color: $post-link-color;
 
