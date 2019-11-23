@@ -1,7 +1,7 @@
 ---
 title: "Reverse Proxy | 反向代理是什么？"
 date: 2019-11-22T21:14:00+08:00
-draft: true
+draft: false
 show_in_homepage: true
 show_description: true
 tags:
@@ -24,7 +24,7 @@ autoCollapseToc: true
 
 相信阅读这篇文章的同学一定对 Proxy 这个名词不陌生，~~Mainland China 互联网现状让大部分同学的计算机网络知识突飞猛进~~😂。简单来说，Proxy 服务器的主要功能就是在客户端 Client 和服务端 Server 之间搭建一个桥梁，从客户端访问服务端的网络流量、以及从服务端返回客户端的网络流量都会经由这一 Proxy 服务器的转发。[^Cloudflare]
 
-![](https://i.loli.net/2019/11/23/SX6GjARx5eKpfEI.png)
+![功能示意](https://i.loli.net/2019/11/23/SX6GjARx5eKpfEI.png)
 
 为了方便表述，我们就叫我们的 Proxy 服务器：咕咕，一只鸽子。🐦
 
@@ -34,7 +34,7 @@ autoCollapseToc: true
 
 飞鸽传书嘛，信鸽主要功能就是通风报信，我们这里的咕咕也不例外。咕咕在正常情况下是我们自己（客户端）的，也就意味着：咕咕会在 Client 前面等待送信。当 Client 准备发送一个请求的时候，咕咕会拿着这个请求，在公共互联网上面，将请求准确送达至对应的 Server。同理，Server 返回 response 给 Client，response 也会先被咕咕拿到，之后再转交给 Client。
 
-![](https://i.loli.net/2019/11/23/agNBpxLzSoIAFhi.png)
+![Forward Proxy 的工作原理](https://i.loli.net/2019/11/23/agNBpxLzSoIAFhi.png)
 
 上面就是「正向代理」的基本工作流程，咕咕就是我们这个例子里面的正向代理服务器，负责转发和接受从 Client 发出或收到的网络请求。我们用正向代理（Forward Proxy），~~除了大家人尽皆知的目的以外~~😂，还可以：
 
@@ -45,7 +45,7 @@ autoCollapseToc: true
 
 那么反向代理是怎样工作的呢？在反向代理中，我们的咕咕现在由服务器 Server 养活（部署），也就是说，咕咕在服务器端通风报信。每个从 Client 经由互联网发过来的请求会先到达咕咕这里，咕咕再将每个请求分发给相应的服务器。反之亦然。这就是「反向代理」的基本工作原理，我们在这个例子里面的「咕咕」，就是我们的反向代理服务器。（Reverse Proxy Server）
 
-![](https://i.loli.net/2019/11/23/hUC5TGactx16AJM.png)
+![Reverse Proxy 的工作原理](https://i.loli.net/2019/11/23/hUC5TGactx16AJM.png)
 
 为什么我们服务端也需要一个这样的咕咕呢？因为我们的咕咕不仅勤劳，还很坚强。要知道，不是所有的目标服务器都像我们咕咕那么坚强，目标服务器很多时候会因为直接收到的信件过多（收到过多的请求）而被淹没，甚至宕机。如果有咕咕的帮助，目标服务器就不会因为请求过多而无法处理，同时如果咕咕发现一个服务的请求太多，我们可以将这一服务增加多个服务器共同处理，咕咕这时候就可以将服务的请求进行分流，从而减轻单个服务器的处理负担。**这也就是「反向代理」在「负载均衡」方面的应用。**
 
@@ -65,11 +65,13 @@ autoCollapseToc: true
 - Netdata 服务对应域名：<https://stats.tenkeyseven.com>（可以公开访问）
 - Nginx 测试静态页面对应域名：<https://tenkeyseven.com>（可以公开访问）
 
+我们连接到服务器上面，执行下面的命令来查看端口占用情况：
+
 ```bash
 sudo netstat -tulpn | grep LISTEN
 ```
 
-![](https://i.loli.net/2019/11/23/XrHv2C5xA8liF3Z.png)
+![端口占用情况](https://i.loli.net/2019/11/23/XrHv2C5xA8liF3Z.png)
 
 通过查看端口占用情况，我们可以非常清晰的看到：
 
@@ -83,7 +85,7 @@ sudo netstat -tulpn | grep LISTEN
 
 Nginx 全部功能均由配置文件 `nginx.conf` 来设置，这一配置文件通常位于 `/etc/nginx/nginx.conf`，我们仔细看一下 Nginx 的配置文件。
 
-### 对上游服务器（upstream）的定义
+### 对 upstream 服务器的定义
 
 ![对 upstream 服务器的声明](https://i.loli.net/2019/11/23/X4Dzh9fBL8NeRGa.png)
 
@@ -108,7 +110,8 @@ upstream ttrssdev {
 server {
    server_name tenkeyseven.com; # managed by Certbot
        root         /usr/share/nginx/html;
-...
+       # ...
+}
 ```
 
 ### Proxy 转发规则的定义
@@ -146,9 +149,27 @@ server {
            proxy_busy_buffers_size     64k;
            proxy_temp_file_write_size  64k;
        }
+    
+    # ...
+}
 ```
 
-事实上，这部分的配置非常简单。得益于 Let's Encrypt 的存在，我们可以利用 Certbot 在签署每个域名的 SSL 证书时，自动生成对应服务的转发配置。
+事实上，这部分的配置非常简单。得益于 Let's Encrypt 的存在，我们可以利用 Certbot 在签署每个域名的 SSL 证书时，自动生成对应服务的转发配置。因此，事实上我们只需要声明前面介绍的 upstream 服务，并在 Certbot 生成的对应域名下的 location 子项处将服务器对应到反向代理的配置项处即可。
+
+## 小结
+
+最后，我们可以看到，经过这样的配置，我们从外界互联网访问我们服务器的请求，就被 Nginx 反向代理分别导向了对应的服务器，从而实现了多个域名对应多个服务，并部署在同一个服务器上面的功能。同时，Nginx 反向代理服务统一帮我们管理了 SSL 证书的签署，因此无论是从外界来访问我们服务器的请求，还是我们服务器里面某个服务返回给外界的请求，都是经过加密的 HTTPS 请求。
+
+![Nginx 反向代理在上文中的功能](https://i.loli.net/2019/11/23/2zKHFZmQXShLRAC.png)
+
+Nginx 反向代理服务器还有更多的功能，比如：
+
+- 前文提到的负载均衡（Load balance）
+- 用反向代理来作为 CDN，cache 一部分资源，加快访问速度
+- 在请求到达目标服务器之前，反向代理服务器事先过滤掉一部分恶意请求，保证提供服务的目标服务器的稳定工作
+- ……
+
+抛砖引玉，感谢阅读。
 
 [^Cloudflare]: [What Is A Reverse Proxy? | Proxy Servers Explained - Cloudflare](https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/)
 
