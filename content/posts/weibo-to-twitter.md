@@ -11,7 +11,7 @@ tags:
 - Twitter
 categories:
 - 自动化
-featured_image: 'https://i.loli.net/2019/11/26/L8lY64gwj7Jymie.png'
+featured_image: 'https://i.loli.net/2019/11/26/WHF6PDRzq8tEJZr.png'
 comment: true
 toc: true
 autoCollapseToc: true
