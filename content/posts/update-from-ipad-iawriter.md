@@ -9,7 +9,6 @@ tags:
 categories:
 - 用 iPad 学习的一天
 featured_image: https://i.loli.net/2019/11/14/zE2BNisaexXb6JL.png
-featured_image_preview: ''
 comment: true
 toc: true
 autoCollapseToc: true

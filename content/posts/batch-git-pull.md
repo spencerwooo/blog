@@ -9,7 +9,6 @@ tags:
 categories:
 - 技术
 featured_image: https://i.loli.net/2019/10/29/ZqySW1DFQvUs7G8.png
-featured_image_preview: ''
 comment: true
 toc: true
 autoCollapseToc: true
