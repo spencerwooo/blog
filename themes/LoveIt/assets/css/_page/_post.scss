@@ -328,32 +328,38 @@
   blockquote {
     font-size: 1rem;
     display: block;
-    border-width: 1px 0;
-    border-style: solid;
-    border-color: $global-border-color;
-    padding: 1.5em 1.2em 0.5em 1.2em;
-    margin: 0 0 2em 0;
+    // border-width: 1px 0;
+    // border-style: solid;
+    // border-color: $global-border-color;
+    border-radius: .6rem;
+    background-color: $code-background-color;
+    padding: 0.5em 1.2em 0.5em 1.2em;
+    // margin: 2em 0 2em 0;
+    margin: 1rem 0 1rem 0;
     position: relative;
-
-    &:before {
-      content: '\201C';
-      position: absolute;
-      top: 0em;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 3rem;
-      height: 2rem;
-      font: 6em/1.08em 'PT Sans', sans-serif;
-      color: $post-link-color;
-      text-align: center;
-
-      .dark-theme & {
-        color: $post-link-color-dark;
-      }
+    .dark-theme & {
+      background-color: $code-background-color-dark;
     }
 
+    // &:before {
+    //   content: '\201C';
+    //   position: absolute;
+    //   top: 0em;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    //   width: 3rem;
+    //   height: 2rem;
+    //   font: 6em/1.08em 'PT Sans', sans-serif;
+    //   color: $post-link-color;
+    //   text-align: center;
+
+    //   .dark-theme & {
+    //     color: $post-link-color-dark;
+    //   }
+    // }
+
     &:after {
-      content: "#blockquote" attr(cite);
+      content: "# QUOTE" attr(cite);
       display: block;
       text-align: right;
       font-size: 0.875em;
