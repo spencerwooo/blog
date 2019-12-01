@@ -82,10 +82,13 @@ IFTTT 网络自动化平台实际上是一个缩写，完全展开的 IFTTT 是�
   - 我们请求的微博文本内容为：`TestingMyWebhook`
   - 我们请求的微博原文链接为：`https://m.weibo.cn/detail/4444027372221130`
   - 我们请求的微博图片链接为：`https://wx4.sinaimg.cn/orj360/63e5c1e1ly1g9f2lmag8hj20k00qoac8.jpg`
-  - 那么我们最终拼接出来的 URL 请求为：
+  - 那么我们最终拼接出来的 URL 请求为（没有换行，换行方便阅读）：
 
     ```
-    https://hook.integromat.com/{integromat_api_key}?text=TestingMyWebhook&url=https://m.weibo.cn/detail/4444027372221130&image=https://wx4.sinaimg.cn/orj360/63e5c1e1ly1g9f2lmag8hj20k00qoac8.jpg
+    https://hook.integromat.com/{integromat_api_key}
+    ?text=TestingMyWebhook
+    &url=https://m.weibo.cn/detail/4444027372221130
+    &image=https://wx4.sinaimg.cn/orj360/63e5c1e1ly1g9f2lmag8hj20k00qoac8.jpg
     ```
 
 - 将上面的 URL 复制到浏览器中访问，加载完成之后，如果我们得到了正确的数据结构，那么 Integromat 那边会自动显示 Successfully Determined，同时浏览器中会显示 Accepted 字样
