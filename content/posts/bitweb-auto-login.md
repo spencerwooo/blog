@@ -1,5 +1,5 @@
 ---
-title: "BIT-Web Automation | 如何利用 iOS 快捷指令自动化登录 BIT-Web 校园网"
+title: "BIT-Web Automation：如何利用 iOS 快捷指令自动化登录 BIT-Web 校园网"
 date: 2019-12-3T16:27:00+08:00
 draft: true
 show_in_homepage: true
@@ -17,6 +17,8 @@ autoCollapseToc: true
 ---
 
 BIT-Web 是北京理工大学校园 Wi-Fi，专门用于笔记本等桌面设备，另外还有 BIT-Mobile 用于移动设备。但是，BIT-Mobile 有时候并没有 BIT-Web 稳定，自动登录不是那么靠谱，我们也不能通过 BIT-Mobile 登录使用免费中国移动宽带，这些场景下我们都需要在移动设备上连接至 BIT-Web 进行手动登录。
+
+![BIT-Web 和 BIT-Mobile 的对比](https://i.loli.net/2019/12/03/3V7DesynEPc4zdk.png)
 
 最近我的同学跟我说，BIT-Web 的登录页面在移动端（尤其是 Android 平台）上不能正常的显示「密码管理器」，也就不能直接填充密码，每次都需要手动输入。这令人非常烦恼，如何才能实现在连接到 BIT-Web 上之后自动发送登录认证请求来连接至校园网呢？
 
