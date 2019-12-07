@@ -82,7 +82,7 @@ staticDir = ["static", "themes/LoveIt/assets/others"]
   [params.cdn]
     fontawesome_free_css = ''
     animate_css = ''
-    gitalk_css = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spencerwooo/blog@00cfe0a1a069494e3512a4817a649965a5d55b6c/themes/LoveIt/assets/css/lib/gitalk/gitalk.css">'
+    gitalk_css = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spencerwooo/blog@5d6bcd8b7bf94ce66d118368c724708d67bd83de/themes/LoveIt/assets/css/lib/gitalk/gitalk.css">'
     gitalk_js = '<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>'
     valine_js = ''
     jquery_js = ''
