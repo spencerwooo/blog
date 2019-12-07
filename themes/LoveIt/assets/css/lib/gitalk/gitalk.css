@@ -731,8 +731,8 @@
   color: #0f4c81;
 }
 .gt-container a:hover {
-  color: #81a6ed;
-  border-color: #81a6ed;
+  color: #0f4c81cc;
+  border-color: #0f4c81cc;
 }
 .gt-container a.is--active {
   color: #333;
@@ -880,11 +880,11 @@
 }
 .gt-container .gt-btn-preview:hover {
   background-color: #f2f2f2;
-  border-color: #81a6ed;
+  border-color: #0f4c81cc;
 }
 .gt-container .gt-btn-public:hover {
-  background-color: #81a6ed;
-  border-color: #81a6ed;
+  background-color: #0f4c81cc;
+  border-color: #0f4c81cc;
 }
 .gt-container .gt-error {
   text-align: center;
