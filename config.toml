@@ -1,6 +1,6 @@
 baseURL = "https://blog.spencerwoo.com"
 # languageCode = "zh"
-title = "👑 Spencer's Blog"
+title = "Spencer's Blog"
 theme = "LoveIt"
 enableGitInfo = false
 hasCJKLanguage = true
@@ -36,19 +36,19 @@ staticDir = ["static", "themes/LoveIt/assets/others"]
 
   [[menu.main]]
     identifier = "posts"
-    name = "📰 Posts"
+    name = "Posts"
     url = "/posts/"
     weight = 2
 
   [[menu.main]]
     identifier = "tags"
-    name = "🔖 Tags"
+    name = "Tags"
     url = "/tags/"
     weight = 3
 
   [[menu.main]]
     identifier = "categories"
-    name = "🎀 Categories"
+    name = "Categories"
     url = "/categories/"
     weight = 4
 
