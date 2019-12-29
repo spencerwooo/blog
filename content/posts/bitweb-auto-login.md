@@ -1,6 +1,6 @@
 ---
 title: "BIT-Web Automation：如何利用 iOS 快捷指令自动化登录 BIT-Web 校园网"
-date: 2019-12-29T16:27:00+08:00
+date: 2019-12-29T20:50:00+08:00
 draft: true
 show_in_homepage: true
 show_description: true
@@ -10,7 +10,7 @@ tags:
 - BIT
 categories:
 - Automation
-featured_image: ''
+featured_image: 'https://i.loli.net/2019/12/29/xBWoT8nqw4OdfZE.png'
 comment: true
 toc: true
 autoCollapseToc: true
@@ -98,7 +98,7 @@ curl --request POST \
 
 首先，在 Shortcuts 里面创建新动作，并搜索加入模块「Get contents of URL」。点击模块下部的 Show More，在其中按下图进行配置：
 
-![BIT-Web 登录认证请求模块](https://i.loli.net/2019/12/29/ny9fDUtWxY6CmF8.jpg)
+![BIT-Web 登录认证请求模块](https://i.loli.net/2019/12/29/dKnXm2GWcAeRHrD.png)
 
 - URL 设置为：`http://10.0.0.55:801/include/auth_action.php`
 - Method 设置为：`POST`
@@ -113,18 +113,18 @@ curl --request POST \
 
 在模块「Get contents of URL」下方添加模块「Text」，**将「Text」的值设置为「Contents of URL」**，也就是上一步网络请求的返回结果。
 
-![将返回数据用 Text 模块规格化](https://i.loli.net/2019/12/29/G8ZRsvm5EkuFb6C.png)
+![将返回数据用 Text 模块规格化](https://i.loli.net/2019/12/29/c1DTOqN8vQJgpGL.jpg)
 
 继续，在下面添加模块「If」，用来判断我们登录成功与否。将 If 模块的判断条件设置为「contains」，包含字符设置为 `login_ok`：
 
 - 如果匹配成功：说明登录 BIT-Web 成功，发送登录成功通知
 - 如果匹配失败（进入 Otherwise 部分）：说明登录 BIT-Web 失败，发送登录失败通知以及失败的请求返回的数据
 
-![BIT-Web 登录返回数据处理模块](https://i.loli.net/2019/12/29/8j6MgFHJtBaWbyx.jpg)
+![BIT-Web 登录返回数据处理模块](https://i.loli.net/2019/12/29/W3ePoZXzOkjsqpQ.jpg)
 
 之后，我们测试。将手机连接至校园网 BIT-Web，尝试执行这一 Shortcuts 动作。如果一切顺利，那么你应该可以登录成功，得到如下通知：
 
-![BIT-Web 登录成功](https://i.loli.net/2019/12/29/klBp3EOgVIUs1bj.jpg)
+![BIT-Web 登录成功](https://i.loli.net/2019/12/29/KRnBAS9ygtz4lQb.jpg)
 
 ### 定义动作触发条件
 
@@ -132,6 +132,28 @@ curl --request POST \
 
 我们点击 Shortcuts 中间菜单「Automation」，点击上方加号，选择 Create Personal Automation。之后，在菜单中选择 WLAN，在下方菜单中点击 Choose 并选择 BIT-Web。
 
-![配置连接至 BIT-Web 的自动触发器](https://i.loli.net/2019/12/29/OVydXlJ3oEptTvP.jpg)
+![配置连接至 BIT-Web 的自动触发器](https://i.loli.net/2019/12/29/as4dlTP6xqKHieG.png)
+
+之后，点击右上角 Next，在添加动作模块的页面点击加号，添加一个「Run Shortcut」的模块。
+
+![添加 Run Shortcut 的模块](https://i.loli.net/2019/12/29/U7QO8EF5J1gNRca.jpg)
+
+接下来，将「Run Shortcut」模块的执行动作设置为我们刚刚制作的 BIT-Web Shortcut 动作。其他内容无需改动。
+
+![配置自动执行上一步制作的 BIT-Web Shortcut 动作](https://i.loli.net/2019/12/29/GhiWC1arb9uwQeV.png)
+
+之后，点击 Next > Done 保存动作。
 
 ## 效果
+
+如果一切顺利，那么你的 iPhone 连接至 BIT-Web 之后，Shortcuts 应用就会自动弹出提醒请求执行 BIT-Web 登录的动作。在通知提醒上面点击执行，我们就可以直接登录至 BIT-Web。
+
+> **🤔 注意：**
+> 
+> 这一快捷指令以及利用快捷指令登录 BIT-Web 是上个月的思路和想法，在上个月这一功能一直完好可用，但是最近我注意到 Wifi 触发器总是无法正确的触发动作的运行，同时在 Reddit 社区里面也有不下 5 条抱怨 WiFi 触发器不工作的内容。因此我怀疑确实是 iOS 出现的 bug 导致的。
+
+另外，如果上面的触发总是无法成功，那么你也可以直接将 BIT-Web Shortcut 动作固定在主屏幕，每次连接到 BIT-Web 之后手动点击执行快捷指令即可。这肯定比跳转登录认证页面输入账号密码登录方便许多。
+
+![直接将 BIT-Web 登录快捷指令固定到主屏幕](https://i.loli.net/2019/12/29/uEm2ZR5gdKXW9iL.jpg)
+
+自动化的操作比人力重复无效劳动要方便许多，打卡、签到，日复一日的登录、提醒，都可以利用「自动化」的思路进行完成。本文就介绍到这里，感谢阅读。
