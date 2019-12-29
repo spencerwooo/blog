@@ -1,7 +1,7 @@
 ---
 title: "BIT-Web Automation：如何利用 iOS 快捷指令自动化登录 BIT-Web 校园网"
 date: 2019-12-29T20:50:00+08:00
-draft: true
+draft: false
 show_in_homepage: true
 show_description: true
 tags:
