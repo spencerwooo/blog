@@ -29,34 +29,34 @@ staticDir = ["static", "themes/LoveIt/assets/others"]
 
 [menu]
   [[menu.main]]
-    identifier = "portfolio"
-    name = "🎉 Portfolio"
-    url = "https://spencerwoo.com/"
-    weight = 1
-
-  [[menu.main]]
     identifier = "posts"
     name = "Posts"
     url = "/posts/"
-    weight = 2
+    weight = 1
 
   [[menu.main]]
     identifier = "tags"
     name = "Tags"
     url = "/tags/"
-    weight = 3
+    weight = 2
 
   [[menu.main]]
-    identifier = "categories"
-    name = "Categories"
-    url = "/categories/"
-    weight = 4
+    identifier = "portfolio"
+    name = "🎉 Portfolio"
+    url = "https://spencerwoo.com/"
+    weight = 3
+
+  # [[menu.main]]
+  #   identifier = "categories"
+  #   name = "Categories"
+  #   url = "/categories/"
+  #   weight = 4
 
   [[menu.main]]
     identifier = "RSS"
     name = "📮 RSS"
     url = "https://blog.spencerwoo.com/posts/index.xml"
-    weight = 5
+    weight = 4
 
 [params]
   version = "5.x"

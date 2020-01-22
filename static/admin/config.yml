@@ -48,13 +48,14 @@ collections:
               "Weibo",
             ],
         }
-      - {
-          label: "Categories",
-          name: "categories",
-          widget: "select",
-          options:
-            ["技术", "Automation", "服务器能拿来干什么", "用 iPad 学习的一天"],
-        }
+      # - {
+      #     label: "Categories",
+      #     name: "categories",
+      #     widget: "select",
+      #     multiple: true,
+      #     options:
+      #       ["技术", "Automation", "服务器能拿来干什么", "用 iPad 学习的一天"],
+      #   }
       - { label: "Featured Image", name: "featured_image", widget: "string" }
       - { label: "Comment", name: "comment", widget: "boolean", default: true }
       - { label: "TOC", name: "toc", widget: "boolean", default: true }
