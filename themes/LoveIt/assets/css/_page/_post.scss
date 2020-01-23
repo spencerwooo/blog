@@ -40,7 +40,8 @@
 }
 
 .post-featured-image {
-  padding-top: .6rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
 
   img {
     display: block;
@@ -169,8 +170,8 @@
   h4,
   h5,
   h6 {
-    padding-top: .8rem;
-    padding-bottom: .3rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
   }
 
   h2::before {
@@ -225,7 +226,7 @@
 
   p {
     font-size: 1rem;
-    margin: 0.3rem 0 1rem 0;
+    margin: 1.2rem 0 1.2rem 0;
     line-height: 2rem;
     // text-align: justify;
   }
@@ -327,7 +328,9 @@
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 0 auto;
+    // margin: 20 auto;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
     overflow: hidden;
   }
 
