@@ -1,7 +1,7 @@
 ---
 title: "cwim 背后的故事：Rust 与 Ownership"
 date: 2020-01-23T00:20:00+08:00
-draft: true
+draft: false
 show_in_homepage: true
 show_description: true
 tags:
