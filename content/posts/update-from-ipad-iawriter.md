@@ -10,8 +10,8 @@ categories:
 - 用 iPad 学习的一天
 featured_image: https://i.loli.net/2019/11/14/zE2BNisaexXb6JL.png
 comment: true
-toc: true
-autoCollapseToc: true
+toc: false
+autoCollapseToc: false
 ---
 
 之前，我就曾经介绍过我是如何利用 iPad 对部署在 GitHub 上面的静态博客进行更新的。这篇文章即使到现在也有一定的借鉴意义，文章归档于：[使用 Working Copy 在 iPad 上面更新博客 | 一次随缘的更新](https://archive.spencerwoo.com/posts/2019/06/09/from-my-ipad.html)。

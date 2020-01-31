@@ -10,8 +10,8 @@ categories:
 - 技术
 featured_image: https://i.loli.net/2019/10/29/ZqySW1DFQvUs7G8.png
 comment: true
-toc: true
-autoCollapseToc: true
+toc: false
+autoCollapseToc: false
 ---
 
 不废话，放脚本：

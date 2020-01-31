@@ -8,6 +8,6 @@ tags:
 -
 featured_image: ''
 comment: true
-toc: true
-autoCollapseToc: true
+toc: false
+autoCollapseToc: false
 ---

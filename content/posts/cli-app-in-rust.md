@@ -10,8 +10,8 @@ tags:
 - CLI
 featured_image: 'https://i.loli.net/2020/01/22/OzrcsukSVqtNAle.png'
 comment: true
-toc: true
-autoCollapseToc: true
+toc: false
+autoCollapseToc: false
 ---
 
 前几天 Stack Overflow 博客上面有一篇文章[^1]，里面提到了 Rust 已经连续四年位列 Stack Overflow 社区最爱编程语言榜首。的确，Rust 是一门神奇又美丽的语言。Rust 是一门标榜 safe 与 zero-cost abstraction 的语言[^2]，意味着只要你编写的 Rust 代码符合官方标准 —— 能够通过编译 —— 那么你的项目几乎可以肯定地说是内存安全的。

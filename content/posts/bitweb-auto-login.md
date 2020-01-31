@@ -12,8 +12,8 @@ categories:
 - Automation
 featured_image: 'https://i.loli.net/2019/12/29/xBWoT8nqw4OdfZE.png'
 comment: true
-toc: true
-autoCollapseToc: true
+toc: false
+autoCollapseToc: false
 ---
 
 BIT-Web 是北京理工大学校园 Wi-Fi，专门用于笔记本等桌面设备，另外还有 BIT-Mobile 用于移动设备。但是，BIT-Mobile 有时候并没有 BIT-Web 稳定，自动登录不是那么靠谱，我们也不能通过 BIT-Mobile 登录使用免费运营商宽带，这些场景下我们都需要在移动设备上连接至 BIT-Web 进行手动登录。
@@ -149,7 +149,7 @@ curl --request POST \
 如果一切顺利，那么你的 iPhone 连接至 BIT-Web 之后，Shortcuts 应用就会自动弹出提醒请求执行 BIT-Web 登录的动作。在通知提醒上面点击执行，我们就可以直接登录至 BIT-Web。
 
 > **🤔 注意：**
-> 
+>
 > 这一快捷指令以及利用快捷指令登录 BIT-Web 是上个月的思路和想法，在上个月这一功能一直完好可用，但是最近我注意到 Wifi 触发器总是无法正确的触发动作的运行，同时在 Reddit 社区里面也有不下 5 条抱怨 WiFi 触发器不工作的内容。因此我怀疑确实是 iOS 出现的 bug 导致的。
 
 另外，如果上面的触发总是无法成功，那么你也可以直接将 BIT-Web Shortcut 动作固定在主屏幕，每次连接到 BIT-Web 之后手动点击执行快捷指令即可。这肯定比跳转登录认证页面输入账号密码登录方便许多。

@@ -13,8 +13,8 @@ categories:
 - Automation
 featured_image: 'https://i.loli.net/2019/11/26/WHF6PDRzq8tEJZr.png'
 comment: true
-toc: true
-autoCollapseToc: true
+toc: false
+autoCollapseToc: false
 ---
 
 IFTTT 网络自动化平台实际上是一个缩写，完全展开的 IFTTT 是「IF this THEN that」- 如果「这」，那么「那」。既然如此，我们利用 IFTTT 就可以实现非常完善的自动化事件处理流程，比如这篇文章我要介绍的就是一个例子：「利用 IFTTT 自动将微博发布的信息同步到 Twitter 上面」的最佳实践。

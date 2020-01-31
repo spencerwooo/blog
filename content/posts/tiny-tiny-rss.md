@@ -12,8 +12,8 @@ categories:
 - 服务器能拿来干什么
 featured_image: https://i.loli.net/2019/11/20/hbFSq6CwI1VNfJL.png
 comment: true
-toc: true
-autoCollapseToc: true
+toc: false
+autoCollapseToc: false
 ---
 
 9012 年了，别的小朋友们服务器上面跑着各式各样的东西：博客、云盘、监控脚本……再看看我们那台闲（bai）置（piao）很久的阿里云 Server，里面的 Git 竟然还是 1.8 的上古版本。🤦‍♂️ 不如把那台服务器拿出来，部署一个属于自己的 RSS 服务器，甚至可以跟同学们一起用呢～
