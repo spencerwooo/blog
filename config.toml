@@ -9,7 +9,7 @@ enableEmoji = true
 enableRobotsTXT = true
 googleAnalytics = "UA-111664763-2"
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
-pygmentsOptions = "linenos=table"
+# pygmentsOptions = "linenos=table"
 pygmentsCodefences = true
 pygmentsUseClasses = true
 pygmentsCodefencesGuessSyntax = true
