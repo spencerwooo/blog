@@ -30,19 +30,19 @@ staticDir = ["static", "themes/LoveIt/assets/others"]
 [menu]
   [[menu.main]]
     identifier = "posts"
-    name = "<i class=\"fas fa-home\"></i> Posts"
+    name = "Posts"
     url = "/posts/"
     weight = 1
 
   [[menu.main]]
     identifier = "tags"
-    name = "<i class=\"fas fa-tags\"></i> Tags"
+    name = "Tags"
     url = "/tags/"
     weight = 2
 
   [[menu.main]]
     identifier = "portfolio"
-    name = "<i class=\"fas fa-plane-departure\"></i> Portfolio"
+    name = "Portfolio"
     url = "https://spencerwoo.com/"
     weight = 3
 
@@ -54,7 +54,7 @@ staticDir = ["static", "themes/LoveIt/assets/others"]
 
   [[menu.main]]
     identifier = "RSS"
-    name = "<i class=\"fas fa-rss-square\"></i> RSS"
+    name = "RSS"
     url = "https://blog.spencerwoo.com/posts/index.xml"
     weight = 4
 
