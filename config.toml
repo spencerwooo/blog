@@ -30,19 +30,19 @@ staticDir = ["static", "themes/LoveIt/assets/others"]
 [menu]
   [[menu.main]]
     identifier = "posts"
-    name = "Posts"
+    name = "<i class=\"fas fa-home\"></i> Posts"
     url = "/posts/"
     weight = 1
 
   [[menu.main]]
     identifier = "tags"
-    name = "Tags"
+    name = "<i class=\"fas fa-tags\"></i> Tags"
     url = "/tags/"
     weight = 2
 
   [[menu.main]]
     identifier = "portfolio"
-    name = "🎉 Portfolio"
+    name = "<i class=\"fas fa-plane-departure\"></i> Portfolio"
     url = "https://spencerwoo.com/"
     weight = 3
 
@@ -54,7 +54,7 @@ staticDir = ["static", "themes/LoveIt/assets/others"]
 
   [[menu.main]]
     identifier = "RSS"
-    name = "📮 RSS"
+    name = "<i class=\"fas fa-rss-square\"></i> RSS"
     url = "https://blog.spencerwoo.com/posts/index.xml"
     weight = 4
 
@@ -64,7 +64,7 @@ staticDir = ["static", "themes/LoveIt/assets/others"]
   keywords = ["Spencer Woo", "Spencer", "Woo", "Blog"]
   home_mode = "post"
   avatar = "/images/avatar.jpeg"
-  subtitle = "When in doubt, use brute force."
+  subtitle = "开发者 / 设计师 / 少数派 / 学生"
   socialShare = false
   since = 2019
   icp = ''
@@ -108,6 +108,7 @@ staticDir = ["static", "themes/LoveIt/assets/others"]
     Twitter = "realSpencerWoo"
     Email = "spencerwoo98@gmail.com"
     Telegram = "Spencer_Woo"
+    Medium = "spencerweekly"
 
   [params.share]
     enable = false
