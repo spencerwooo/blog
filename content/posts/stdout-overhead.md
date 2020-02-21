@@ -73,7 +73,7 @@ So what should we do here? Well, in order to avoid I/O overhead, we either have 
 
 After I ditched pkbar, I found a perfect progress bar library: [tqdm — A Fast, Extensible Progress Bar for Python and CLI](https://github.com/tqdm/tqdm). With over 13.4k+ stars, `tqdm` is easily the best Python library for us to implement training progress visualization.
 
-![**tqdm** in action](https://i.loli.net/2020/02/22/XltCGUHq9Ohg6Su.png)
+![tqdm in action](https://i.loli.net/2020/02/22/XltCGUHq9Ohg6Su.png)
 
 `tqdm` is simple, efficient and comes with minimal overhead. The author claims that `tqdm` only delays output for a minimum of 60ns per iteration. That’s impressive. In addition to its low overhead, `tqdm` uses smart algorithms to predict the remaining time and to skip  unnecessary iteration displays, which allows for a negligible overhead  in most cases.
 
@@ -165,7 +165,7 @@ for image, label in pbar:
 
 `tqdm` can be used directly in a CLI environment with no special configuration whatsoever.
 
-![**tqdm** in a CLI enviroment](https://i.loli.net/2020/02/22/jXOBwvmhyEupNIV.gif)
+![tqdm in a CLI enviroment](https://i.loli.net/2020/02/22/jXOBwvmhyEupNIV.gif)
 
 Also, we can run `tqdm` in VS Code’s Python Interactive console, or Jupyter Notebook. In this case, `tqdm` will output progress asynchronously according to the [Notebook API](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Running Code.html#Output-is-asynchronous).
 
@@ -187,7 +187,7 @@ import tqdm.notebook as tqdm
 
 Now, run the code once more, if everything goes well, we should be able to  see a neat progress bar with colors indicating the current task’s state: pending, success or failure.
 
-![**tqdm** integrating directly into Jupyter Notebook with [ipywidgets](https://ipywidgets.readthedocs.io/en/latest/)](https://i.loli.net/2020/02/22/jWR23kaVYObST4P.gif)
+![tqdm integrating directly into Jupyter Notebook with ipywidgets - https://ipywidgets.readthedocs.io/en/latest](https://i.loli.net/2020/02/22/jWR23kaVYObST4P.gif)
 
 ------
 
