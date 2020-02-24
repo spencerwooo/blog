@@ -1,16 +1,16 @@
 // @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
-@import url("https://fonts.googleapis.com/css?family=Miriam+Libre:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Miriam+Libre:400,700|Rubik&display=swap");
 
-@font-face {
-  font-family: 'Product Sans';
-  src: url('lib/webfonts/ProductSans-Regular.woff2') format('woff2'),
-       url('lib/webfonts/ProductSans-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: 'Product Sans';
+//   src: url('lib/webfonts/ProductSans-Regular.woff2') format('woff2'),
+//        url('lib/webfonts/ProductSans-Regular.woff') format('woff');
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
 html {
-  font-family: 'Miriam Libre', 'Avenir Next', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, 'PingFang SC', 'Noto Sans CJK SC', 'Sarasa Gothic SC', 'Microsoft YaHei', sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-family: 'Rubik', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, 'PingFang SC', 'Noto Sans CJK SC', 'Sarasa Gothic SC', 'Microsoft YaHei', sans-serif, Apple Color Emoji, Segoe UI Emoji;
 
   // /* scrollbar, only support webkit */
   // &::-webkit-scrollbar {
