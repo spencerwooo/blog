@@ -6,10 +6,10 @@
     <div class="post-content">
         {{ $content := .Content }}
         {{ $REin := `<img src="([^"]+)" alt="([^"]+)?" />` }}
-        {{ $REout := "<figure><img src=/images/loading.gif data-sizes=auto data-src=$1 alt=$2 class=lazyload><figcaption class=image-caption>$2</figcaption></figure>" }}
+        {{ $REout := "<figure><img src=/images/loading.svg data-sizes=auto data-src=$1 alt=$2 class=lazyload><figcaption class=image-caption>$2</figcaption></figure>" }}
         {{ $content = replaceRE $REin $REout $content }}
         {{ $REin = `<img src="([^"]+)" alt="([^"]+)?" title="([^"]+)?" />` }}
-        {{ $REout = "<figure><img src=/images/loading.gif data-src=$1 data-sizes=auto alt=$2 title=$3 class=lazyload><figcaption class=image-caption>$2</figcaption></figure>" }}
+        {{ $REout = "<figure><img src=/images/loading.svg data-src=$1 data-sizes=auto alt=$2 title=$3 class=lazyload><figcaption class=image-caption>$2</figcaption></figure>" }}
         {{ $content = replaceRE $REin $REout $content }}
         {{ $REin = `:\(([\w- ]+?)\):` }}
         {{ $REout = `<i class="$1 fa-fw"></i>` }}
