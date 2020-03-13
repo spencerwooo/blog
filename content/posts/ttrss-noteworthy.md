@@ -118,7 +118,7 @@ Fever Emulation 的 API 包含有三个部分：
 
 如果你使用了 Awesome TTRSS 中包含的 Mercury 全文抓取和 OpenCC 繁简转换 API，那么你应该在 `docker ps` 的输出中看到这两个服务的身影：
 
-![](https://i.loli.net/2020/03/13/1gqOBVUvX5h7M63.png)
+![docker ps 的输出](https://i.loli.net/2020/03/13/1gqOBVUvX5h7M63.png)
 
 如果你这两个服务的配置和原配置一致：
 
