@@ -1,18 +1,12 @@
 ---
 title: "Remote Jupyter Lab：如何用 Jupyter Lab 将远程服务器资源最大化利用"
-date: 2020-03-12T00:53:49+08:00
-draft: false
-show_in_homepage: true
-show_description: true
-tags:
-- Machine Learning
-- Jupyter
-- Server
-- Dev Environment
-featured_image: 'https://i.loli.net/2020/03/12/mwH29t6LgrApoPI.png'
-comment: true
-toc: false
-autoCollapseToc: false
+date: 2020-03-12
+published: true
+slug: remote-jupyter-lab
+tags: ['Machine Learning', 'Jupyter', 'Server', 'Dev Environment']
+cover_image: ./images/remote-jupyter-lab.png
+canonical_url: false
+description: "Remote Jupyter Lab: how to utilize Jupyter Lab to its fullest on a remote server?"
 ---
 
 > 🎃 **编者按：**

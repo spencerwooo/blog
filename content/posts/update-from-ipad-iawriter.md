@@ -1,17 +1,12 @@
 ---
 title: Working Copy + iA Writer：第二次尝试从我的 iPad 上面更新博客
-date: 2019-11-14T06:24:53+00:00
-show_in_homepage: true
-show_description: true
-tags:
-- iPad
-- Git
-categories:
-- 用 iPad 学习的一天
-featured_image: https://i.loli.net/2019/11/14/zE2BNisaexXb6JL.png
-comment: true
-toc: false
-autoCollapseToc: false
+date: 2019-11-14
+published: true
+slug: update-from-ipad-iawriter
+tags: ['iPad', 'Git']
+cover_image: ./images/update-from-ipad-iawriter.png
+canonical_url: false
+description: "我又开始玩我的 iPad 了"
 ---
 
 之前，我就曾经介绍过我是如何利用 iPad 对部署在 GitHub 上面的静态博客进行更新的。这篇文章即使到现在也有一定的借鉴意义，文章归档于：[使用 Working Copy 在 iPad 上面更新博客 | 一次随缘的更新](https://archive.spencerwoo.com/posts/2019/06/09/from-my-ipad.html)。

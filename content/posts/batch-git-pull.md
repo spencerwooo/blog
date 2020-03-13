@@ -1,17 +1,12 @@
 ---
 title: Batch Git Pull：分享一个维护多个 Git 仓库的小脚本
-date: 2019-11-13T03:29:53.000+00:00
-show_in_homepage: true
-show_description: true
-tags:
-- Git
-- Tech
-categories:
-- 技术
-featured_image: https://i.loli.net/2019/10/29/ZqySW1DFQvUs7G8.png
-comment: true
-toc: false
-autoCollapseToc: false
+date: 2019-11-13
+published: true
+slug: batch-git-pull
+tags: ['Git', 'Tech']
+cover_image: ./images/batch-git-pull.png
+canonical_url: false
+description: "如何一次更新多个 Git 仓库"
 ---
 
 不废话，放脚本：
@@ -110,7 +105,7 @@ xargs -I {} git -C {} pull
 
 b(￣▽￣)d 👍 成功\~
 
-# 📚 References
+## 📚 References
 
 * [Updating Multiple Repos With One Command](https://medium.com/@codenameyau/updating-multiple-repos-with-one-command-9768c8cdfe46)
 * [xargs 命令教程](http://www.ruanyifeng.com/blog/2019/08/xargs-tutorial.html)

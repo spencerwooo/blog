@@ -1,18 +1,12 @@
 ---
 title: "Reverse Proxy | 反向代理是什么？"
-date: 2019-11-22T21:14:00+08:00
-draft: false
-show_in_homepage: true
-show_description: true
-tags:
-- Tech
-- Server
-categories:
-- 技术
-featured_image: https://i.loli.net/2019/11/22/qgB3MXVk1ThExIw.png
-comment: true
-toc: false
-autoCollapseToc: false
+date: 2019-11-22
+published: true
+slug: reverse-proxy
+tags: ['Tech', 'Server']
+cover_image: ./images/reverse-proxy.png
+canonical_url: false
+description: "Nginx 反向代理的工作原理"
 ---
 
 [Tiny Tiny RSS | 最速部署私有 RSS 服务器](https://blog.spencerwoo.com/2019/11/tiny-tiny-rss/) 这篇文章里面，我们提到了「利用 Nginx 作为反向代理」来为 Tiny Tiny RSS 服务加上 SSL 支持。事实上，我经常都能在各个和 Nginx、Apache Server 等相关文档里面看到「反向代理」这个术语。今天我们就来看看，到底什么是反向代理？「反向代理」的工作原理，以及我们都可以用「反向代理」来干什么？

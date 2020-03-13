@@ -1,26 +1,15 @@
 ---
 title: "Tiny Tiny RSS：部署中的普遍问题与注意事项总结"
-date: 2020-03-13T16:36:38+08:00
-draft: false
-show_in_homepage: true
-show_description: true
-tags:
-  - Server
-  - RSS
-  - Tech
-featured_image: "https://i.loli.net/2020/03/13/UaHiGIObo8yVFXp.png"
-comment: true
+date: 2020-03-13
+published: true
+slug: ttrss-noteworthy
+tags: ['Server', 'RSS', 'Tech']
+cover_image: ./images/ttrss-noteworthy.png
+canonical_url: false
+description: "Tiny Tiny RSS 部署踩坑"
 ---
 
 最近一直在折腾 Tiny Tiny RSS，包括升级、添加样式和持久化。由于我是直接使用了 Awesome TTRSS 项目提供的 `docker-compose.yml` 部署的 Docker 版本 Tiny Tiny RSS，所以一些经验还是具有普遍性、值得分享的。这里我总结一下我在部署 Tiny Tiny RSS 过程中遇到的一些「普遍问题」和「注意事项」。
-
-- [如何直接更新最新版本的 Tiny Tiny RSS](#%e5%a6%82%e4%bd%95%e7%9b%b4%e6%8e%a5%e6%9b%b4%e6%96%b0%e6%9c%80%e6%96%b0%e7%89%88%e6%9c%ac%e7%9a%84-tiny-tiny-rss)
-- [如何在编辑 docker-compose 文件之后重启 Tiny Tiny RSS](#%e5%a6%82%e4%bd%95%e5%9c%a8%e7%bc%96%e8%be%91-docker-compose-%e6%96%87%e4%bb%b6%e4%b9%8b%e5%90%8e%e9%87%8d%e5%90%af-tiny-tiny-rss)
-- [如何正确的配置 Fever Emulation API](#%e5%a6%82%e4%bd%95%e6%ad%a3%e7%a1%ae%e7%9a%84%e9%85%8d%e7%bd%ae-fever-emulation-api)
-- [如何设置分栏视图](#%e5%a6%82%e4%bd%95%e8%ae%be%e7%bd%ae%e5%88%86%e6%a0%8f%e8%a7%86%e5%9b%be)
-- [如何正确设置 Mercury 全文抓取和 OpenCC 繁简转换 API](#%e5%a6%82%e4%bd%95%e6%ad%a3%e7%a1%ae%e8%ae%be%e7%bd%ae-mercury-%e5%85%a8%e6%96%87%e6%8a%93%e5%8f%96%e5%92%8c-opencc-%e7%b9%81%e7%ae%80%e8%bd%ac%e6%8d%a2-api)
-- [如何调试、查看 Tiny Tiny RSS 与其他容器服务的 log](#%e5%a6%82%e4%bd%95%e8%b0%83%e8%af%95%e6%9f%a5%e7%9c%8b-tiny-tiny-rss-%e4%b8%8e%e5%85%b6%e4%bb%96%e5%ae%b9%e5%99%a8%e6%9c%8d%e5%8a%a1%e7%9a%84-log)
-- [如何持久化 Tiny Tiny RSS 图标](#%e5%a6%82%e4%bd%95%e6%8c%81%e4%b9%85%e5%8c%96-tiny-tiny-rss-%e5%9b%be%e6%a0%87)
 
 关于如何在自己的服务器上面部署 Tiny Tiny RSS：
 
@@ -29,10 +18,8 @@ comment: true
 
 另外，订阅我博客 RSS 的同学已经达到了惊人的 10 个（来自 Feedly 的数据）！谢谢各位的关注。🙇‍♂️
 
-{{< rawhtml >}}
-<a href="https://blog.spencerwoo.com/posts/index.xml"><img src="https://img.shields.io/badge/subscribe%20via-RSS-ffa500?logo=rss&style=for-the-badge" alt="" style="display: inline; margin: 0.5rem 0.5rem 0.5rem 0;"></a>
-<a href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fblog.spencerwoo.com%2Fposts%2Findex.xml"><img src="https://img.shields.io/badge/dynamic/json?color=2bb24c&amp;label=subscribers&amp;query=%24.source.subscribers&amp;url=https%3A%2F%2Ffeedly.com%2Fv3%2Frecommendations%2Ffeeds%2Ffeed%252Fhttps%253A%252F%252Fblog.spencerwoo.com%252Fposts%252Findex.xml&amp;logo=feedly&style=for-the-badge" alt="" style="display: inline; margin: 0.5rem 0;"></a>
-{{< /rawhtml >}}
+<a href="https://blog.spencerwoo.com/posts/index.xml"><img src="https://img.shields.io/badge/subscribe%20via-RSS-ffa500?logo=rss&style=for-the-badge" alt="" style="display: inline; margin: 0 1rem 0 0; width: auto;"></a>
+<a href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fblog.spencerwoo.com%2Fposts%2Findex.xml"><img src="https://img.shields.io/badge/dynamic/json?color=2bb24c&amp;label=subscribers&amp;query=%24.source.subscribers&amp;url=https%3A%2F%2Ffeedly.com%2Fv3%2Frecommendations%2Ffeeds%2Ffeed%252Fhttps%253A%252F%252Fblog.spencerwoo.com%252Fposts%252Findex.xml&amp;logo=feedly&style=for-the-badge" alt="" style="display: inline; margin: 0 1rem 0 0; width: auto;"></a>
 
 ## 如何直接更新最新版本的 Tiny Tiny RSS
 

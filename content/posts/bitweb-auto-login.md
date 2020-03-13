@@ -1,19 +1,12 @@
 ---
 title: "BIT-Web Automation：如何利用 iOS 快捷指令自动化登录 BIT-Web 校园网"
-date: 2019-12-29T20:50:00+08:00
-draft: false
-show_in_homepage: true
-show_description: true
-tags:
-- Automation
-- Shortcuts
-- BIT
-categories:
-- Automation
-featured_image: 'https://i.loli.net/2019/12/29/xBWoT8nqw4OdfZE.png'
-comment: true
-toc: false
-autoCollapseToc: false
+date: 2019-12-29
+published: true
+slug: bitweb-auto-login
+tags: ['Automation', 'Shortcuts', 'BIT']
+cover_image: ./images/bitweb-auto-login.png
+canonical_url: false
+description: "自动化登录 BIT-Web 的最佳实践"
 ---
 
 BIT-Web 是北京理工大学校园 Wi-Fi，专门用于笔记本等桌面设备，另外还有 BIT-Mobile 用于移动设备。但是，BIT-Mobile 有时候并没有 BIT-Web 稳定，自动登录不是那么靠谱，我们也不能通过 BIT-Mobile 登录使用免费运营商宽带，这些场景下我们都需要在移动设备上连接至 BIT-Web 进行手动登录。

@@ -1,18 +1,12 @@
 ---
 title: "「输出」开销：为什么我们向 stdout 输出时那么慢？"
-date: 2020-02-22T01:30:41+08:00
-draft: false
-show_in_homepage: true
-show_description: true
-tags:
-- Tech
-- Neural Network
-- Terminal
-- Principle
-featured_image: 'https://i.loli.net/2020/02/22/9Qf2vDsRMKUEcLq.png'
-comment: true
-toc: false
-autoCollapseToc: false
+date: 2020-02-22
+published: true
+slug: stdout-overhead
+tags: ['Tech', 'Neural Network', 'Terminal', 'Principle']
+cover_image: ./images/stdout-overhead.png
+canonical_url: false
+description: "Console output overhead: why is writing to stdout so slow?"
 ---
 
 > 本文发布于 Medium: [Console output overhead: why is writing to stdout so slow?](https://medium.com/spencerweekly/console-output-overhead-why-is-writing-to-stdout-so-slow-b0cc7c88704c)

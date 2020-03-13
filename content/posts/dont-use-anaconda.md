@@ -1,17 +1,12 @@
 ---
 title: "别用 Anaconda：如何搭建一个 decent 的机器学习开发环境？"
-date: 2020-02-08T23:07:24+08:00
-draft: false
-show_in_homepage: true
-show_description: true
-tags:
-- Dev Environment
-- Machine Learning
-- Medium
-featured_image: 'https://i.loli.net/2020/02/08/cVEYhJvdOyAjwxD.png'
-comment: true
-toc: false
-autoCollapseToc: false
+date: 2020-02-08
+published: true
+slug: dont-use-anaconda
+tags: ['Dev Environment', 'Machine Learning', 'Medium']
+cover_image: ./images/dont-use-anaconda.png
+canonical_url: false
+description: "Don’t use Anaconda: How to setup a decent machine learning environment?"
 ---
 
 > 🎃 **编者按：**
