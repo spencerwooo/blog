@@ -4,6 +4,8 @@
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+const marked = require('marked')
+
 module.exports = {
   siteUrl: 'https://blog.spencerwoo.com',
   siteName: 'Spencer\'s Blog',
@@ -48,7 +50,7 @@ module.exports = {
         nodeToFeedItem: (node) => ({
           title: node.title,
           date: node.date || node.fields.date,
-          content: node.content
+          content: marked(node.content)
         })
       }
     },
