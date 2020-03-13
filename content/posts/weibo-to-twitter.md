@@ -5,13 +5,13 @@ draft: false
 show_in_homepage: true
 show_description: true
 tags:
-- Automation
-- IFTTT
-- Weibo
-- Twitter
+  - Automation
+  - IFTTT
+  - Weibo
+  - Twitter
 categories:
-- Automation
-featured_image: 'https://i.loli.net/2019/11/26/WHF6PDRzq8tEJZr.png'
+  - Automation
+featured_image: "https://i.loli.net/2019/11/26/WHF6PDRzq8tEJZr.png"
 comment: true
 toc: false
 autoCollapseToc: false
@@ -66,9 +66,9 @@ IFTTT 网络自动化平台实际上是一个缩写，完全展开的 IFTTT 是�
 ![配置 Webhook、添加 Data structure](https://i.loli.net/2019/11/29/8xmh1FfwK9SLRvy.png)
 
 - 下面我们开始设置微博数据结构：
-   - 点击右侧 Generator，在弹出的窗口中将 Content type 选择为 **Query String**
-   - 在下方 Sample Data 中填入：`text=weiboText&url=weiboUrl&image=imageUrl`，点击保存之后，我们就得到了一个合适的 Data Structure
-   - 可以看到，上面 Sample Data 实际上就是我们利用 IFTTT 获取到微博数据的一个传递，其中 `text` 字段保存「微博文本内容：weiboText」、`url` 字段保存「微博链接：weiboUrl」、`image` 字段保存「微博图片：imageUrl」
+  - 点击右侧 Generator，在弹出的窗口中将 Content type 选择为 **Query String**
+  - 在下方 Sample Data 中填入：`text=weiboText&url=weiboUrl&image=imageUrl`，点击保存之后，我们就得到了一个合适的 Data Structure
+  - 可以看到，上面 Sample Data 实际上就是我们利用 IFTTT 获取到微博数据的一个传递，其中 `text` 字段保存「微博文本内容：weiboText」、`url` 字段保存「微博链接：weiboUrl」、`image` 字段保存「微博图片：imageUrl」
 
 ![配置微博 Data structure](https://i.loli.net/2019/11/29/9EwG8oaXptnMThs.png)
 
@@ -78,6 +78,7 @@ IFTTT 网络自动化平台实际上是一个缩写，完全展开的 IFTTT 是�
 
 - 上图里面我框出来的地方就是 Integromat 的 Webhook API 地址。接下来，将上图中的 API 地址复制，在后面添加上我们刚刚声明的数据结构的请求，并在浏览器中访问一下，让 Integromat 对收到的请求进行判断，自动确定数据结构的数据类型
 - 需要注意的是，我们需要让这一步中的 URL 跟我们 IFTTT 发送给 Integromat 的请求一致，也就是在刚刚复制的 Integromat 请求地址后面，需要正确的拼接上我们的请求数据，这里给出一个示范：
+
   - 如果我们的 Integromat Webhook API 地址为：`https://hook.integromat.com/{integromat_api_key}`
   - 我们请求的微博文本内容为：`TestingMyWebhook`
   - 我们请求的微博原文链接为：`https://m.weibo.cn/detail/4444027372221130`
@@ -106,7 +107,7 @@ IFTTT 网络自动化平台实际上是一个缩写，完全展开的 IFTTT 是�
 在 IFTTT 平台，我们进入 [Webhook 的动作界面](https://ifttt.com/maker_webhooks)，点击右侧的 Documentation，不出意外的话，你会看到专属于你自己的 Webhook Key，我们在 Integromat 中最后就会向这个地址发出 HTTP 请求，传递相应的微博博文数据，触发正确的 IFTTT 动作。因此，请记下这一请求的具体方式，包括请求 URL 以及请求 body 格式：
 
 ```json
-{ "value1" : "...", "value2" : "...", "value3" : "..." }
+{ "value1": "...", "value2": "...", "value3": "..." }
 ```
 
 ![Webhook Documentation](https://i.loli.net/2019/11/29/U7bolMJ13aZD45Y.png)
@@ -187,8 +188,8 @@ text={{Text}}&url={{WeiboURL}}&image={{PhotoURL}}
 
 在第二条分支上面点击，选择设置 Filter 并填入 Label 为 PureTextWeibo，在 Condition 处设置筛选条件为：
 
-- Image *Does not contain* `http` **AND**
-- Text *Does not match pattern (case insensitive)* `(Repost)|(转发微博)|(\/\/)|(轉發微博)`
+- Image _Does not contain_ `http` **AND**
+- Text _Does not match pattern (case insensitive)_ `(Repost)|(转发微博)|(\/\/)|(轉發微博)`
 
 两个判断条件进行「与」运算，保证满足两条内容才能触发本条规则。
 
@@ -211,6 +212,6 @@ text={{Text}}&url={{WeiboURL}}&image={{PhotoURL}}
 
 如果一些顺利，那么我们就应该可以直接让 IFTTT 和 Integromat 配合在云端默默监控我们的最新微博，并自动的根据合适的方式帮我们转发至 Twitter。
 
-![](https://i.loli.net/2019/12/07/F8Pgq2keAU3Sfw5.png)
+![最终的微博 to 推特转发效果](https://i.loli.net/2019/12/07/F8Pgq2keAU3Sfw5.png)
 
 但是，这种转发方式还是有一定的限制，其中最为致命的实际上就是：IFTTT 只能捕获微博的第一张图片，多于一张的图片我们就只能将第一张图片转发到 Twitter。同时 Integromat 的同步次数也有一定的限制，每个月相当于最多能转发 500 条原创微博。不过这些对我来说还是足够的，如果有更多的需求，我推荐大家购买完整版的「奇点」微博客户端，能够自动每次发微博的同时发送推特，更为方便。这篇文章的介绍就到这里，感谢阅读。

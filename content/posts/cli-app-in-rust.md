@@ -5,10 +5,10 @@ draft: false
 show_in_homepage: true
 show_description: true
 tags:
-- Tech
-- Rust
-- CLI
-featured_image: 'https://i.loli.net/2020/01/22/OzrcsukSVqtNAle.png'
+  - Tech
+  - Rust
+  - CLI
+featured_image: "https://i.loli.net/2020/01/22/OzrcsukSVqtNAle.png"
 comment: true
 toc: false
 autoCollapseToc: false
@@ -124,7 +124,7 @@ Rust 的 Ownership（所有权）是保证 Rust 程序「内存安全」的重�
 
 Rust 是使用「栈」和「堆」这两种数据结构来对这两种内存分配形式进行划分的。为了更好的理解 Rust 的 Ownership 的工作机制，我们首先看看 Rust 是如何利用「栈」和「堆」进行内存分配。
 
-![](https://i.loli.net/2020/01/25/qb3QyEH4euULclY.png)
+![使用「栈」和「堆」进行内存分配](https://i.loli.net/2020/01/25/qb3QyEH4euULclY.png)
 
 首先，「栈」从实现上来说是一种效率非常高的数据结构，因为「栈」拥有「后进先出」的数据存储特点（LIFO），使得最后压入栈顶的元素会被最先从栈顶移出。这种数据结构的优势在于：当我们用「栈」来维护内存数据时，**我们只需要维护「栈顶」元素的信息即可**。同时，Rust 内存管理的「栈」在编译时即可知道其具体大小，静态分配内存空间即可[^3]。
 
@@ -184,7 +184,7 @@ Double free 异常是如何发生的？当我们使用 `String` 类型来存储�
 
 ![使用 copy 将 s1 复制给 s2](https://i.loli.net/2020/01/25/RKb2kyXjLS87VFT.png)
 
-前面我们提到了，*对于一个「值」来说，当程序离开「值」的 owner 所在的 scope 之后，这一「值」就会被释放掉*，那么当我们离开 `s1` 和 `s2` 所在的 scope 之后，程序则会试图将这两个「值」的内存空间全部释放，而此时 `s1` 和 `s2` 指向同一块地址空间，**这种情况下就会出现 double free 异常的情况**。
+前面我们提到了，_对于一个「值」来说，当程序离开「值」的 owner 所在的 scope 之后，这一「值」就会被释放掉_，那么当我们离开 `s1` 和 `s2` 所在的 scope 之后，程序则会试图将这两个「值」的内存空间全部释放，而此时 `s1` 和 `s2` 指向同一块地址空间，**这种情况下就会出现 double free 异常的情况**。
 
 > Freeing memory twice can lead to memory corruption, which can potentially lead to security vulnerabilities.
 
@@ -214,11 +214,7 @@ fn main() {
 Rust 的确是一门神奇的语言，不仅拥有 C、C++ 等系统级别语言的高效迅速，还利用 Ownership 的设计思想保证了内存安全。上面仅仅是 Rust 语言中一个小小的独特之处，由于这一特性所保证的功能我在其他语言中也有过类似的体验（比如 Python 的 deep copy 与 shallow copy[^5]），因此拿来和大家分享。Rust 还有更多有趣的设计与内容等待大家发掘。感谢阅读。
 
 [^1]: [What is Rust and why is it so popular? - Stack Overflow Blog](https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/)
-
 [^2]: [What do Rust's buzzwords like "safe" and "zero-cost abstraction" mean?](https://www.reddit.com/r/rust/comments/5lg3ih/what_do_rusts_buzzwords_like_safe_and_zerocost/)
-
 [^3]: [Ownership in Rust, Part 1 - Medium](https://medium.com/@thomascountz/ownership-in-rust-part-1-112036b1126b)
-
 [^4]: [The Rust Programming Language - Understanding Ownership](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html)
-
 [^5]: [copy in Python (Deep Copy and Shallow Copy) - GeeksforGeeks](https://www.geeksforgeeks.org/copy-python-deep-copy-shallow-copy/)
