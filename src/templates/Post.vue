@@ -148,7 +148,8 @@ query Post ($id: ID!) {
     .vssue-comments .vssue-comment .vssue-comment-footer .vssue-comment-operations {
       color: var(--link-color) !important;
     }
-    .vssue-status {
+    .vssue-status,
+    .vssue-icon {
       color: var(--link-color) !important;
     }
     .vssue-button {
@@ -158,7 +159,7 @@ query Post ($id: ID!) {
       font-family: rubik, sans-serif;
     }
     .vssue-pagination .vssue-pagination-select {
-      border: var(--link-color) !important;
+      border: 1px dashed var(--link-color) !important;
     }
   }
 
