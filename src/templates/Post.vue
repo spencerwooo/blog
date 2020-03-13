@@ -135,12 +135,10 @@ query Post ($id: ID!) {
   font-family: rubik, sans-serif;
 
   .vssue {
+    color: var(--body-color) !important;
     a {
       color: var(--link-color);
       font-family: rubik, sans-serif;
-    }
-    .vssue-header-powered-by {
-      color: var(--body-color) !important;
     }
     .vssue-new-comment-body textarea,
     .vssue-new-comment-footer {
@@ -148,6 +146,10 @@ query Post ($id: ID!) {
     }
     .vssue-new-comment .vssue-new-comment-input {
       background-color: var(--bg-content-color) !important;
+    }
+    .markdown-body,
+    .vssue-header-powered-by {
+      color: var(--body-color) !important;
     }
     .vssue-comments
       .vssue-comment
@@ -157,9 +159,7 @@ query Post ($id: ID!) {
     .vssue-comments
       .vssue-comment
       .vssue-comment-footer
-      .vssue-comment-operations {
-      color: var(--link-color) !important;
-    }
+      .vssue-comment-operations,
     .vssue-status {
       color: var(--link-color) !important;
     }
@@ -173,7 +173,22 @@ query Post ($id: ID!) {
       font-family: rubik, sans-serif;
     }
     .vssue-pagination .vssue-pagination-select {
+      color: var(--body-color) !important;
       border: 1px dashed var(--link-color) !important;
+
+      ::after {
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid var(--link-color) !important;
+        content: "";
+        position: absolute;
+        top: 40%;
+        right: 5px;
+        content: "";
+        z-index: 98;
+      }
     }
   }
 
