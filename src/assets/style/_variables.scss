@@ -12,7 +12,7 @@ body {
   --title-color: #111;
   --link-color: #eb5757;
   // --link-color: #6b17e6;
-  --border-color:  rgba(0,0,0,.1);
+  --border-color: rgba(0, 0, 0, 0.1);
   --space: 3.5rem;
   --content-width: 860px;
   --header-height: 60px;
@@ -30,14 +30,15 @@ body {
   }
 }
 
-
 // Override variables for Dark theme
 body[data-theme="dark"] {
-   --bg-color: #0D2538;
-   --bg-content-color: #0f2d44;
-   --bg-code: rgba(0,0,0,.3);
-   --border-color:  rgba(255,255,255,.1);;
-   --body-color: #ced8de;
-   --title-color: #fff;
-   --link-color: #af9cef;
+  // --bg-color: #0d2538;
+  --bg-color: #292a2d;
+  // --bg-content-color: #0f2d44;
+  --bg-content-color: #373c3f;
+  --bg-code: rgba(0, 0, 0, 0.3);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --body-color: #ced8de;
+  --title-color: #fff;
+  --link-color: #eb5757;
 }
