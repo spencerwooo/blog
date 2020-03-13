@@ -148,9 +148,11 @@ query Post ($id: ID!) {
     .vssue-comments .vssue-comment .vssue-comment-footer .vssue-comment-operations {
       color: var(--link-color) !important;
     }
-    .vssue-status,
-    .vssue-icon {
+    .vssue-status {
       color: var(--link-color) !important;
+    }
+    .vssue-icon {
+      fill: var(--link-color) !important;
     }
     .vssue-button {
       color: var(--link-color) !important;
