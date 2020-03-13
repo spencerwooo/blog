@@ -16,8 +16,8 @@
     </main>
 
     <footer class="footer">
-      <span class="footer__copyright">Copyright ©2019 - {{ new Date().getFullYear() }}.</span>
-      <span class="footer__links">Powered by <a href="//gridsome.org"> Gridsome </a></span>
+      <div class="footer__copyright">Copyright ©2019 - {{ new Date().getFullYear() }}.</div>
+      <div class="footer__links">Runs on 🚀 <a href="//gridsome.org">Gridsome</a> and ❤️ Love</div>
     </footer>
 
   </div>
@@ -69,6 +69,7 @@ export default {
 
 .footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: calc(var(--space) / 2);

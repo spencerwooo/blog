@@ -12,12 +12,12 @@
 		</p>
 
 		<p class="author__links">
-			<g-link to="/">Home</g-link>
-			<a href="//spencerwoo.com">Portfolio</a>
-			<a href="//medium.com/spencerweekly">Medium</a>
-			<a href="//twitter.com/realSpencerWoo">Twitter</a>
-			<a href="//github.com/spencerwooo">GitHub</a>
-			<a href="//blog.spencerwoo.com/posts/index.xml">RSS</a>
+			<g-link to="/"><font-awesome :icon="['fas', 'home']"/></g-link>
+			<a href="//spencerwoo.com"><font-awesome :icon="['fas', 'id-badge']"/></a>
+			<a href="//medium.com/spencerweekly"><font-awesome :icon="['fab', 'medium']"/></a>
+			<a href="//twitter.com/realSpencerWoo"><font-awesome :icon="['fab', 'twitter']"/></a>
+			<a href="//github.com/spencerwooo"><font-awesome :icon="['fab', 'github']"/></a>
+			<a href="//blog.spencerwoo.com/posts/index.xml"><font-awesome :icon="['fas', 'rss']"/></a>
 		</p>
 
 	</div>
