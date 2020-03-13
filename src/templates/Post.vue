@@ -137,17 +137,25 @@ query Post ($id: ID!) {
       color: var(--link-color);
       font-family: rubik, sans-serif;
     }
-
     .vssue-new-comment-body textarea,
     .vssue-new-comment-footer{
       font-family: rubik, sans-serif !important;
     }
-
+    .vssue-new-comment .vssue-new-comment-input {
+      background-color: #f8f8f5 !important;
+    }
+    .vssue-comments .vssue-comment .vssue-comment-footer .vssue-comment-reactions .vssue-comment-reaction,
+    .vssue-comments .vssue-comment .vssue-comment-footer .vssue-comment-operations {
+      color: var(--link-color) !important;
+    }
     .vssue-button {
       color: var(--link-color) !important;
       border: 2px solid var(--link-color) !important;
       font-weight: normal;
       font-family: rubik, sans-serif;
+    }
+    .vssue-pagination .vssue-pagination-select {
+      border: var(--link-color) !important;
     }
   }
 
