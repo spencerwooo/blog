@@ -51,6 +51,12 @@ module.exports = {
           content: node.content
         })
       }
+    },
+    {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: 'UA-111664763-2'
+      }
     }
   ],
 
