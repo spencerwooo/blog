@@ -144,13 +144,12 @@ query Post ($id: ID!) {
     .vssue-new-comment-footer {
       font-family: rubik, sans-serif !important;
     }
-    .vssue-notice .vssue-progress,
     .vssue-new-comment .vssue-new-comment-input {
       background-color: var(--bg-content-color) !important;
 
-      :focus {
-        border-color: var(--link-color);
-        box-shadow: 0 0 1px 1px var(--link-color);
+      &:focus {
+        border-color: var(--link-color) !important;
+        box-shadow: 0 0 1px 1px var(--link-color) !important;
       }
     }
     .markdown-body,
@@ -166,7 +165,8 @@ query Post ($id: ID!) {
       .vssue-comment
       .vssue-comment-footer
       .vssue-comment-operations,
-    .vssue-status {
+    .vssue-status,
+    .vssue-notice .vssue-progress {
       color: var(--link-color) !important;
     }
     .vssue-icon {
