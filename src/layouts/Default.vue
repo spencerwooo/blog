@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-
     <header class="header">
       <div class="header__left">
         <Logo v-if="showLogo" />
@@ -12,14 +11,17 @@
     </header>
 
     <main class="main">
-      <slot/>
+      <slot />
     </main>
 
     <footer class="footer">
-      <div class="footer__copyright">Copyright ©2019 - {{ new Date().getFullYear() }}.</div>
-      <div class="footer__links">Runs on 🚀 <a href="//gridsome.org">Gridsome</a> and ❤️ Love</div>
+      <div class="footer__copyright">
+        Copyright ©2019 - {{ new Date().getFullYear() }}.
+      </div>
+      <div class="footer__links">
+        Runs on 🚀 <a href="//gridsome.org">Gridsome</a> and ❤️ Love
+      </div>
     </footer>
-
   </div>
 </template>
 
@@ -29,12 +31,12 @@ import ToggleTheme from '~/components/ToggleTheme.vue'
 
 export default {
   props: {
-    showLogo: { default: true }
+    showLogo: { default: true },
   },
   components: {
     Logo,
-    ToggleTheme
-  }
+    ToggleTheme,
+  },
 }
 </script>
 
@@ -45,7 +47,7 @@ export default {
   align-items: center;
   min-height: var(--header-height);
   padding: 0 calc(var(--space) / 2);
-  top:0;
+  top: 0;
   z-index: 10;
 
   &__left,
@@ -74,11 +76,13 @@ export default {
   justify-content: center;
   padding: calc(var(--space) / 2);
   text-align: center;
-  font-size: .8em;
-  font-family: rubik,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,pingfang sc,noto sans cjk sc,sarasa gothic sc,microsoft yahei,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-size: 0.8em;
+  font-family: rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, pingfang sc, noto sans cjk sc, sarasa gothic sc, microsoft yahei,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
 
   > span {
-    margin: 0 .35em;
+    margin: 0 0.35em;
   }
 
   a {

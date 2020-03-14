@@ -5,12 +5,15 @@
 
     <!-- List posts -->
     <div class="posts">
-      <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
+      <PostCard
+        v-for="edge in $page.posts.edges"
+        :key="edge.node.id"
+        :post="edge.node"
+      />
     </div>
 
     <!-- Pagination -->
-    <Pager :info="$page.posts.pageInfo"/>
-
+    <Pager :info="$page.posts.pageInfo" />
   </Layout>
 </template>
 
@@ -48,11 +51,11 @@ import PostCard from '~/components/PostCard.vue'
 export default {
   components: {
     Author,
-    PostCard
+    PostCard,
   },
   metaInfo: {
-    title: 'Spencer Woo'
-  }
+    title: 'Spencer Woo',
+  },
 }
 </script>
 

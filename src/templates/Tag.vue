@@ -1,11 +1,13 @@
 <template>
   <Layout>
-    <h1 class="tag-title text-center space-bottom">
-      # {{ $page.tag.title }}
-    </h1>
+    <h1 class="tag-title text-center space-bottom"># {{ $page.tag.title }}</h1>
 
     <div class="posts">
-      <PostCard v-for="edge in $page.tag.belongsTo.edges" :key="edge.node.id" :post="edge.node"/>
+      <PostCard
+        v-for="edge in $page.tag.belongsTo.edges"
+        :key="edge.node.id"
+        :post="edge.node"
+      />
     </div>
   </Layout>
 </template>
@@ -39,14 +41,12 @@ import PostCard from '~/components/PostCard.vue'
 export default {
   components: {
     Author,
-    PostCard
+    PostCard,
   },
   metaInfo: {
-    title: 'Tag'
-  }
+    title: 'Tag',
+  },
 }
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

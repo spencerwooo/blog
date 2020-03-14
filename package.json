@@ -4,7 +4,8 @@
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
-    "explore": "gridsome explore"
+    "explore": "gridsome explore",
+    "prettier": "prettier --write '**/*.{ts,js,css,html,vue}'"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "node-sass": "^4.12.0",
+    "prettier": "^1.19.1",
     "sass-loader": "^8.0.0"
   }
 }
