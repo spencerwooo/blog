@@ -19,7 +19,28 @@
         Copyright ©2019 - {{ new Date().getFullYear() }}.
       </div>
       <div class="footer__links">
-        Runs on 🚀 <a href="//gridsome.org">Gridsome</a> and ❤️ Love
+        Runs on <font-awesome :icon="['fas', 'rocket']" />
+        <a href="//gridsome.org">Gridsome</a> and
+        <font-awesome :icon="['fas', 'heart']" />Love.
+      </div>
+      <div class="footer__links">
+        Proudly deployed on <font-awesome :icon="['fas', 'gem']" /><a
+          href="//www.netlify.com"
+          >Netlify</a
+        >. Subscribe!
+      </div>
+      <div id="rss-stats">
+        <a href="https://blog.spencerwoo.com/posts/index.xml"
+          ><img
+            src="https://img.shields.io/badge/subscribe%20via-RSS-ffa500?logo=rss"
+            alt=""
+        /></a>
+        <a
+          href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fblog.spencerwoo.com%2Fposts%2Findex.xml"
+          ><img
+            src="https://img.shields.io/badge/dynamic/json?color=2bb24c&amp;label=subscribers&amp;query=%24.source.subscribers&amp;url=https%3A%2F%2Ffeedly.com%2Fv3%2Frecommendations%2Ffeeds%2Ffeed%252Fhttps%253A%252F%252Fblog.spencerwoo.com%252Fposts%252Findex.xml&amp;logo=feedly"
+            alt=""
+        /></a>
       </div>
     </footer>
   </div>
@@ -70,13 +91,16 @@ export default {
 }
 
 .footer {
+  max-width: var(--content-width);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: calc(var(--space) / 2);
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: calc(var(--space)) 0;
   text-align: center;
-  font-size: 0.8em;
+  line-height: 2;
+  font-size: 0.9em;
   font-family: rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
     Arial, pingfang sc, noto sans cjk sc, sarasa gothic sc, microsoft yahei,
     sans-serif, Apple Color Emoji, Segoe UI Emoji;
@@ -87,6 +111,18 @@ export default {
 
   a {
     color: currentColor;
+  }
+
+  svg {
+    margin-right: 0.2rem;
+  }
+
+  #rss-stats {
+    padding-top: 0.4rem;
+
+    a {
+      margin-right: 0.5rem;
+    }
   }
 }
 </style>

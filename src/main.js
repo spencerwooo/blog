@@ -15,16 +15,37 @@ import { Pager } from 'gridsome'
 // Icons by font awesome
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { config, library } from '@fortawesome/fontawesome-svg-core'
-import { faHome, faRss, faIdBadge } from '@fortawesome/free-solid-svg-icons'
+import {
+  faHome,
+  faRss,
+  faIdBadge,
+  faRocket,
+  faHeart,
+  faGem,
+} from '@fortawesome/free-solid-svg-icons'
 import {
   faGithub,
   faTwitter,
   faMedium,
+  faWeibo,
+  faTelegram,
 } from '@fortawesome/free-brands-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 config.autoAddCss = false
-library.add(faGithub, faTwitter, faHome, faRss, faIdBadge, faMedium)
+library.add(
+  faGithub,
+  faTwitter,
+  faHome,
+  faRss,
+  faIdBadge,
+  faMedium,
+  faWeibo,
+  faTelegram,
+  faRocket,
+  faHeart,
+  faGem
+)
 
 // NProgress
 import NProgress from 'nprogress'

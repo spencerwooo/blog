@@ -14,21 +14,28 @@
     </h1>
 
     <p class="author__intro">
-      开发者 / 设计师 / 少数派 / 学生
+      哟，你终于来啦 (≧∇≦)ﾉ
     </p>
 
     <p class="author__links">
       <g-link to="/"><font-awesome :icon="['fas', 'home']"/></g-link>
-      <a href="//spencerwoo.com"><font-awesome :icon="['fas', 'id-badge']"/></a>
+      <a href="//spencerwoo.com"><font-awesome :icon="['fas', 'id-badge']"/></a
+      >|
       <a href="//medium.com/spencerweekly"
         ><font-awesome :icon="['fab', 'medium']"
       /></a>
       <a href="//twitter.com/realSpencerWoo"
         ><font-awesome :icon="['fab', 'twitter']"
       /></a>
-      <a href="//github.com/spencerwooo"
-        ><font-awesome :icon="['fab', 'github']"
+      <a href="//weibo.com/spencerwoo"
+        ><font-awesome :icon="['fab', 'weibo']"
       /></a>
+      <a href="//t.me/realSpencerWoo"
+        ><font-awesome :icon="['fab', 'telegram']"
+      /></a>
+      <a href="//github.com/spencerwooo"
+        ><font-awesome :icon="['fab', 'github']"/></a
+      >|
       <a href="//blog.spencerwoo.com/posts/index.xml"
         ><font-awesome :icon="['fas', 'rss']"
       /></a>
@@ -74,6 +81,7 @@ export default {
 
   &__links {
     margin-top: -0.5em;
+    color: var(--link-color);
     a {
       margin: 0 0.5em;
     }
