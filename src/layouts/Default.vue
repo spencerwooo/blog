@@ -91,12 +91,12 @@ export default {
 }
 
 .footer {
-  max-width: var(--content-width);
-  margin: 0 auto;
+  // max-width: var(--content-width);
+  // margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   padding: calc(var(--space)) 0;
   text-align: center;
   line-height: 2;
@@ -118,10 +118,10 @@ export default {
   }
 
   #rss-stats {
-    padding-top: 0.4rem;
+    padding-top: 0.35rem;
 
     a {
-      margin-right: 0.5rem;
+      margin-right: 0.35rem;
     }
   }
 }
