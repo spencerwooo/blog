@@ -99,7 +99,7 @@ export default {
   justify-content: center;
   padding: calc(var(--space)) 0;
   text-align: center;
-  line-height: 2;
+  line-height: 1.8;
   font-size: 0.9em;
   font-family: rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
     Arial, pingfang sc, noto sans cjk sc, sarasa gothic sc, microsoft yahei,

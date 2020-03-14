@@ -116,7 +116,7 @@ query Post ($id: ID!) {
     }
 
     p {
-      line-height: 2;
+      line-height: 1.8;
     }
 
     img {
