@@ -34,28 +34,28 @@
 </template>
 
 <script>
-import PostMeta from "~/components/PostMeta";
-import PostTags from "~/components/PostTags";
-import Author from "~/components/Author.vue";
+import PostMeta from '~/components/PostMeta'
+import PostTags from '~/components/PostTags'
+import Author from '~/components/Author.vue'
 
 export default {
   components: {
     Author,
     PostMeta,
-    PostTags
+    PostTags,
   },
   metaInfo() {
     return {
       title: this.$page.post.title,
       meta: [
         {
-          name: "description",
-          content: this.$page.post.description
-        }
-      ]
-    };
-  }
-};
+          name: 'description',
+          content: this.$page.post.description,
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <page-query>
@@ -182,11 +182,11 @@ query Post ($id: ID!) {
         border-left: 6px solid transparent;
         border-right: 6px solid transparent;
         border-top: 6px solid var(--link-color) !important;
-        content: "";
+        content: '';
         position: absolute;
         top: 40%;
         right: 5px;
-        content: "";
+        content: '';
         z-index: 98;
       }
     }
