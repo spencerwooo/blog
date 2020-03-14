@@ -66,7 +66,7 @@ nav {
   text-align: center;
 
   a {
-    margin: 0 20px 0 0;
+    margin: 0 10px;
     padding: 3px 10px;
     border: 2px var(--link-color);
     border-style: dashed;
