@@ -1,0 +1,110 @@
+/* purgecss start ignore */
+/* base admonitions variables on  variables */
+:root {
+  --cb-admonition-background-color: inherit;
+  --cb-admonition-border-width: 2px;
+  --cb-admonition-border-color: inherit;
+  --cb-admonition-border-radius: 0.2rem;
+  --cb-admonition-color: #fff;
+  --cb-admonition-padding-vertical: 1rem;
+  --cb-admonition-padding-horizontal: 1rem;
+  --cb-color-note: #2780d4;
+  --cb-color-important: #68b4cf;
+  --cb-color-tip: #4bb44b;
+  --cb-color-caution: #fcd260;
+  --cb-color-warning: #eb5757;
+  --cb-color-text-dark: #1c1e21;
+}
+
+/* apply variables to admonitions */
+
+.admonition {
+  background-color: var(--bg-content-color);
+  border: var(--cb-admonition-border-width) dashed
+    var(--cb-admonition-background-color);
+  border-radius: var(--radius);
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.03),
+    1px 1px 15px 0 rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+  color: var(--cb-admonition-color);
+  padding: var(--cb-admonition-padding-vertical)
+    var(--cb-admonition-padding-horizontal);
+  margin-bottom: 1em;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.6s;
+}
+
+.admonition:hover {
+  transform: translateY(-2px);
+  box-shadow: 1px 10px 30px 0 rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.6s;
+}
+
+.admonition-content p {
+  color: var(--body-color) !important;
+}
+
+.admonition h5 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  color: var(--cb-admonition-icon-color) !important;
+}
+
+.admonition-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5em;
+  margin-top: 0.2em;
+}
+
+.admonition-icon svg {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  stroke-width: 0;
+  fill: var(--cb-admonition-icon-color);
+  stroke: var(--cb-admonition-icon-color);
+}
+
+.admonition-content > :last-child {
+  margin-bottom: 0;
+}
+
+/* set variables based on admonition type */
+
+.admonition {
+  --cb-admonition-background-color: #3578e5;
+  --cb-admonition-icon-color: var(--cb-admonition-color);
+}
+
+.admonition-note {
+  --cb-admonition-background-color: var(--cb-color-note);
+  --cb-admonition-icon-color: var(--cb-color-note);
+  --cb-admonition-color: var(--cb-color-text-dark);
+}
+
+.admonition-important {
+  --cb-admonition-background-color: var(--cb-color-important);
+  --cb-admonition-icon-color: var(--cb-color-important);
+  --cb-admonition-color: var(--cb-color-text-dark);
+}
+
+.admonition-tip {
+  --cb-admonition-background-color: var(--cb-color-tip);
+  --cb-admonition-icon-color: var(--cb-color-tip);
+  --cb-admonition-color: var(--cb-color-text-dark);
+}
+
+.admonition-caution {
+  --cb-admonition-background-color: var(--cb-color-caution);
+  --cb-admonition-icon-color: var(--cb-color-caution);
+  --cb-admonition-color: var(--cb-color-text-dark);
+}
+
+.admonition-warning {
+  --cb-admonition-background-color: var(--cb-color-warning);
+  --cb-admonition-icon-color: var(--cb-color-warning);
+  --cb-admonition-color: var(--cb-color-text-dark);
+}
+
+/* purgecss end ignore */

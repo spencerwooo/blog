@@ -71,7 +71,7 @@ module.exports = {
       slug: true,
       autolinkHeadings: true,
       autolinkClassName: 'icon icon-link',
-      plugins: ['@gridsome/remark-prismjs'],
+      plugins: ['@gridsome/remark-prismjs', 'gridsome-plugin-remark-container'],
       config: {
         footnotes: true,
       },
