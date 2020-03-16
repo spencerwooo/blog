@@ -7,10 +7,10 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
  */
 
 pre {
-  padding: calc(var(--space) / 2);
-  font-size: 0.85em;
+  padding: calc(var(--space) / 3) calc(var(--space) / 2);
+  font-size: 1em;
   background-color: var(--bg-code);
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
 
