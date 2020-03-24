@@ -29,6 +29,10 @@
       <Vssue />
     </div>
 
+    <back-to-top>
+      <font-awesome id="back-to-top-button" :icon="['fas', 'arrow-up']" />
+    </back-to-top>
+
     <Author class="post-author" />
   </Layout>
 </template>

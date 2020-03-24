@@ -22,6 +22,7 @@ import {
   faRocket,
   faHeart,
   faGem,
+  faArrowUp,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faGithub,
@@ -31,6 +32,9 @@ import {
   faTelegram,
 } from '@fortawesome/free-brands-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+
+// back to top
+import BackToTop from 'vue-backtotop'
 
 config.autoAddCss = false
 library.add(
@@ -44,7 +48,8 @@ library.add(
   faTelegram,
   faRocket,
   faHeart,
-  faGem
+  faGem,
+  faArrowUp
 )
 
 // NProgress
@@ -62,6 +67,9 @@ export default function(Vue, { router, head, isClient }) {
   Vue.component('Layout', DefaultLayout)
   Vue.component('Pager', Pager)
   Vue.component('font-awesome', FontAwesomeIcon)
+
+  // back to top
+  Vue.use(BackToTop)
 
   Vue.use(Vssue, {
     api: GithubV3,
