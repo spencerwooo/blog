@@ -34,7 +34,7 @@ import {
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 // back to top
-import BackToTop from 'vue-backtotop'
+// import BackToTop from 'vue-backtotop'
 
 config.autoAddCss = false
 library.add(
@@ -69,7 +69,7 @@ export default function(Vue, { router, head, isClient }) {
   Vue.component('font-awesome', FontAwesomeIcon)
 
   // back to top
-  Vue.use(BackToTop)
+  // Vue.use(BackToTop)
 
   Vue.use(Vssue, {
     api: GithubV3,
