@@ -21,25 +21,36 @@
       <div class="footer__links">
         Runs on <font-awesome :icon="['fas', 'rocket']" />
         <a href="//gridsome.org">Gridsome</a> and
-        <font-awesome :icon="['fas', 'heart']" />Love.
-      </div>
-      <div class="footer__links">
-        Proudly deployed on <font-awesome :icon="['fas', 'gem']" /><a
-          href="//www.netlify.com"
+        <font-awesome :icon="['fas', 'heart']" />Love. Deployed on
+        <font-awesome :icon="['fas', 'gem']" /><a href="//www.netlify.com"
           >Netlify</a
-        >. Subscribe!
+        >.
+      </div>
+      <div class="footer__links"></div>
+      <div class="footer__links">
+        Subscriber statistics powered by
+        <font-awesome :icon="['fas', 'rss']" /><a
+          href="//api.spencerwoo.com/substats"
+          >Substats</a
+        >. DO SUBSCRIBE!
       </div>
       <div id="rss-stats">
         <a href="https://blog.spencerwoo.com/posts/index.xml"
           ><img
-            src="https://img.shields.io/badge/subscribe%20via-RSS-ffa500?logo=rss"
-            alt=""
+            src="https://img.shields.io/badge/Subscribe-RSS-ffa500?logo=rss"
+            alt="rss"
         /></a>
         <a
           href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fblog.spencerwoo.com%2Fposts%2Findex.xml"
           ><img
-            src="https://img.shields.io/badge/dynamic/json?color=2bb24c&amp;label=subscribers&amp;query=%24.source.subscribers&amp;url=https%3A%2F%2Ffeedly.com%2Fv3%2Frecommendations%2Ffeeds%2Ffeed%252Fhttps%253A%252F%252Fblog.spencerwoo.com%252Fposts%252Findex.xml&amp;logo=feedly"
-            alt=""
+            src="https://img.shields.io/badge/dynamic/json?label=Feedly&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dfeedly%26queryKey%3Dhttps%3A%2F%2Fblog.spencerwoo.com%2Fposts%2Findex.xml&labelColor=2bb24c&logoColor=white&color=282c34&logo=feedly&longCache=true"
+            alt="feedly"
+        /></a>
+        <a
+          href="https://www.inoreader.com/feed/https%3A%2F%2Fblog.spencerwoo.com%2Fposts%2Findex.xml"
+          ><img
+            src="https://img.shields.io/badge/dynamic/json?label=Inoreader&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dinoreader%26queryKey%3Dhttps%3A%2F%2Fblog.spencerwoo.com%2Fposts%2Findex.xml&color=282c34&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTM2IDBjMTkuODgyIDAgMzYgMTYuMTE4IDM2IDM2UzU1Ljg4MiA3MiAzNiA3MiAwIDU1Ljg4MiAwIDM2IDE2LjExOCAwIDM2IDB6bS03Ljk5IDMwLjk4QzIwLjgyNSAzMC45OCAxNSAzNi44MDQgMTUgNDMuOTkgMTUgNTEuMTc1IDIwLjgyNSA1NyAyOC4wMSA1N2M3LjE4MyAwIDEzLjAwOS01LjgyNSAxMy4wMDktMTMuMDExIDAtNy4xODUtNS44MjYtMTMuMDA5LTEzLjAwOS0xMy4wMDl6bTMuNjcgNS41NjVhMy43MjcgMy43MjcgMCAxMS0uMDA1IDcuNDU0IDMuNzI3IDMuNzI3IDAgMDEuMDA0LTcuNDU0em0tMy42Ny0xNC43NTh2NC42ODdjOS42NTYgMCAxNy41MTYgNy44NTggMTcuNTE2IDE3LjUxNWg0LjY4OWMwLTEyLjI0Mi05Ljk2MS0yMi4yMDItMjIuMjA1LTIyLjIwMnptMC05Ljc4N3Y0LjY4N2M3LjI5MiAwIDE0LjE0OCAyLjg0IDE5LjMwNiA3Ljk5OCA1LjE1OCA1LjE1NyA3Ljk5NSAxMi4wMTQgNy45OTUgMTkuMzA0SDYwYzAtOC41NDQtMy4zMjgtMTYuNTc3LTkuMzctMjIuNjJDNDQuNTg1IDE1LjMyNiAzNi41NTQgMTIgMjguMDEgMTJ6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48L3N2Zz4=&labelColor=007bc7&longCache=true"
+            alt="inoreader"
         /></a>
       </div>
     </footer>
