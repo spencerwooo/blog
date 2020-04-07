@@ -59,6 +59,9 @@ import '~/assets/style/nprogress.scss'
 // container
 import '~/assets/style/container.scss'
 
+// katex
+import 'katex/dist/katex.min.css'
+
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 export default function(Vue, { router, head, isClient }) {
   NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false })
