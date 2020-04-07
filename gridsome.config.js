@@ -74,7 +74,7 @@ module.exports = {
       plugins: [
         '@gridsome/remark-prismjs',
         'gridsome-plugin-remark-container',
-        ['gridsome-remark-katex'],
+        'gridsome-remark-katex',
       ],
       config: {
         footnotes: true,
