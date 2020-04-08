@@ -2,7 +2,7 @@
 /* base admonitions variables on  variables */
 :root {
   --cb-admonition-background-color: inherit;
-  --cb-admonition-border-width: 2px;
+  --cb-admonition-border-width: 4px;
   --cb-admonition-border-color: inherit;
   --cb-admonition-border-radius: 0.2rem;
   --cb-admonition-color: #fff;
@@ -20,24 +20,25 @@
 
 .admonition {
   background-color: var(--bg-content-color);
-  border: var(--cb-admonition-border-width) dashed
+  border-left: var(--cb-admonition-border-width) solid
     var(--cb-admonition-background-color);
-  border-radius: var(--radius);
+  // border-radius: var(--radius);
   // box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.03),
   //   1px 1px 15px 0 rgba(0, 0, 0, 0.03);
   box-sizing: border-box;
   color: var(--cb-admonition-color);
-  padding: var(--cb-admonition-padding-vertical)
-    var(--cb-admonition-padding-horizontal);
+  // padding: var(--cb-admonition-padding-vertical)
+  //   var(--cb-admonition-padding-horizontal);
+  padding-left: calc(var(--space) / 2);
   margin-bottom: 1em;
   transition: transform 0.3s, background-color 0.3s, box-shadow 0.6s;
 }
 
-.admonition:hover {
-  transform: translateY(-2px);
-  box-shadow: 1px 10px 30px 0 rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s, background-color 0.3s, box-shadow 0.6s;
-}
+// .admonition:hover {
+//   transform: translateY(-2px);
+//   box-shadow: 1px 10px 30px 0 rgba(0, 0, 0, 0.04);
+//   transition: transform 0.3s, background-color 0.3s, box-shadow 0.6s;
+// }
 
 .admonition-content p {
   color: var(--body-color) !important;
@@ -45,7 +46,7 @@
 
 .admonition h5 {
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   text-transform: uppercase;
   color: var(--cb-admonition-icon-color) !important;
 }
