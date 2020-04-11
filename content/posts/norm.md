@@ -94,7 +94,7 @@ _l1 = norm(perturb, 1)
 # L2
 _l2 = norm(perturb)
 # L∞
-_linf = norm(perturb, inf)
+_linf = norm(perturb, np.inf)
 ```
 
 事实上，`numpy.linalg.norm` 的内部实现中，就是利用 $\ell_p$ 的定义进行的向量运算。比如 $\ell_1(x)$ 就是：
