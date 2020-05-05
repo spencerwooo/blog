@@ -132,6 +132,15 @@ query Post ($id: ID!) {
   }
 }
 
+.footnotes {
+  p {
+    display: inline;
+  }
+  .footnote-backref {
+    display: inline;
+  }
+}
+
 .post-comments {
   padding: calc(var(--space) / 2);
   max-width: var(--content-width);
