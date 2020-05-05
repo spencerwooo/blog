@@ -5,13 +5,14 @@ html {
 
 // Light default theme
 body {
-  --bg-color: #f7f6f3;
+  // --bg-color: #f7f6f3;
+  --bg-color: #f7fafc;
   --bg-content-color: #fff;
   --bg-code: #fffbf3;
   --body-color: #444;
   --title-color: #111;
-  --link-color: #eb5757;
-  // --link-color: #6b17e6;
+  // --link-color: #eb5757;
+  --link-color: #265ca2;
   --border-color: rgba(0, 0, 0, 0.1);
   --space: 3.5rem;
   --content-width: 860px;
@@ -19,7 +20,7 @@ body {
   --radius: 5px;
 }
 
-// Make  things smaller for mobile
+// Make things smaller for mobile
 @media screen and (max-width: 650px) {
   html {
     --base-font-size: 17px;
@@ -32,13 +33,14 @@ body {
 
 // Override variables for Dark theme
 body[data-theme='dark'] {
-  // --bg-color: #0d2538;
-  --bg-color: #292a2d;
+  // --bg-color: #292a2d;
+  --bg-color: #000001;
   // --bg-content-color: #0f2d44;
-  --bg-content-color: #373c3f;
+  --bg-content-color: #2d3235;
   --bg-code: rgba(0, 0, 0, 0.3);
   --border-color: rgba(255, 255, 255, 0.1);
   --body-color: #ced8de;
   --title-color: #fff;
-  --link-color: #eb5757;
+  --link-color: #579ceb;
+  // --link-color: #eb5757;
 }
