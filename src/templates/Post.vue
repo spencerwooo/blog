@@ -124,10 +124,11 @@ query Post ($id: ID!) {
     }
 
     img {
-      width: calc(100% + var(--space) * 2);
+      // width: calc(100% + var(--space) * 2);
       // margin-left: calc(var(--space) * -1);
       display: block;
-      // max-width: none;
+      max-width: 100%;
+      margin: 0 auto;
     }
   }
 }

@@ -76,14 +76,14 @@ curl --request POST \
 
 上面的 HTTP 请求我来简单分解介绍一下。首先，请求是 `POST` 的方法，格式为 `application/x-www-form-urlencoded`，请求地址（即 url 地址）为 `http://10.0.0.55:801/include/auth_action.php`，参数分别为：
 
-|    参数    |        值         |                           功能                           |
-| :--------: | :---------------: | :------------------------------------------------------: |
-|  `action`  |      `login`      |                      设置动作为登录                      |
-| `username` | `{YOUR_USERNAME}` |                    发送账户（即学号）                    |
-| `password` | `{YOUR_PASSWORD}` |                      发送校园网密码                      |
-|  `ac_id`   |         8         | 代表登录 BIT-Web（BIT-Mobile 登录请求的 `ac_id` 不一样） |
-| `save_me`  |         1         |                   保存当前登录 session                   |
-|   `ajax`   |         1         |                 （猜测）表示异步发送请求                 |
+| 参数       | 值                | 功能                                                     |
+| :--------- | :---------------- | :------------------------------------------------------- |
+| `action`   | `login`           | 设置动作为登录                                           |
+| `username` | `{YOUR_USERNAME}` | 发送账户（即学号）                                       |
+| `password` | `{YOUR_PASSWORD}` | 发送校园网密码                                           |
+| `ac_id`    | 8                 | 代表登录 BIT-Web（BIT-Mobile 登录请求的 `ac_id` 不一样） |
+| `save_me`  | 1                 | 保存当前登录 session                                     |
+| `ajax`     | 1                 | （猜测）表示异步发送请求                                 |
 
 搞清楚我们具体的发送信息之后，接下来我们开始着手在 iOS 上面制作 Shortcuts 动作。
 
@@ -91,7 +91,9 @@ curl --request POST \
 
 首先，在 Shortcuts 里面创建新动作，并搜索加入模块「Get contents of URL」。点击模块下部的 Show More，在其中按下图进行配置：
 
-![BIT-Web 登录认证请求模块](https://i.loli.net/2019/12/29/dKnXm2GWcAeRHrD.png)
+<!-- ![BIT-Web 登录认证请求模块](https://i.loli.net/2019/12/29/dKnXm2GWcAeRHrD.png) -->
+
+<p><img src="https://i.loli.net/2019/12/29/dKnXm2GWcAeRHrD.png" alt="BIT-Web 登录认证请求模块" width="500px"></p>
 
 - URL 设置为：`http://10.0.0.55:801/include/auth_action.php`
 - Method 设置为：`POST`
@@ -106,18 +108,24 @@ curl --request POST \
 
 在模块「Get contents of URL」下方添加模块「Text」，**将「Text」的值设置为「Contents of URL」**，也就是上一步网络请求的返回结果。
 
-![将返回数据用 Text 模块规格化](https://i.loli.net/2019/12/29/c1DTOqN8vQJgpGL.jpg)
+<!-- ![将返回数据用 Text 模块规格化](https://i.loli.net/2019/12/29/c1DTOqN8vQJgpGL.jpg) -->
+
+<p><img src="https://i.loli.net/2019/12/29/c1DTOqN8vQJgpGL.jpg" alt="将返回数据用 Text 模块规格化" width="500px"></p>
 
 继续，在下面添加模块「If」，用来判断我们登录成功与否。将 If 模块的判断条件设置为「contains」，包含字符设置为 `login_ok`：
 
 - 如果匹配成功：说明登录 BIT-Web 成功，发送登录成功通知
 - 如果匹配失败（进入 Otherwise 部分）：说明登录 BIT-Web 失败，发送登录失败通知以及失败的请求返回的数据
 
-![BIT-Web 登录返回数据处理模块](https://i.loli.net/2019/12/29/W3ePoZXzOkjsqpQ.jpg)
+<!-- ![BIT-Web 登录返回数据处理模块](https://i.loli.net/2019/12/29/W3ePoZXzOkjsqpQ.jpg) -->
+
+<p><img src="https://i.loli.net/2019/12/29/W3ePoZXzOkjsqpQ.jpg" alt="BIT-Web 登录返回数据处理模块" width="500px"></p>
 
 之后，我们测试。将手机连接至校园网 BIT-Web，尝试执行这一 Shortcuts 动作。如果一切顺利，那么你应该可以登录成功，得到如下通知：
 
-![BIT-Web 登录成功](https://i.loli.net/2019/12/29/KRnBAS9ygtz4lQb.jpg)
+<!-- ![BIT-Web 登录成功](https://i.loli.net/2019/12/29/KRnBAS9ygtz4lQb.jpg) -->
+
+<p><img src="https://i.loli.net/2019/12/29/KRnBAS9ygtz4lQb.jpg" alt="BIT-Web 登录成功" width="500px"></p>
 
 ### 定义动作触发条件
 
