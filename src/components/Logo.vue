@@ -1,6 +1,6 @@
 <template>
   <g-link class="logo" to="/">
-    <span class="logo__text"> &larr; {{ $static.metadata.siteName }} </span>
+    <span class="logo__text"> &#9664; &nbsp; {{ $static.metadata.siteName }} </span>
   </g-link>
 </template>
 
