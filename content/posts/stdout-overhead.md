@@ -161,7 +161,7 @@ for image, label in pbar:
 
 ![tqdm in a CLI enviroment](https://i.loli.net/2020/02/22/jXOBwvmhyEupNIV.gif)
 
-Also, we can run `tqdm` in VS Code’s Python Interactive console, or Jupyter Notebook. In this case, `tqdm` will output progress asynchronously according to the [Notebook API](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Running Code.html#Output-is-asynchronous).
+Also, we can run `tqdm` in VS Code’s Python Interactive console, or Jupyter Notebook. In this case, `tqdm` will output progress asynchronously according to the [Notebook API](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Running%20Code.html#Output-is-asynchronous).
 
 ![tqdm outputting inside Jupyter Notebook / VS Code Python Interactive](https://i.loli.net/2020/02/22/If8ZQj32hwTndSJ.gif)
 

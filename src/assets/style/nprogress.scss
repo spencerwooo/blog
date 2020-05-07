@@ -1,10 +1,15 @@
+:root {
+  --accent-color: #0070F3;
+}
+
+
 /* Make clicks pass-through */
 #nprogress {
   pointer-events: none;
 }
 
 #nprogress .bar {
-  background: var(--body-color);
+  background: var(--accent-color);
 
   position: fixed;
   z-index: 1031;
@@ -22,7 +27,7 @@
   right: 0px;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px var(--body-color), 0 0 5px var(--body-color);
+  box-shadow: 0 0 10px var(--accent-color), 0 0 5px var(--accent-color);
   opacity: 1;
 
   -webkit-transform: rotate(3deg) translate(0px, -4px);
@@ -45,8 +50,8 @@
   box-sizing: border-box;
 
   border: solid 2px transparent;
-  border-top-color: var(--body-color);
-  border-left-color: var(--body-color);
+  border-top-color: var(--accent-color);
+  border-left-color: var(--accent-color);
   border-radius: 50%;
 
   -webkit-animation: nprogress-spinner 400ms linear infinite;
