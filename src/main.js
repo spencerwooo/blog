@@ -21,7 +21,7 @@ import {
   faIdBadge,
   faRocket,
   faHeart,
-  faGem,
+  faCaretSquareUp,
   faArrowUp,
 } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -48,7 +48,7 @@ library.add(
   faTelegram,
   faRocket,
   faHeart,
-  faGem,
+  faCaretSquareUp,
   faArrowUp
 )
 

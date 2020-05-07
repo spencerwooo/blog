@@ -22,8 +22,8 @@
         Runs on <font-awesome :icon="['fas', 'rocket']" />
         <a href="//gridsome.org">Gridsome</a> and
         <font-awesome :icon="['fas', 'heart']" />Love. Deployed on
-        <font-awesome :icon="['fas', 'gem']" /><a href="//www.netlify.com"
-          >Netlify</a
+        <font-awesome :icon="['fas', 'caret-square-up']" /><a href="//vercel.com/spencerwoo/blog"
+          >Vercel</a
         >.
       </div>
       <div class="footer__links"></div>
