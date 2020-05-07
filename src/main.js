@@ -34,7 +34,7 @@ import {
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 // back to top
-// import BackToTop from 'vue-backtotop'
+import BackToTop from 'vue-backtotop'
 
 config.autoAddCss = false
 library.add(
@@ -72,7 +72,7 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('font-awesome', FontAwesomeIcon)
 
   // back to top
-  // Vue.use(BackToTop)
+  Vue.use(BackToTop)
 
   Vue.use(Vssue, {
     api: GithubV3,
@@ -81,19 +81,6 @@ export default function (Vue, { router, head, isClient }) {
     clientId: 'fd641fd7507d903acbfc',
     clientSecret: 'da7d0476d848a139a787a286df419e7bf7c334a5',
   })
-
-  // router.options.scrollBehavior = (to, from, savedPosition) => {
-  //   if (savedPosition) {
-  //     return savedPosition;
-  //   }
-  //   if (to.hash) {
-  //     return { selector: to.hash };
-  //   }
-  //   if ((from.name == 'project' && to.name == 'project') || ((from.name == 'work' && to.name == 'project'))) {
-  //     return window.scrollHeight
-  //   }
-  //   return { x: 0, y: 0 }
-  // }
 
   router.beforeEach((to, from, next) => {
     if (from.name !== null) {
