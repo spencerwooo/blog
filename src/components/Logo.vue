@@ -1,8 +1,10 @@
 <template>
   <div>
-    <span id="sitename">{{ $static.metadata.siteName }}</span>
+    <!-- <span id="sitename"></span> -->
     <g-link class="logo" to="/">
-      <span class="logo__text"> <font-awesome :icon="['fas', 'home']" /> Home </span>
+      <span class="logo__text">
+        &#9650; &nbsp; {{ $static.metadata.siteName }}
+      </span>
     </g-link>
   </div>
 </template>

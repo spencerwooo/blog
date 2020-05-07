@@ -22,7 +22,8 @@
         Runs on <font-awesome :icon="['fas', 'rocket']" />
         <a href="//gridsome.org">Gridsome</a> and
         <font-awesome :icon="['fas', 'heart']" />Love. Deployed on
-        <font-awesome :icon="['fas', 'caret-square-up']" /><a href="//vercel.com/spencerwoo/blog"
+        <font-awesome :icon="['fas', 'caret-square-up']" /><a
+          href="//vercel.com/spencerwoo/blog"
           >Vercel</a
         >.
       </div>
@@ -73,6 +74,10 @@ export default {
 </script>
 
 <style lang="scss">
+#app {
+  scroll-behavior: smooth;
+}
+
 .header {
   display: flex;
   justify-content: space-between;

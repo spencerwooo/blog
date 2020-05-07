@@ -29,9 +29,15 @@
       <Vssue />
     </div>
 
-    <!-- <back-to-top bottom="50px" right="40px">
-      <font-awesome id="back-to-top-button" :icon="['fas', 'arrow-up']" />
-    </back-to-top> -->
+    <transition name="fade">
+      <div
+        id="back-to-top"
+        v-scroll-to="{ el: '#app' }"
+        v-if="scrolledDist > 800"
+      >
+        <font-awesome id="back-to-top-icon" :icon="['fas', 'arrow-up']" />
+      </div>
+    </transition>
 
     <Author class="post-author" />
   </Layout>
@@ -57,6 +63,28 @@ export default {
           content: this.$page.post.description,
         },
       ],
+    }
+  },
+  data() {
+    return {
+      scrolledDist: 0,
+    }
+  },
+  methods: {
+    handleScroll() {
+      if (process.isClient) {
+        this.scrolledDist = window.scrollY
+      }
+    },
+  },
+  created() {
+    if (process.isClient) {
+      window.addEventListener('scroll', this.handleScroll)
+    }
+  },
+  destroyed() {
+    if (process.isClient) {
+      window.removeEventListener('scroll', this.handleScroll)
     }
   },
 }
@@ -220,5 +248,27 @@ query Post ($id: ID!) {
 
 .post-author {
   margin-top: calc(var(--space) / 2);
+}
+
+#back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+#back-to-top-icon {
+  font-size: 1.1em;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
