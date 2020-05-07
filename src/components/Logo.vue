@@ -1,7 +1,10 @@
 <template>
-  <g-link class="logo" to="/">
-    <span class="logo__text"> &#9664; &nbsp; {{ $static.metadata.siteName }} </span>
-  </g-link>
+  <div>
+    <span id="sitename">{{ $static.metadata.siteName }}</span>
+    <g-link class="logo" to="/">
+      <span class="logo__text"> <font-awesome :icon="['fas', 'home']" /> Home </span>
+    </g-link>
+  </div>
 </template>
 
 <static-query>
@@ -13,6 +16,10 @@ query {
 </static-query>
 
 <style lang="scss">
+#sitename {
+  margin-right: 1.2em;
+}
+
 .logo {
   text-decoration: none;
   color: var(--body-color) !important;
