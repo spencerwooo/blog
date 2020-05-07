@@ -24,7 +24,7 @@
     "marked": "^0.8.0",
     "nprogress": "^0.2.0",
     "vssue": "^1.4.2",
-    "vue-backtotop": "^1.6.1"
+    "vue-scrollto": "^2.18.1"
   },
   "devDependencies": {
     "node-sass": "^4.12.0",

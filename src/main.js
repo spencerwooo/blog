@@ -34,7 +34,7 @@ import {
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 // back to top
-import BackToTop from 'vue-backtotop'
+import VueScrollTo from 'vue-scrollto'
 
 config.autoAddCss = false
 library.add(
@@ -63,7 +63,7 @@ import '~/assets/style/container.scss'
 import 'katex/dist/katex.min.css'
 
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
-export default function (Vue, { router, head, isClient }) {
+export default function(Vue, { router, head, isClient }) {
   NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false })
 
   // Set default layout as a global component
@@ -72,7 +72,16 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('font-awesome', FontAwesomeIcon)
 
   // back to top
-  Vue.use(BackToTop)
+  Vue.use(VueScrollTo, {
+    container: 'body',
+    duration: 1000,
+    easing: 'ease-in-out',
+    offset: 0,
+    force: true,
+    cancelable: true,
+    x: false,
+    y: true,
+  })
 
   Vue.use(Vssue, {
     api: GithubV3,
