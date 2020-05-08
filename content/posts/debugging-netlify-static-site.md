@@ -1,6 +1,6 @@
 ---
 title: Netlify or VuePress：大型悬疑推理篇之——报错到底是谁的锅？
-date: 2020-05-08T13:00:00.000+00:00
+date: 2020-05-09T00:00:00+08:00
 published: false
 slug: debugging-netlify-static-site
 tags:
@@ -13,7 +13,7 @@ canonical_url: false
 description: 记录一次横跨一个月的 debug 之路，还要千万分感谢帮我精准 debug 的 @geekdada。
 
 ---
-Dev on Windows with WSL 是我目前维护比较频繁的一个文档，介绍了在 Windows 上使用 WSL 进行开发的环境配置、注意事项以及高阶操作等，我们称它为 `dowww`。我使用的是非常优秀的基于 Vue 的静态文档生成器：VuePress，来构建 `dowww` 的文档网站，并（曾经）借助于 Netlify 来将文档的静态页面部署在网络上，让大家可以访问参考。
+Dev on Windows with WSL 是我目前维护比较频繁的一个文档，它介绍了在 Windows 上使用 WSL 进行开发的环境配置、注意事项以及高阶操作等，我们称它为 `dowww`。我使用的是非常优秀的基于 Vue 的静态文档生成器：VuePress，来构建 `dowww` 的文档网站，并（曾经）借助于 Netlify 来将文档的静态页面部署在网络上，让大家可以访问参考。
 
 随着 WSL 的不断更新，我们的 `dowww` 文档也在不断迭代，为了让 `dowww` 文档网站能够回溯历史版本，我参考了在 VuePress 项目的 issue 区中 [Docs versioning mechanism](https://github.com/vuejs/vuepress/issues/1018) 这一 issue 提到的一种方案，自定义实现了「多版本文档」这一 VuePress 尚未实现的功能。随后，在 Netlify 上部署的静态网站便出现了非常奇特的 bug。
 
@@ -117,7 +117,7 @@ curl -I https://deploy-preview-54--dowww.netlify.app/1.1/4-advanced/4-2-lxrunoff
 
 一切都恢复正常了。由于 VuePress 生成的静态文件的文件名都是按照我 Markdown 文件名来的，所以当我们直接的访问一个包含大写字母 URL 的内部页面时，由于 Netlify 的处理，我们实际上进入了一个全为小写字母 URL 的页面，此时 VuePress 自己就迷惑了，也就出现导航至其他页面时可能触发的 bug。
 
-所以……看来如果我将我项目中所有的路径中的大写字母改为小写，问题在 Netlify 平台上就解决了？事实上也确实如此。VuePress 在进行 Markdown 文件解析时，会按照 Markdown 文件本身的文件名进行处理，每一个 Markdown 文件都是一个单独的路径，因此我需要将所有的 Markdown 文件名称、包含 Markdown 文件的路径、以及在 VuePress 配置文件 `config.js` 与我自己自定义 versioning 实现中所使用的 `sidebar.js` 里定义的全部文件名、路径名中的大写字母更换成小写字母。
+所以……看来如果我将我项目中所有的路径中的大写字母改为小写，问题在 Netlify 平台上就解决了？事实上也确实如此。上面刚刚提到，VuePress 在进行 Markdown 文件解析时，会按照 Markdown 文件本身的文件名进行处理，每一个 Markdown 文件都是一个单独的路径，因此我需要将所有的 Markdown 文件名称、包含 Markdown 文件的路径、以及在 VuePress 配置文件 `config.js` 与我自己自定义 versioning 实现中所使用的 `sidebar.js` 里定义的全部文件名、路径名中的大写字母更换成小写字母。
 
 看似比较复杂的问题，其实也不过是一行命令的事情：
 
