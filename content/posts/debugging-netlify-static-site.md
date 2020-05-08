@@ -95,7 +95,7 @@ python -m http.server
 
 > This is an intended feature of our platform from which you cannot opt out. We’ll serve any combination of case (e.g. `FiLe.HtMl` or `file.html` or `FILE.HTML`) correctly, though the mixed-case ones will be redirected to the “canonical” lowercase definition.
 >
-> We found that most people deploy from a non-case-sensitive filesystem (Windows/Mac) and this was the best way to make things work as most folks intended. 
+> We found that most people deploy from a non-case-sensitive filesystem (Windows/Mac) and this was the best way to make things work as most folks intended.
 >
 > 🚩 _Source: [My URL paths are forced into lowercase](https://community.netlify.com/t/my-url-paths-are-forced-into-lowercase/1659/2)_
 
@@ -127,7 +127,7 @@ find my_root_dir -depth -exec rename 's/(.*)\/([^\/]*)/$1\/\L$2/' {} \;
 
 上面这一命令非常巧妙，用 `rename` 工具先重命名目录中包含的文件，再重命名目录本身，有效的避免了命令错误导致文件路径失效的问题[^1]。我直接在项目的 `/docs` 目录下运行上面这一命令，之后手动修改了 `config.js`、`sidebar.js` 中内容，重新部署到 Netlify 上面……问题解决！
 
-那么，历时四个月（~~并没有，只是因为我拖延~~）的 bug 总算解决了，我们 `dowww` 文档也正式支持上了多版本 versioning，非常开心。不过，虽然 Netlify 上面确实问题解决了，但是由于 Vercel 的管理后天实在太好看，所以我还是把我的大部分网站都迁移了过去。喜新厌旧本人了 🤭
+那么，历时四个月（~~并没有，只是因为我拖延~~）的 bug 总算解决了，我们 `dowww` 文档也正式支持上了多版本 versioning，非常开心。不过，虽然 Netlify 上面确实问题解决了，但是由于 Vercel 的管理后台实在太好看，所以我还是把我的大部分网站都迁移了过去。喜新厌旧本人了 🤭
 
 这篇文章主要想记录一下我艰（tuo）难（yan）的 debug 经历，为同在使用 Netlify 和 Vercel 等第三方静态网站托管平台的你提供一些参考，不再重蹈覆辙。希望本文能够帮到你解决问题，感谢阅读。
 
