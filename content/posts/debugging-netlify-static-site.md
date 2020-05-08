@@ -8,7 +8,7 @@ tags:
 - VuePress
 - Netlify
 - Frontend
-cover_image: ''
+cover_image: "/content/posts/images/debugging-netlify-static-site.png"
 canonical_url: false
 description: 记录一次横跨一个月的 debug 之路。
 
