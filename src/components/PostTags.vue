@@ -22,7 +22,7 @@ export default {
   margin: 1em 0 0;
 
   &__link {
-    margin-right: 0.7em;
+    margin: 0.3em 0.6em 0.3em 0;
     font-size: 0.8em;
     color: currentColor;
     text-decoration: none;
@@ -30,6 +30,7 @@ export default {
     color: currentColor !important; //Todo: remove important;
     padding: 0.5em;
     border-radius: var(--radius);
+    display: inline-block;
   }
 }
 </style>
