@@ -18,26 +18,39 @@
     </p>
 
     <p class="author__links">
-      <g-link to="/"><font-awesome :icon="['fas', 'home']"/></g-link>
-      <a href="//spencerwoo.com"><font-awesome :icon="['fas', 'id-badge']"/></a
-      >|
-      <a href="//medium.com/spencerweekly"
+      <!-- <g-link to="/"><font-awesome :icon="['fas', 'home']"/></g-link> -->
+      <a href="//spencerwoo.com" target="_blank"
+        ><font-awesome :icon="['fas', 'id-badge']"
+      /></a>
+      <a
+        href="//blog.spencerwoo.com/posts/index.xml"
+        target="_blank"
+        style="color: #F5A623;"
+        ><font-awesome :icon="['fas', 'rss']"/></a
+      >/
+      <a
+        href="//medium.com/spencerweekly"
+        target="_blank"
+        style="color: var(--title-color);"
         ><font-awesome :icon="['fab', 'medium']"
       /></a>
-      <a href="//twitter.com/realSpencerWoo"
+      <a
+        href="//twitter.com/realSpencerWoo"
+        target="_blank"
+        style="color: #1da1f2;"
         ><font-awesome :icon="['fab', 'twitter']"
       /></a>
-      <a href="//weibo.com/spencerwoo"
+      <a href="//weibo.com/spencerwoo" target="_blank" style="color: #E00;"
         ><font-awesome :icon="['fab', 'weibo']"
       /></a>
-      <a href="//t.me/realSpencerWoo"
+      <a href="//t.me/realSpencerWoo" target="_blank" style="color: #179cde;"
         ><font-awesome :icon="['fab', 'telegram']"
       /></a>
-      <a href="//github.com/spencerwooo"
-        ><font-awesome :icon="['fab', 'github']"/></a
-      >|
-      <a href="//blog.spencerwoo.com/posts/index.xml"
-        ><font-awesome :icon="['fas', 'rss']"
+      <a
+        href="//github.com/spencerwooo"
+        target="_blank"
+        style="color: var(--title-color);"
+        ><font-awesome :icon="['fab', 'github']"
       /></a>
     </p>
   </div>
@@ -81,8 +94,9 @@ export default {
 
   &__links {
     margin-top: -0.5em;
-    color: var(--link-color);
+    font-size: 1em;
     a {
+      color: var(--link-color);
       margin: 0 0.5em;
     }
   }
