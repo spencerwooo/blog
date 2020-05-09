@@ -15,7 +15,7 @@ description: "Nginx 反向代理的工作原理"
 
 首先，反向代理（Reverse Proxy）是一种代理（Proxy）服务。为了搞清楚「反向代理」，我们首先来说一说「代理 - Proxy」。
 
-相信阅读这篇文章的同学一定对 Proxy 这个名词不陌生，~~Mainland China 互联网现状让大部分同学的计算机网络知识突飞猛进~~😂。简单来说，Proxy 服务器的主要功能就是在客户端 Client 和服务端 Server 之间搭建一个桥梁，从客户端访问服务端的网络流量、以及从服务端返回客户端的网络流量都会经由这一 Proxy 服务器的转发。[^Cloudflare]
+相信阅读这篇文章的同学一定对 Proxy 这个名词不陌生，~~Mainland China 互联网现状让大部分同学的计算机网络知识突飞猛进~~😂。简单来说，Proxy 服务器的主要功能就是在客户端 Client 和服务端 Server 之间搭建一个桥梁，从客户端访问服务端的网络流量、以及从服务端返回客户端的网络流量都会经由这一 Proxy 服务器的转发。[^1]
 
 ![功能示意](https://i.loli.net/2019/11/23/SX6GjARx5eKpfEI.png)
 
@@ -31,7 +31,7 @@ description: "Nginx 反向代理的工作原理"
 
 上面就是「正向代理」的基本工作流程，咕咕就是我们这个例子里面的正向代理服务器，负责转发和接受从 Client 发出或收到的网络请求。我们用正向代理（Forward Proxy），~~除了大家人尽皆知的目的以外~~😂，还可以：
 
-- 有效屏蔽广告、追踪脚本等有害请求。咕咕可以选择性的将 Server 发来的内容进行屏蔽，也就是：咕咕知道这次发来的是个广告，不给我们看也无妨大碍，那为了让我们浏览体验更加纯净，咕咕就非常体贴的丢掉了这一广告。爱了 ❤️ [^LTT]
+- 有效屏蔽广告、追踪脚本等有害请求。咕咕可以选择性的将 Server 发来的内容进行屏蔽，也就是：咕咕知道这次发来的是个广告，不给我们看也无妨大碍，那为了让我们浏览体验更加纯净，咕咕就非常体贴的丢掉了这一广告。爱了 ❤️ [^2]
 - 有效的隐藏我们的身份。因为咕咕在你没有用到它的时候，可以并行的为其他同学传递请求。这时候，Server 是无从知道请求的真正来源的，只知道是由咕咕转手的，从而保证我们身份匿名性。
 
 ### Reverse Proxy：反向代理
@@ -164,6 +164,6 @@ Nginx 反向代理服务器还有更多的功能，比如：
 
 抛砖引玉，感谢阅读。
 
-[^Cloudflare]: [What Is A Reverse Proxy? | Proxy Servers Explained - Cloudflare](https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/)
+[^1]: [What Is A Reverse Proxy? | Proxy Servers Explained - Cloudflare](https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/)
 
-[^LTT]: [Block EVERY Online Ad with THIS / Linus Tech Tips](https://www.youtube.com/watch?v=KBXTnrD_Zs4)
+[^2]: [Block EVERY Online Ad with THIS / Linus Tech Tips](https://www.youtube.com/watch?v=KBXTnrD_Zs4)
