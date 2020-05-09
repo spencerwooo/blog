@@ -1,5 +1,11 @@
 <template>
   <Layout>
+    <notifications
+      class="notify-style"
+      position="bottom right"
+      width="var(--toast-width)"
+    />
+
     <div class="post-title">
       <h1 class="post-title__text">
         {{ $page.post.title }}
@@ -87,6 +93,21 @@ export default {
       window.removeEventListener('scroll', this.handleScroll)
     }
   },
+  mounted() {
+    // Add post outdated notification
+    const today = new Date()
+    const publishTime = new Date(this.$page.post.date)
+    const publishedDays = Math.ceil(
+      (today - publishTime) / (1000 * 60 * 60 * 24)
+    )
+    if (publishedDays >= 180) {
+      this.$notify({
+        type: 'info',
+        text: `📢 本页面距今已有 ${publishedDays} 天未更新，年久失修，内容可能有所偏颇，还请仔细甄别！`,
+        duration: 10000,
+      })
+    }
+  },
 }
 </script>
 
@@ -110,6 +131,28 @@ query Post ($id: ID!) {
 </page-query>
 
 <style lang="scss">
+.vue-notification {
+  border-radius: var(--radius);
+  margin: 0 calc(var(--space) / 3) calc(var(--space) / 3) 0;
+}
+
+.notify-style {
+  // box-shadow: var(--shadow-small);
+  border-radius: var(--radius);
+  z-index: 5000;
+  transition: all 0.4s ease;
+
+  .notification-content {
+    padding: calc(var(--space) / 12) calc(var(--space) / 6);
+    font-size: var(--base-font-size);
+  }
+
+  .info {
+    background: var(--link-color);
+    border-left: none;
+  }
+}
+
 .post-title {
   padding: var(--space) 0 var(--space);
   text-align: center;

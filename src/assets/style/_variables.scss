@@ -11,12 +11,16 @@ body {
   --text-code: #d400ff;
   --body-color: #000000;
   --title-color: #000000;
-  --link-color: #0070F3;
+  --link-color: #0070f3;
   --border-color: rgba(0, 0, 0, 0.1);
+  --selection-color: #79ffe1;
   --space: 3.5rem;
   --content-width: 860px;
   --header-height: 60px;
   --radius: 5px;
+  --toast-width: 400px;
+  --shadow-small: 1px 1px 10px 0 rgba(0, 0, 0, 0.2),
+    1px 1px 30px 0 rgba(0, 0, 0, 0.3);
 }
 
 // Make things smaller for mobile
@@ -27,6 +31,7 @@ body {
   body {
     --space: 1.3rem;
     --header-height: 60px;
+    --toast-width: 280px;
   }
 }
 
@@ -38,5 +43,5 @@ body[data-theme='dark'] {
   --border-color: rgba(255, 255, 255, 0.1);
   --body-color: #ced8de;
   --title-color: #fff;
-  --link-color: #0070F3;
+  --link-color: #0070f3;
 }

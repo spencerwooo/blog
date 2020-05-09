@@ -33,9 +33,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
-// back to top
-import VueScrollTo from 'vue-scrollto'
-
 config.autoAddCss = false
 library.add(
   faGithub,
@@ -52,6 +49,12 @@ library.add(
   faArrowUp
 )
 
+// notifications
+import Notifications from 'vue-notification'
+
+// back to top
+import VueScrollTo from 'vue-scrollto'
+
 // NProgress
 import NProgress from 'nprogress'
 import '~/assets/style/nprogress.scss'
@@ -63,7 +66,7 @@ import '~/assets/style/container.scss'
 import 'katex/dist/katex.min.css'
 
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
-export default function(Vue, { router, head, isClient }) {
+export default function (Vue, { router, head, isClient }) {
   NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false })
 
   // Set default layout as a global component
@@ -82,6 +85,9 @@ export default function(Vue, { router, head, isClient }) {
     x: false,
     y: true,
   })
+
+  // notifications
+  Vue.use(Notifications)
 
   Vue.use(Vssue, {
     api: GithubV3,
