@@ -111,7 +111,7 @@ query Post ($id: ID!) {
 
 <style lang="scss">
 .post-title {
-  padding: calc(var(--space) / 2) 0 calc(var(--space) / 2);
+  padding: var(--space) 0 var(--space);
   text-align: center;
 }
 

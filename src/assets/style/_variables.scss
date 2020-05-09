@@ -22,10 +22,10 @@ body {
 // Make things smaller for mobile
 @media screen and (max-width: 650px) {
   html {
-    --base-font-size: 17px;
+    --base-font-size: 14px;
   }
   body {
-    --space: 1.5rem;
+    --space: 1.3rem;
     --header-height: 60px;
   }
 }

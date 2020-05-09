@@ -104,3 +104,25 @@ ol {
       sans-serif, Apple Color Emoji, Segoe UI Emoji;
   }
 }
+
+@media screen and (max-width: 650px) {
+  h1 {
+    font-size: 1.562em;
+  }
+
+  h2 {
+    font-size: 1.461em;
+  }
+
+  h3 {
+    font-size: 1.314em;
+  }
+
+  h4 {
+    font-size: 1.166em;
+  }
+
+  h5 {
+    font-size: 1.025em;
+  }
+}

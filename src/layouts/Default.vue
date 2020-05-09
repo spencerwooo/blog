@@ -113,7 +113,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: calc(var(--space)) 0;
+  padding: var(--space) 15px var(--space);
   text-align: center;
   line-height: 1.8;
   font-size: 0.9em;
