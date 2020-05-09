@@ -49,3 +49,19 @@ table {
     background-color: var(--bg-code);
   }
 }
+
+sup {
+  position: relative;
+  top: -0.3em;
+  vertical-align: top;
+  color: var(--link-color);
+  margin: 0 0.2em;
+
+  &::before {
+    content: '[';
+  }
+
+  &::after {
+    content: ']';
+  }
+}
