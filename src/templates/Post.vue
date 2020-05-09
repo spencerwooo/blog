@@ -100,6 +100,8 @@ export default {
     const publishedDays = Math.ceil(
       (today - publishTime) / (1000 * 60 * 60 * 24)
     )
+
+    // console.log(publishedDays)
     if (publishedDays >= 180) {
       this.$notify({
         type: 'info',

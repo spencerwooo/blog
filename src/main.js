@@ -50,7 +50,8 @@ library.add(
 )
 
 // notifications
-import Notifications from 'vue-notification'
+import Notifications from 'vue-notification/dist/ssr'
+import '~/assets/style/notification.scss'
 
 // back to top
 import VueScrollTo from 'vue-scrollto'
