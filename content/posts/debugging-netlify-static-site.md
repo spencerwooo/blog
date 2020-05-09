@@ -1,6 +1,6 @@
 ---
 title: Netlify or VuePress：大型悬疑推理篇之——报错到底是谁的锅？
-date: 2020-05-09T00:23:00+08:00
+date: 2020-05-08T16:23:00.000+00:00
 published: true
 slug: debugging-netlify-static-site
 tags:
@@ -24,7 +24,7 @@ Dev on Windows with WSL 是我目前维护比较频繁的一个文档，它介�
     DOMException: Failed to execute 'appendChild' on 'Node': This node type does not support this method.
         at Object.appendChild (https://deploy-preview-54--dowww.netlify.app/a...
 
-![刷新页面，即可看到 Console 报错](https://i.loli.net/2020/05/08/RhXlwPayUE7CT5c.png)
+![刷新页面，即可看到 Console 报错](https://i.loli.net/2020/05/09/b9O1cTKAYJlzZah.png)
 
 另外，在这一状态下，点击左侧的导航侧边栏，VuePress 不仅无法渲染出顺滑滚动的效果，我们甚至无法直接进行页面导航，点不开下拉菜单，偶尔也根本打不开任何其他页面，我们只能手动再次进入文档主页，重新定位刚刚的位置才能正常阅读。🎃
 
@@ -47,7 +47,7 @@ Dev on Windows with WSL 是我目前维护比较频繁的一个文档，它介�
 
 报错只发生于部署得到的 Netlify 网站上面，所以我们直接进入文档内部一页，点击刷新，待页面加载成功之后开启 Chrome Debugger 捕获 Exception。在这一状态下，bug 的复现非常简单，只需要点击任意一个侧边栏链接，我们就可以看到 Chrome Debugger 捕获到了相应的错误：
 
-![使用 Chrome Debugger 捕获出错位置](https://i.loli.net/2020/05/08/HSZ2uED96kdXjcR.png)
+![使用 Chrome Debugger 捕获出错位置](https://i.loli.net/2020/05/09/RWJzUV1QhB2D8Mi.png)
 
 可以看到，出错的代码是：
 
