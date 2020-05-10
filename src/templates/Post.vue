@@ -256,6 +256,16 @@ query Post ($id: ID!) {
     .vssue-notice .vssue-progress {
       color: var(--link-color) !important;
     }
+    .vssue-notice .vssue-progress {
+      background-color: var(--link-color) !important;
+    }
+    .vssue-comment-main {
+      border-color: #549cf0;
+      box-shadow: 0 0 1px 1px #549cf0;
+      textarea {
+        color: var(--body-color) !important;
+      }
+    }
     .vssue-icon {
       fill: var(--link-color) !important;
     }
