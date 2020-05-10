@@ -259,7 +259,7 @@ query Post ($id: ID!) {
     .vssue-notice .vssue-progress {
       background-color: var(--link-color) !important;
     }
-    .vssue-comment-main {
+    .vssue-comment.vssue-comment-edit-mode .vssue-comment-main {
       border-color: #549cf0;
       box-shadow: 0 0 1px 1px #549cf0;
       textarea {
