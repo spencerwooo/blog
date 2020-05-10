@@ -24,6 +24,8 @@ query Tag ($id: ID!) {
             path
             date (format: "D. MMMM YYYY")
             timeToRead
+            cjkWordCount
+            cjkReadTime
             description
             content
           }

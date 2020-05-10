@@ -5,9 +5,24 @@
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+const count = require('word-count')
+
 module.exports = function (api) {
   api.loadSource(({ addCollection }) => {
     // Use the Data store API here: https://gridsome.org/docs/data-store-api/
+  })
+
+  api.onCreateNode(options => {
+    if (options.internal.typeName === 'Post') {
+      const postContent = options.content.replace(/<\/?[^>]+(>|$)/g, "")
+      const wpm = 230
+
+      const cjkWordCount = count(postContent)
+      const cjkReadTime = Math.ceil(cjkWordCount / wpm)
+      return {
+        ...options, cjkWordCount, cjkReadTime
+      }
+    }
   })
 
   api.createPages(async ({

@@ -137,6 +137,8 @@ query Post ($id: ID!, $previousElement: ID!, $nextElement: ID!) {
     path
     date (format: "MMMM D. YYYY")
     timeToRead
+    cjkWordCount
+    cjkReadTime
     tags {
       id
       title

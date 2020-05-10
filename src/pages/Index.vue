@@ -30,6 +30,8 @@ query ($page: Int) {
         title
         date (format: "MMMM D. YYYY")
         timeToRead
+        cjkWordCount
+        cjkReadTime
         description
         cover_image (width: 1280, height: 400, blur: 10)
         path
