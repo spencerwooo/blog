@@ -1,9 +1,15 @@
-@media screen and (min-width: 1150px) {
+@media screen and (min-width: 1080px) {
   .jZbKA {
-    width: calc(30% - 120px) !important;
+    width: calc(40% - 120px) !important;
   }
   .bvkhEi {
-    width: calc(70% - 120px) !important;
-    left: calc(240px + 30% - 120px) !important;
+    width: calc(60% - 120px) !important;
+    left: calc(240px + 40% - 120px) !important;
+  }
+  .OKlKX {
+    height: 3rem !important;
+  }
+  .gCzLwX {
+    display: inline !important;
   }
 }
