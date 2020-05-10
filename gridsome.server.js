@@ -47,6 +47,5 @@ module.exports = function (api) {
       })
 
     })
-
   })
 }

@@ -30,19 +30,19 @@
       </div>
 
       <div class="post__navigation">
-        <g-link
+        <a
           class="navlink"
           v-if="$page.previous"
-          :to="$page.previous.path"
+          :href="$page.previous.path"
           style="float: left;"
-          >&#9664; {{ $page.previous.title }}</g-link
+          >&#9664; {{ $page.previous.title }}</a
         >
-        <g-link
+        <a
           class="navlink"
           v-if="$page.next"
-          :to="$page.next.path"
+          :href="$page.next.path"
           style="float: right;"
-          >{{ $page.next.title }} &#9654;</g-link
+          >{{ $page.next.title }} &#9654;</a
         >
       </div>
     </div>
