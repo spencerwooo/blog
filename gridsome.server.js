@@ -9,4 +9,44 @@ module.exports = function (api) {
   api.loadSource(({ addCollection }) => {
     // Use the Data store API here: https://gridsome.org/docs/data-store-api/
   })
+
+  api.createPages(async ({
+    graphql,
+    createPage
+  }) => {
+    // Use the Pages API here: https://gridsome.org/docs/pages-api
+    const {
+      data
+    } = await graphql(`{
+      allPost {
+        edges {
+          previous {
+            id
+          }
+          next {
+            id
+          }
+          node {
+            id
+            path
+          }
+        }
+      }
+    }
+    `)
+
+    data.allPost.edges.forEach(function (element) {
+      createPage({
+        path: element.node.path,
+        component: './src/templates/BlogPost.vue',
+        context: {
+          previousElement: (element.previous) ? element.previous.id : '##empty##',
+          nextElement: (element.next) ? element.next.id : '##empty##',
+          id: element.node.id
+        }
+      })
+
+    })
+
+  })
 }

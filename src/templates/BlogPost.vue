@@ -28,6 +28,23 @@
       <div class="post__footer">
         <PostTags :post="$page.post" />
       </div>
+
+      <div class="post__navigation">
+        <g-link
+          class="navlink"
+          v-if="$page.previous"
+          :to="$page.previous.path"
+          style="float: left;"
+          >&#9664; {{ $page.previous.title }}</g-link
+        >
+        <g-link
+          class="navlink"
+          v-if="$page.next"
+          :to="$page.next.path"
+          style="float: right;"
+          >{{ $page.next.title }} &#9654;</g-link
+        >
+      </div>
     </div>
 
     <div class="post-comments">
@@ -114,7 +131,7 @@ export default {
 </script>
 
 <page-query>
-query Post ($id: ID!) {
+query Post ($id: ID!, $previousElement: ID!, $nextElement: ID!) {
   post: post (id: $id) {
     title
     path
@@ -128,6 +145,16 @@ query Post ($id: ID!) {
     description
     content
     cover_image (width: 1280, blur: 10)
+  }
+
+  previous: post (id: $previousElement) {
+    title
+    path
+  }
+
+  next: post(id: $nextElement) {
+    title
+    path
   }
 }
 </page-query>
@@ -204,11 +231,33 @@ query Post ($id: ID!) {
       margin: 0 auto;
     }
   }
+
+  &__navigation {
+    border-top: 1px solid var(--border-color);
+    margin-top: calc(var(--space) / 2);
+    padding: calc(var(--space) / 2) 0 0 0;
+    overflow: auto;
+
+    .navlink {
+      border: none;
+      text-decoration: none;
+
+      &:first-of-type {
+        margin-bottom: calc(var(--space) / 4);
+      }
+    }
+  }
 }
 
 .footnotes {
   p {
     display: inline;
+  }
+  hr {
+    padding: calc(var(--space) / 2) 0 0 0;
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 0 0;
   }
   .footnote-backref {
     display: inline;
