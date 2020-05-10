@@ -1,0 +1,9 @@
+@media screen and (min-width: 1150px) {
+  .jZbKA {
+    width: calc(30% - 120px) !important;
+  }
+  .bvkhEi {
+    width: calc(70% - 120px) !important;
+    left: calc(240px + 30% - 120px) !important;
+  }
+}
