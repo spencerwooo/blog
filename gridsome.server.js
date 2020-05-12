@@ -50,7 +50,7 @@ module.exports = function (api) {
     }
     `)
 
-    data.allPost.edges.forEach(function (element) {
+    data.allPost.edges.forEach(element => {
       createPage({
         path: element.node.path,
         component: './src/templates/BlogPost.vue',
