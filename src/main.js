@@ -1,8 +1,10 @@
 // Import main css
 import '~/assets/style/index.scss'
 
-// Import default layout so we don't need to import it to every page
-import DefaultLayout from '~/layouts/Default.vue'
+// × Import default layout so we don't need to import it to every page
+// ! Use default App.vue to force reload each component on new blog page, or else $route.path
+// ! will not reflect correctly. See: https://github.com/gridsome/gridsome/issues/835
+// import DefaultLayout from '~/layouts/Default.vue'
 
 // Import vssue
 import Vssue from 'vssue'
@@ -71,7 +73,7 @@ export default function (Vue, { router, head, isClient }) {
   NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false })
 
   // Set default layout as a global component
-  Vue.component('Layout', DefaultLayout)
+  // Vue.component('Layout', DefaultLayout)
   Vue.component('Pager', Pager)
   Vue.component('font-awesome', FontAwesomeIcon)
 

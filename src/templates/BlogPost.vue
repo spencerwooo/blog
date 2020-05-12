@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <div>
     <notifications
       class="notify-style"
       position="bottom right"
@@ -63,7 +63,7 @@
     </transition>
 
     <Author class="post-author" />
-  </Layout>
+  </div>
 </template>
 
 <script>

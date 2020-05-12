@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <div>
     <h1 class="tag-title text-center space-bottom"># {{ $page.tag.title }}</h1>
 
     <div class="posts">
@@ -9,7 +9,7 @@
         :post="edge.node"
       />
     </div>
-  </Layout>
+  </div>
 </template>
 
 <page-query>

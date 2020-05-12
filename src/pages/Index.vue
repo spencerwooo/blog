@@ -1,5 +1,5 @@
 <template>
-  <Layout :show-logo="false">
+  <div :show-logo="false">
     <!-- Author intro -->
     <Author :show-title="true" />
 
@@ -14,7 +14,7 @@
 
     <!-- Pagination -->
     <Pager :info="$page.posts.pageInfo" />
-  </Layout>
+  </div>
 </template>
 
 <page-query>

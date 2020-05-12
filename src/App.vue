@@ -11,7 +11,10 @@
     </header>
 
     <main class="main">
-      <slot />
+      <!-- <slot /> -->
+      <!-- Re-render components on each route to force route path change.
+           See: https://github.com/gridsome/gridsome/issues/835 -->
+      <router-view :key="$route.path" />
     </main>
 
     <footer class="footer">
