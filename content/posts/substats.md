@@ -9,7 +9,7 @@ canonical_url: false
 description: 'Subscriber statistics：专注提供各个网站和社区里用户的订阅者、关注者、粉丝数量的 Serverless API'
 ---
 
-:::note SUBSTATS
+:::important SUBSTATS
 Serverless Function to Count How Many People are Subscribed to You in Your Favorite Services.
 **你只管调用，我们来帮你找订阅者！**
 :::

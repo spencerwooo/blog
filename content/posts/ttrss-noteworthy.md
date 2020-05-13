@@ -16,7 +16,7 @@ description: 'Tiny Tiny RSS 部署踩坑'
 - [Tiny Tiny RSS | 最速部署私有 RSS 服务器](https://blog.spencerwoo.com/2019/11/tiny-tiny-rss/)：我的博客
 - [找不到满意的 RSS 服务？你可以自己搭建一个](https://sspai.com/post/57498)：我的少数派文章
 
-:::tip RSS 订阅
+:::warning RSS 订阅
 另外，订阅我博客 RSS 的同学（来自 Feedly 的数据）已经达到了惊人的 10 个！谢谢各位的关注，没有用 RSS 订阅的同学可以点击下方徽章直接在 Feedly 中订阅。🙇‍♂️
 
 <a href="https://blog.spencerwoo.com/posts/index.xml"><img src="https://img.shields.io/badge/subscribe%20via-RSS-ffa500?logo=rss&style=for-the-badge" alt="" style="display: inline; margin: 0 0.1rem 0 0; width: auto;"></a>
