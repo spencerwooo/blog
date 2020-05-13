@@ -8,104 +8,92 @@
   --cb-admonition-color: #fff;
   --cb-admonition-padding-vertical: 1rem;
   --cb-admonition-padding-horizontal: 1rem;
-  --cb-color-note: #0070F3;
+  --cb-color-note: #0070f3;
+  --cb-color-note-lighten: #0071f311;
   --cb-color-important: #19cc96;
+  --cb-color-important-lighten: #19cc9611;
   --cb-color-tip: #d400ff;
-  --cb-color-caution: #F5A623;
-  --cb-color-warning: #E00;
+  --cb-color-tip-lighten: #d400ff11;
+  --cb-color-caution: #f5a623;
+  --cb-color-caution-lighten: #f5a62311;
+  --cb-color-warning: #e00;
+  --cb-color-warning-lighten: #e0000011;
   --cb-color-text-dark: #000;
 }
 
 /* apply variables to admonitions */
 
 .admonition {
-  background-color: var(--bg-content-color);
-  border-left: var(--cb-admonition-border-width) solid
-    var(--cb-admonition-background-color);
-  // border-radius: var(--radius);
-  // box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.03),
-  //   1px 1px 15px 0 rgba(0, 0, 0, 0.03);
-  box-sizing: border-box;
+  margin: var(--cb-admonition-padding-vertical) calc(0em - var(--space));
+  padding: var(--cb-admonition-padding-vertical) var(--space);
+  background-color: var(--cb-admonition-color-lighten);
   color: var(--cb-admonition-color);
-  // padding: var(--cb-admonition-padding-vertical)
-  //   var(--cb-admonition-padding-horizontal);
-  padding-left: calc(var(--space) / 2);
-  margin-bottom: 1em;
   transition: transform 0.3s, background-color 0.3s, box-shadow 0.6s;
-}
 
-// .admonition:hover {
-//   transform: translateY(-2px);
-//   box-shadow: 1px 10px 30px 0 rgba(0, 0, 0, 0.04);
-//   transition: transform 0.3s, background-color 0.3s, box-shadow 0.6s;
-// }
+  h5 {
+    margin-top: 0;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    color: var(--cb-admonition-icon-color) !important;
+  }
 
-.admonition-content {
-  color: var(--body-color) !important;
-}
+  .admonition-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5em;
+    margin-top: 0.3em;
+    svg {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      stroke-width: 0;
+      fill: var(--cb-admonition-color);
+      stroke: var(--cb-admonition-color);
+    }
+  }
 
-.admonition h5 {
-  margin-top: 0;
-  margin-bottom: 4px;
-  text-transform: uppercase;
-  color: var(--cb-admonition-icon-color) !important;
-}
+  .admonition-content {
+    color: var(--body-color) !important;
 
-.admonition-icon {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.5em;
-  margin-top: 0.2em;
-}
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
 
-.admonition-icon svg {
-  display: inline-block;
-  width: 22px;
-  height: 22px;
-  stroke-width: 0;
-  fill: var(--cb-admonition-icon-color);
-  stroke: var(--cb-admonition-icon-color);
-}
-
-.admonition-content > :last-child {
-  margin-bottom: 0;
+  p {
+    margin-bottom: 0;
+  }
 }
 
 /* set variables based on admonition type */
 
 .admonition {
-  --cb-admonition-background-color: #3578e5;
-  --cb-admonition-icon-color: var(--cb-admonition-color);
+  --cb-admonition-background-color: var(--cb-color-note);
 }
 
 .admonition-note {
-  --cb-admonition-background-color: var(--cb-color-note);
-  --cb-admonition-icon-color: var(--cb-color-note);
-  --cb-admonition-color: var(--cb-color-text-dark);
+  --cb-admonition-color: var(--cb-color-note);
+  --cb-admonition-color-lighten: var(--cb-color-note-lighten);
 }
 
 .admonition-important {
-  --cb-admonition-background-color: var(--cb-color-important);
-  --cb-admonition-icon-color: var(--cb-color-important);
-  --cb-admonition-color: var(--cb-color-text-dark);
+  --cb-admonition-color: var(--cb-color-important);
+  --cb-admonition-color-lighten: var(--cb-color-important-lighten);
 }
 
 .admonition-tip {
-  --cb-admonition-background-color: var(--cb-color-tip);
-  --cb-admonition-icon-color: var(--cb-color-tip);
-  --cb-admonition-color: var(--cb-color-text-dark);
+  --cb-admonition-color: var(--cb-color-tip);
+  --cb-admonition-color-lighten: var(--cb-color-tip-lighten);
 }
 
 .admonition-caution {
-  --cb-admonition-background-color: var(--cb-color-caution);
-  --cb-admonition-icon-color: var(--cb-color-caution);
-  --cb-admonition-color: var(--cb-color-text-dark);
+  --cb-admonition-color: var(--cb-color-caution);
+  --cb-admonition-color-lighten: var(--cb-color-caution-lighten);
 }
 
 .admonition-warning {
-  --cb-admonition-background-color: var(--cb-color-warning);
-  --cb-admonition-icon-color: var(--cb-color-warning);
-  --cb-admonition-color: var(--cb-color-text-dark);
+  --cb-admonition-color: var(--cb-color-warning);
+  --cb-admonition-color-lighten: var(--cb-color-warning-lighten);
 }
 
 /* purgecss end ignore */

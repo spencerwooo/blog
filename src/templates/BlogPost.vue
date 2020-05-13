@@ -216,10 +216,10 @@ query Post ($id: ID!, $previousElement: ID!, $nextElement: ID!) {
       margin-top: 0;
     }
 
-    p:first-of-type {
-      // font-size: 1.2em;
-      color: var(--title-color);
-    }
+    // p:first-of-type {
+    //   // font-size: 1.2em;
+    //   color: var(--title-color);
+    // }
 
     p {
       line-height: 1.8;
