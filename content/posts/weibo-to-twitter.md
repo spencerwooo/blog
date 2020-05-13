@@ -1,14 +1,18 @@
 ---
-title: "IFTTT x Integromat：微博 to Twitter 自动转发的最佳实践"
+title: IFTTT x Integromat：微博 to Twitter 自动转发的最佳实践
 date: 2019-11-26
 published: true
 slug: weibo-to-twitter
-tags: ['Automation', 'IFTTT', Weibo', 'Twitter']
-cover_image: ./images/weibo-to-twitter.png
+tags:
+- Automation
+- IFTTT
+- Twitter
+- Weibo
+cover_image: "./images/weibo-to-twitter.png"
 canonical_url: false
-description: "一个内容，两边发布，互不干扰，两面开花"
----
+description: 一个内容，两边发布，互不干扰，两面开花
 
+---
 IFTTT 网络自动化平台实际上是一个缩写，完全展开的 IFTTT 是「IF this THEN that」- 如果「这」，那么「那」。既然如此，我们利用 IFTTT 就可以实现非常完善的自动化事件处理流程，比如这篇文章我要介绍的就是一个例子：「利用 IFTTT 自动将微博发布的信息同步到 Twitter 上面」的最佳实践。
 
 > **🎫 附注：**
