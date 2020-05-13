@@ -1,19 +1,23 @@
 ---
-title: "IFTTT x Integromat：微博 to Twitter 自动转发的最佳实践"
+title: IFTTT x Integromat：微博 to Twitter 自动转发的最佳实践
 date: 2019-11-26
 published: true
 slug: weibo-to-twitter
-tags: ['Automation', 'IFTTT', Weibo', 'Twitter']
-cover_image: ./images/weibo-to-twitter.png
+tags:
+- Automation
+- IFTTT
+- Twitter
+- Weibo
+cover_image: "./images/weibo-to-twitter.png"
 canonical_url: false
-description: "一个内容，两边发布，互不干扰，两面开花"
----
+description: 一个内容，两边发布，互不干扰，两面开花
 
+---
 IFTTT 网络自动化平台实际上是一个缩写，完全展开的 IFTTT 是「IF this THEN that」- 如果「这」，那么「那」。既然如此，我们利用 IFTTT 就可以实现非常完善的自动化事件处理流程，比如这篇文章我要介绍的就是一个例子：「利用 IFTTT 自动将微博发布的信息同步到 Twitter 上面」的最佳实践。
 
-> **🎫 附注：**
->
-> 本文介绍方法高度借鉴于这篇文章：[微博同步至 Twitter，这里有更好的方式 - 少数派](https://sspai.com/post/51942)，但是本文的介绍方式更为清晰易懂，配置简洁明了，同时也解决了一些如果按照原文直接配置的话会出现的意外问题。
+:::note 附注 🎫
+本文介绍方法高度借鉴于这篇文章：[微博同步至 Twitter，这里有更好的方式 - 少数派](https://sspai.com/post/51942)，但是本文的介绍方式更为清晰易懂，配置简洁明了，同时也解决了一些如果按照原文直接配置的话会出现的意外问题。
+:::
 
 ## 背景与工作原理
 
@@ -55,18 +59,18 @@ IFTTT 网络自动化平台实际上是一个缩写，完全展开的 IFTTT 是�
 - 点击 Webhook 设置窗口中的 Add，在弹出的 Add a hook 界面将 Webhook 名称设置为 **IFTTT weibo webhook**
 - 点击左下角的 Show advanced settings，在 Data structure 处添加抓取自微博的数据结构：点击 Add，在弹出的窗口中将数据结构名称命名为 **Weibo data structure**。这就是我们从 IFTTT 获取到的微博博文的三个关键数据的存储方式（微博文本、微博链接和微博图片）
 
-![配置 Webhook、添加 Data structure](https://i.loli.net/2019/11/29/8xmh1FfwK9SLRvy.png)
+  ![配置 Webhook、添加 Data structure](https://i.loli.net/2019/11/29/8xmh1FfwK9SLRvy.png)
 
 - 下面我们开始设置微博数据结构：
   - 点击右侧 Generator，在弹出的窗口中将 Content type 选择为 **Query String**
   - 在下方 Sample Data 中填入：`text=weiboText&url=weiboUrl&image=imageUrl`，点击保存之后，我们就得到了一个合适的 Data Structure
   - 可以看到，上面 Sample Data 实际上就是我们利用 IFTTT 获取到微博数据的一个传递，其中 `text` 字段保存「微博文本内容：weiboText」、`url` 字段保存「微博链接：weiboUrl」、`image` 字段保存「微博图片：imageUrl」
 
-![配置微博 Data structure](https://i.loli.net/2019/11/29/9EwG8oaXptnMThs.png)
+  ![配置微博 Data structure](https://i.loli.net/2019/11/29/9EwG8oaXptnMThs.png)
 
 - 将上面步骤配置的内容全部保存，我们得到这样的一个界面：
 
-![Integromat Webhook API 地址](https://i.loli.net/2019/11/29/R86yFxQpsDWGP1o.png)
+  ![Integromat Webhook API 地址](https://i.loli.net/2019/11/29/R86yFxQpsDWGP1o.png)
 
 - 上图里面我框出来的地方就是 Integromat 的 Webhook API 地址。接下来，将上图中的 API 地址复制，在后面添加上我们刚刚声明的数据结构的请求，并在浏览器中访问一下，让 Integromat 对收到的请求进行判断，自动确定数据结构的数据类型
 - 需要注意的是，我们需要让这一步中的 URL 跟我们 IFTTT 发送给 Integromat 的请求一致，也就是在刚刚复制的 Integromat 请求地址后面，需要正确的拼接上我们的请求数据，这里给出一个示范：
@@ -86,13 +90,13 @@ IFTTT 网络自动化平台实际上是一个缩写，完全展开的 IFTTT 是�
 
 - 将上面的 URL 复制到浏览器中访问，加载完成之后，如果我们得到了正确的数据结构，那么 Integromat 那边会自动显示 Successfully Determined，同时浏览器中会显示 Accepted 字样
 
-![成功确定数据结构](https://i.loli.net/2019/11/29/yPjM2fTUav8ldwr.png)
+  ![成功确定数据结构](https://i.loli.net/2019/11/29/yPjM2fTUav8ldwr.png)
 
 到这里，我们先将 Integromat 的全部配置保存妥当，将上面 Integromat 的 URL 请求保存，不要关闭标签页，我们继续准备 IFTTT 的配置项目。
 
-> **🐖 注意：**
->
-> 如果这里 Integromat 平台未提示 Successfully Determined，或浏览器中未显示 Accepted，那么说明 URL 请求拼接有问题，请再次尝试保证数据结构确定无误，否则会对接下来的配置造成很大影响。
+:::caution 注意 🐖
+如果这里 Integromat 平台未提示 Successfully Determined，或浏览器中未显示 Accepted，那么说明 URL 请求拼接有问题，请再次尝试保证数据结构确定无误，否则会对接下来的配置造成很大影响。
+:::
 
 #### 在 IFTTT 平台找到 Webhook 接口
 
@@ -140,15 +144,15 @@ text={{Text}}&url={{WeiboURL}}&image={{PhotoURL}}
 - This 处选择 Webhooks，选择 Receive a web request，并给 Event name 起名为 `text_weibo`
 - That 处选择 Twitter，选择 Post a tweet with image，并将 Tweet text 设置为：`{{Value1}} via Weibo: {{Value2}}`，将 Image URL 设置为：`{{Value3}}`
 
-> **🍧 注意：**
->
-> 这里，我们将从 Integromat 中收到即将发送的推特的三个参数，分别为原微博的文本内容、原微博链接以及（如果有）原微博的图片。在 IFTTT 中，我们分别设置这三个参数：
->
-> - `{{Value1}}`：原微博文本
-> - `{{Value2}}`：原微博链接
-> - `{{Value3}}`：原微博图片（如果有）
->
-> 这里的三个 Key 就是 `{{ ... }}` 所包含的内容，这里的配置会和接下来 Integromat 的请求一致。
+:::important 注意 🍧
+这里，我们将从 Integromat 中收到即将发送的推特的三个参数，分别为原微博的文本内容、原微博链接以及（如果有）原微博的图片。在 IFTTT 中，我们分别设置这三个参数：
+
+- `{{Value1}}`：原微博文本
+- `{{Value2}}`：原微博链接
+- `{{Value3}}`：原微博图片（如果有）
+
+这里的三个 Key 就是 `{{ ... }}` 所包含的内容，这里的配置会和接下来 Integromat 的请求一致。
+:::
 
 这样，我们 IFTTT 平台的配置就基本完成了。接下来我们对 Integromat 的动作进行完善。
 
@@ -162,9 +166,9 @@ text={{Text}}&url={{WeiboURL}}&image={{PhotoURL}}
 
 ![第一条分支的 Filter 过滤器](https://i.loli.net/2019/12/02/kHB45v3TtJxcnhC.png)
 
-> **🍳 注意：**
->
-> 在最初少数派的文章介绍之中，原作者用「Image exists」作为判断条件。经过我的调试发现：即使是并没有包含图片的纯文本微博，在 IFTTT 抓取微博信息并传到 Integromat 之后，Integromat 判断树并不能正确的判断这条微博没有图片，而是会自动触发默认路径，导致我们依旧发出一条带有「IFTTT 找不到图片」的推特。因此，这里我使用的判断条件为：「Image contains `http`」。
+:::caution 注意 🍳
+在最初少数派的文章介绍之中，原作者用「Image exists」作为判断条件。经过我的调试发现：即使是并没有包含图片的纯文本微博，在 IFTTT 抓取微博信息并传到 Integromat 之后，Integromat 判断树并不能正确的判断这条微博没有图片，而是会自动触发默认路径，导致我们依旧发出一条带有「IFTTT 找不到图片」的推特。因此，这里我使用的判断条件为：「Image contains `http`」。
+:::
 
 在分支末端点击问号，搜索 HTTP，选择 Make a request。之后：
 
