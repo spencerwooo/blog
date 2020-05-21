@@ -8,12 +8,12 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
 pre {
-  padding: calc(var(--space) / 3) calc(var(--space) / 2);
+  padding: calc(var(--space) / 3) var(--space);
   font-size: 1em;
   background-color: var(--bg-code);
-  margin-bottom: 1em;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
+  margin: 1em calc(0em - var(--space));
+  // border: 1px solid var(--border-color);
+  // border-radius: var(--radius);
 
   code {
     padding: 0em;
@@ -23,7 +23,6 @@ pre {
 
 code {
   background-color: var(--bg-code);
-  color: var(--text-code);
   // border: 1px solid var(--border-color);
   font-size: 0.9em;
   padding: 0.2em 0.5em;
@@ -33,7 +32,7 @@ code[class*='language-'],
 pre[class*='language-'] {
   font-family: 'Fira Code', SF Mono, Consolas, Monaco, 'Ubuntu Mono', monospace;
   text-align: left;
-  white-space: pre;
+  white-space: pre-wrap;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
@@ -59,11 +58,12 @@ pre[class*='language-'] {
 /* Code blocks */
 pre[class*='language-'] {
   overflow: auto;
+  color: var(--text-code-block);
 }
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
-  // border-radius: var(--radius);
+  color: var(--text-code);
   white-space: normal;
   background-color: var(--bg-content-color);
 

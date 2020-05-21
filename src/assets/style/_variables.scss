@@ -7,8 +7,9 @@ html {
 body {
   --bg-color: #fafafa;
   --bg-content-color: #fff;
-  --bg-code: #fff;
+  --bg-code: #f1f3f4;
   --text-code: #d400ff;
+  --text-code-block: #37474f;
   --body-color: #000000;
   --title-color: #000000;
   --link-color: #0070f3;
@@ -39,7 +40,8 @@ body {
 body[data-theme='dark'] {
   --bg-color: #101213;
   --bg-content-color: #2d3235;
-  --bg-code: #000000;
+  --bg-code: #1e2224;
+  --text-code-block: #fff;
   --border-color: rgba(255, 255, 255, 0.1);
   --body-color: #ced8de;
   --title-color: #fff;
