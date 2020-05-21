@@ -190,7 +190,7 @@ query Post ($id: ID!, $previousElement: ID!, $nextElement: ID!) {
 }
 
 .post-meta {
-  font-family: rubik, sans-serif;
+  font-family: Lato, sans-serif;
 }
 
 .post {
@@ -270,17 +270,17 @@ query Post ($id: ID!, $previousElement: ID!, $nextElement: ID!) {
   padding: calc(var(--space) / 2);
   max-width: var(--content-width);
   margin: 0 auto;
-  font-family: rubik, sans-serif;
+  font-family: Lato, sans-serif;
 
   .vssue {
     color: var(--body-color) !important;
     a {
       color: var(--link-color);
-      font-family: rubik, sans-serif;
+      font-family: Lato, sans-serif;
     }
     .vssue-new-comment-body textarea,
     .vssue-new-comment-footer {
-      font-family: rubik, sans-serif !important;
+      font-family: Lato, sans-serif !important;
     }
     .vssue-new-comment .vssue-new-comment-input {
       background-color: var(--bg-content-color) !important;
@@ -325,7 +325,7 @@ query Post ($id: ID!, $previousElement: ID!, $nextElement: ID!) {
       border: 2px solid var(--link-color) !important;
       border-radius: 5px;
       font-weight: normal;
-      font-family: rubik, sans-serif;
+      font-family: Lato, sans-serif;
     }
     .vssue-pagination .vssue-pagination-select {
       color: var(--body-color) !important;

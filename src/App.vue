@@ -94,7 +94,7 @@ export default {
   &__right {
     display: flex;
     align-items: center;
-    font-family: rubik, sans-serif;
+    font-family: Lato, sans-serif;
   }
 
   @media screen and (min-width: 1300px) {
@@ -120,7 +120,7 @@ export default {
   text-align: center;
   line-height: 1.8;
   font-size: 0.9em;
-  font-family: rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+  font-family: Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
     Arial, pingfang sc, noto sans cjk sc, sarasa gothic sc, microsoft yahei,
     sans-serif, Apple Color Emoji, Segoe UI Emoji;
 
