@@ -22,9 +22,9 @@ In this work, from the perspective of regarding the adversarial example generati
 
 论文在将对抗攻击过程看作是一个「优化的过程」，基于提升对抗样本可迁移性的考虑，提出了 NI-FGSM 和 SIM 两种对抗攻击方法：
 
-* 论文在基于梯度的迭代对抗攻击中，使用 NAG 进行优化，从而更有效的实现 Lookahead，使得对抗样本的 transferability 增强。论文认为：NI-FGSM 最终能够有效代替 MI-FGSM（或者 MIM — Momentum Iterative Method）；
-* 论文认为深度学习模型具有 Scale-invariant 的特性，因此提出 Scale-Invariant Method：用多组尺度缩放的输入图像来优化对抗扰动，有效抑制白盒模型过拟合问题，从而得到针对黑盒模型易迁移的对抗样本；
-* 将 NI-FGSM 和 SIM 与现有基于梯度的攻击方法（比如 TIM、DIM）结合，可以有效提升对抗攻击成功率。
+* 论文在基于梯度的迭代对抗攻击中，使用 NAG 进行优化，从而更有效的实现 Lookahead，使得对抗样本的 transferability 增强。论文认为：NI-FGSM 最终能够有效代替 MI-FGSM（或者 MIM — Momentum Iterative Method）
+* 论文认为深度学习模型具有 Scale-invariant 的特性，因此提出 Scale-Invariant Method：用多组尺度缩放的输入图像来优化对抗扰动，有效抑制白盒模型过拟合问题，从而得到针对黑盒模型易迁移的对抗样本
+* 将 NI-FGSM 和 SIM 与现有基于梯度的攻击方法（比如 TIM、DIM）结合，可以有效提升对抗攻击成功率
 
 论文实验表明，在这两种方法和已有方法结合之中，**SI-NI-TI-DIM 这种方法的攻击性能最好，平均攻击成功率能够达到 93.5%.**
 
@@ -42,9 +42,9 @@ In this work, from the perspective of regarding the adversarial example generati
 
 非常容易发现，在这两个过程中：
 
-* 「模型训练」过程中的「训练数据集」就相当于「Transfer-based 对抗攻击」中的「白盒模型」；
-* 「模型训练」过程中「根据训练数据优化待训练参数」就相当于「Transfer-based 对抗攻击」中「根据白盒模型优化生成对抗样本」；
-* 那么，「模型训练」过程中的「测试数据集」就相当于「Transfer-based 对抗攻击」中的「黑盒模型」，依次用于「评估模型的性能」和「评估攻击的性能」。
+* 「模型训练」过程中的「训练数据集」就相当于「Transfer-based 对抗攻击」中的「白盒模型」
+* 「模型训练」过程中「根据训练数据优化待训练参数」就相当于「Transfer-based 对抗攻击」中「根据白盒模型优化生成对抗样本」
+* 那么，「模型训练」过程中的「测试数据集」就相当于「Transfer-based 对抗攻击」中的「黑盒模型」，依次用于「评估模型的性能」和「评估攻击的性能」
 
 那么，从同样「优化」的角度来看，提升对抗样本 transferability 和增强被训练模型的 generalization ability（泛化能力）的方法应该是类似的，因此论文考虑使用增强模型泛化能力同样的方法来增强对抗样本的可迁移性。
 
@@ -55,8 +55,8 @@ In this work, from the perspective of regarding the adversarial example generati
 
 基于以上的论断，论文考虑以下两种改进，以增强对抗样本的可迁移性：
 
-1. **NI-FGSM：使用更好的优化算法。**论文使用 NAG — Nesterov accelerated gradient 来优化基于梯度的迭代攻击；
-2. **SIM：实施模型增强。**论文考虑使用一系列被缩放的图像训练模型，从而达到 Model Augmentation 的效果。
+1. **NI-FGSM：使用更好的优化算法。**论文使用 NAG — Nesterov accelerated gradient 来优化基于梯度的迭代攻击
+2. **SIM：实施模型增强。**论文考虑使用一系列被缩放的图像训练模型，从而达到 Model Augmentation 的效果
 
 ### NI-FGSM
 
@@ -86,8 +86,8 @@ $$
 
 和模型泛化可以通过增添更多训练数据来优化类似，对抗样本的可迁移性也可以通过同时攻击更多模型来增强：
 
-* 论文提出使用 Loss-preserving transformation 获得更多模型的方法，可以减少训练模型的开销；
-* 论文认为模型具备 Scale-invariance 特性：输入图像与其缩放后得到的图像相比，**二者反映在模型上的损失是相近的**。因此论文使用缩放变换 scale transformation 作为模型增强的方法。
+* 论文提出使用 Loss-preserving transformation 获得更多模型的方法，可以减少训练模型的开销
+* 论文认为模型具备 Scale-invariance 特性：输入图像与其缩放后得到的图像相比，**二者反映在模型上的损失是相近的**。因此论文使用缩放变换 scale transformation 作为模型增强的方法
 
 综上，论文提出了 Scale-Invariant attack Method（SIM）：
 
@@ -124,8 +124,8 @@ $$
 
 可以发现：
 
-* 论文方法（SI-NI-TIM、SI-NI-DIM、SI-NI-TI-DIM）比基准方法黑盒攻击成功率始终稳定提升 10%-35%；
-* 白盒攻击设定下，论文方法甚至可以直接达到 100% 的攻击成功率。
+* 论文方法（SI-NI-TIM、SI-NI-DIM、SI-NI-TI-DIM）比基准方法黑盒攻击成功率始终稳定提升 10%-35%
+* 白盒攻击设定下，论文方法甚至可以直接达到 100% 的攻击成功率
 
 ### 攻击集成模型
 
