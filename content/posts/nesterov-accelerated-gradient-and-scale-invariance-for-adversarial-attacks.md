@@ -162,7 +162,7 @@ $$
 **因此，NI-FGSM 不仅比 MI-FGSM 有更好的迁移性，还有更高的攻击效率。**
 
 :::important Nesterov Accelerated Gradient
-全因为 NAG 这个优化算法啊！NAG 虽然只比 Momentum 优化多了一步，相当于根据前方的梯度地形，多走一步，但正因为这一步，让 NAG 比 Momentum 优化收敛的更快。\[^1\]
+全因为 NAG 这个优化算法啊！NAG 虽然只比 Momentum 优化多了一步，相当于根据前方的梯度地形，多走一步，但正因为这一步，让 NAG 比 Momentum 优化收敛的更快。[^1]
 :::
 
 同时，论文还和 FGSM、I-FGSM、PGD 和 C&W 传统攻击进行了对比，实验表明 NI-FGSM 和 SI-NI-FGSM 在白盒设定下和 C&W 一样能够达到 100% 的攻击成功率，黑盒设定下性能远远超越其他攻击。
