@@ -80,7 +80,7 @@ g_{t+1}=\mu\cdot g_t +\frac{\nabla_x\mathcal{J}(x_t^{nes},y^{true})}{\|\nabla_x\
 x_{t+1}^{adv}=\textrm{Clip}_x^{\epsilon}{x_t^{adv}+\alpha\cdot\textrm{sign}(g_{t+1})}
 $$
 
-其中，$g_t$ 表示第 $t$ 次迭代时累积的梯度，$\\mu$ 表示 $g_t$ 的衰减系数。
+其中，$g_t$ 表示第 $t$ 次迭代时累积的梯度，$\mu$ 表示 $g_t$ 的衰减系数。
 
 ### SIM
 
