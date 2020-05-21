@@ -46,7 +46,7 @@ module.exports = {
         },
         htmlFields: ['description', 'content'],
         enforceTrailingSlashes: false,
-        filterNodes: node => true,
+        filterNodes: node => node.published,
         nodeToFeedItem: node => ({
           title: node.title,
           date: node.date || node.fields.date,
