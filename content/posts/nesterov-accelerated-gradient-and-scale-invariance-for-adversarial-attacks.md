@@ -68,8 +68,8 @@ In this work, from the perspective of regarding the adversarial example generati
 Nesterov Accelerated Gradient 是普通梯度下降法的轻微修改，可以有效加速训练过程，大幅度增强收敛能力。NAG 可以看作是基于 Momentum 的优化的改良版：
 
 $$
-v_{t+1}=\mu \cdot v_t + \nabla_{\theta_t}\mathcal{J}(\theta_t-\alpha\cdot\mu\cdot v_t)
-\theta_{t+1}=\theta_t=\alpha\cdot v_{t+1}
+v_{t+1}=\mu \cdot v_t + \nabla_{\theta_t}\mathcal{J}(\theta_t-\alpha\cdot\mu\cdot v_t)\\
+\theta_{t+1}=\theta_t-\alpha\cdot v_{t+1}
 $$
 
 论文发现普通基于梯度的迭代攻击（I-FGSM）非常容易陷入局部最优，导致比单步攻击（FGSM）可迁移性差。实验表明向迭代攻击中引入 Momentum 可以有效解决这一问题（MI-FGSM）。
