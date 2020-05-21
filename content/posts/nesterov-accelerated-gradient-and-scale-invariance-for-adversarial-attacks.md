@@ -181,4 +181,4 @@ $$
 * NI-FGSM 能够成功提升攻击成功率表明其他优化方法（比如 Adam Optimization）也可能有助于构建强对抗攻击
 * 神经网络模型存在 Scale-invariant 性质，但目前未找到确切存在原因。作者认为可能由于模型每一卷积层的 batch normalization（批量正则化）导致模型对尺度变化不敏感
 
-\[^1\]: [比 Momentum 更快：揭开 Nesterov Accelerated Gradient 的真面目](https://zhuanlan.zhihu.com/p/22810533)
+[^1]: [比 Momentum 更快：揭开 Nesterov Accelerated Gradient 的真面目](https://zhuanlan.zhihu.com/p/22810533)
