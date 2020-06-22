@@ -25,6 +25,7 @@ import {
   faHeart,
   faCaretSquareUp,
   faArrowUp,
+  faCommentDots
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faGithub,
@@ -48,7 +49,8 @@ library.add(
   faRocket,
   faHeart,
   faCaretSquareUp,
-  faArrowUp
+  faArrowUp,
+  faCommentDots
 )
 
 // notifications
