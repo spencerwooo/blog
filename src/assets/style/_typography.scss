@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Miriam+Libre:400,700|Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Miriam+Libre:400,700|Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
 
 html {
   font-size: var(--base-font-size);
@@ -38,7 +39,7 @@ h5 {
   transition: color 0.6s;
   color: var(--title-color);
   margin: 2.75rem 0 1rem;
-  font-family: miriam libre, -apple-system, BlinkMacSystemFont, Segoe UI,
+  font-family: open sans, -apple-system, BlinkMacSystemFont, Segoe UI,
     Helvetica, Arial, pingfang sc, source han sans sc, noto sans cjk sc,
     sarasa gothic sc, microsoft yahei, sans-serif, Apple Color Emoji,
     Segoe UI Emoji;
@@ -92,9 +93,6 @@ ul {
   line-height: 1.8;
   li {
     margin-bottom: 0.6em;
-    font-family: Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
-      Arial, pingfang sc, noto sans cjk sc, sarasa gothic sc, microsoft yahei,
-      sans-serif, Apple Color Emoji, Segoe UI Emoji;
   }
 }
 ol {
@@ -104,9 +102,6 @@ ol {
   line-height: 1.8;
   li {
     margin-bottom: 0.6em;
-    font-family: Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
-      Arial, pingfang sc, noto sans cjk sc, sarasa gothic sc, microsoft yahei,
-      sans-serif, Apple Color Emoji, Segoe UI Emoji;
   }
 }
 
