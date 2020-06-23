@@ -72,12 +72,6 @@ export default {
           avatar: 'https://avatars3.githubusercontent.com/u/26199342?s=160',
           style: 'color: #fff; background-color: #26498e',
         },
-        {
-          id: '@nondanee',
-          link: 'https://github.com/nondanee',
-          avatar: 'https://avatars1.githubusercontent.com/u/26399680?s=160',
-          style: 'color: #fff; background-color: #b35f29',
-        },
       ],
     }
   },
