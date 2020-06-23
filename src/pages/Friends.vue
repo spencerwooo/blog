@@ -33,49 +33,49 @@ export default {
         {
           id: '@Felinae',
           link: 'https://code.felinae98.cn/',
-          avatar: 'https://avatars3.githubusercontent.com/u/23295345?s=48',
+          avatar: 'https://avatars3.githubusercontent.com/u/23295345?s=160',
           style: 'color: #fff; background-color: #473922',
         },
         {
           id: '@agnoCJY',
           link: 'https://jychuuu.com/',
-          avatar: 'https://avatars1.githubusercontent.com/u/46088026?s=48',
+          avatar: 'https://avatars1.githubusercontent.com/u/46088026?s=160',
           style: 'color: #fff; background-color: #191919',
         },
         {
           id: '@TenkeySeven',
           link: 'https://blog.tenkeyseven.com/',
-          avatar: 'https://avatars2.githubusercontent.com/u/33371927?s=48',
+          avatar: 'https://avatars2.githubusercontent.com/u/33371927?s=160',
           style: 'color: #fff; background-color: #b59672',
         },
         {
           id: '@Silvester',
           link: 'http://silverster98.github.io/',
-          avatar: 'https://avatars0.githubusercontent.com/u/34436920?s=48',
+          avatar: 'https://avatars0.githubusercontent.com/u/34436920?s=160',
           style: 'color: #fff; background-color: #595058',
         },
         {
           id: '@FKY',
           link: 'http://blog.fkynjyq.com/',
-          avatar: 'https://avatars2.githubusercontent.com/u/16451516?s=48',
+          avatar: 'https://avatars2.githubusercontent.com/u/16451516?s=160',
           style: 'color: #fff; background-color: #005240',
         },
         {
           id: '@idealclover',
           link: 'https://idealclover.top/',
-          avatar: 'https://avatars2.githubusercontent.com/u/24428416?s=48',
+          avatar: 'https://avatars2.githubusercontent.com/u/24428416?s=160',
           style: 'color: #fff; background-color: #487747',
         },
         {
           id: '@kastnerorz',
           link: 'https://github.com/kastnerorz',
-          avatar: 'https://avatars3.githubusercontent.com/u/26199342?s=48',
+          avatar: 'https://avatars3.githubusercontent.com/u/26199342?s=160',
           style: 'color: #fff; background-color: #26498e',
         },
         {
           id: '@nondanee',
           link: 'https://github.com/nondanee',
-          avatar: 'https://avatars1.githubusercontent.com/u/26399680?s=48',
+          avatar: 'https://avatars1.githubusercontent.com/u/26399680?s=160',
           style: 'color: #fff; background-color: #b35f29',
         },
       ],
@@ -104,6 +104,8 @@ export default {
       top: 0;
       left: 0;
       bottom: 0;
+      width: 48px;
+      height: 48px;
       border-radius: var(--radius);
       background-color: #fff;
       transform: rotate(20deg) translate(-15%, 0%);
