@@ -50,7 +50,7 @@ export default {
         },
         {
           id: '@Silvester',
-          link: 'http://silverster98.github.io/',
+          link: 'https://silvester.wang/',
           avatar: 'https://avatars0.githubusercontent.com/u/34436920?s=160',
           style: 'color: #fff; background-color: #595058',
         },
