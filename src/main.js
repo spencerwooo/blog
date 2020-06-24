@@ -25,7 +25,8 @@ import {
   faHeart,
   faCaretSquareUp,
   faArrowUp,
-  faCommentDots
+  faCommentDots,
+  faSpinner
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faGithub,
@@ -50,7 +51,8 @@ library.add(
   faHeart,
   faCaretSquareUp,
   faArrowUp,
-  faCommentDots
+  faCommentDots,
+  faSpinner
 )
 
 // notifications
@@ -59,6 +61,9 @@ import '~/assets/style/notification.scss'
 
 // back to top
 import VueScrollTo from 'vue-scrollto'
+
+// HTTP API
+import axios from 'axios'
 
 // NProgress
 import NProgress from 'nprogress'
@@ -78,6 +83,8 @@ export default function (Vue, { router, head, isClient }) {
   // Vue.component('Layout', DefaultLayout)
   Vue.component('Pager', Pager)
   Vue.component('font-awesome', FontAwesomeIcon)
+
+  Vue.prototype.$http = axios
 
   // back to top
   Vue.use(VueScrollTo, {
