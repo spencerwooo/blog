@@ -13,11 +13,13 @@
         ><g-image class="avatar" alt="avatar" :src="friend.avatar" blur="5" />
         <span>{{ friend.id }}</span></a
       >
-      <p class="note">* I don't accept friend link requests from someone I don't know.</p>
+      <p class="note">
+        * I don't accept friend link requests from someone I don't know.
+      </p>
     </div>
 
     <div class="post-comments">
-      <Vssue />
+      <Disqus shortname="spencerwoo" identifier="spencer-blog-guestbook" />
     </div>
   </div>
 </template>

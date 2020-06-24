@@ -6,10 +6,8 @@ import '~/assets/style/index.scss'
 // ! will not reflect correctly. See: https://github.com/gridsome/gridsome/issues/835
 // import DefaultLayout from '~/layouts/Default.vue'
 
-// Import vssue
-import Vssue from 'vssue'
-import GithubV3 from '@vssue/api-github-v3'
-import 'vssue/dist/vssue.css'
+// Disqus
+import VueDisqus from 'vue-disqus'
 
 // Pagination
 import { Pager } from 'gridsome'
@@ -26,7 +24,7 @@ import {
   faCaretSquareUp,
   faArrowUp,
   faCommentDots,
-  faSpinner
+  faSpinner,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faGithub,
@@ -76,7 +74,7 @@ import '~/assets/style/container.scss'
 import 'katex/dist/katex.min.css'
 
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
-export default function (Vue, { router, head, isClient }) {
+export default function(Vue, { router, head, isClient }) {
   NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false })
 
   // Set default layout as a global component
@@ -100,14 +98,7 @@ export default function (Vue, { router, head, isClient }) {
 
   // notifications
   Vue.use(Notifications)
-
-  Vue.use(Vssue, {
-    api: GithubV3,
-    owner: 'spencerwooo',
-    repo: 'comments',
-    clientId: 'fd641fd7507d903acbfc',
-    clientSecret: 'da7d0476d848a139a787a286df419e7bf7c334a5',
-  })
+  Vue.use(VueDisqus)
 
   router.beforeEach((to, from, next) => {
     if (from.name !== null) {
