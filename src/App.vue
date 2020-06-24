@@ -19,7 +19,7 @@
 
     <footer class="footer">
       <div class="footer__copyright">
-        Copyright ©2019 - {{ new Date().getFullYear() }}.
+        Copyright ©2017 - {{ new Date().getFullYear() }}.
       </div>
       <div class="footer__links">
         Runs on <font-awesome :icon="['fas', 'rocket']" />
