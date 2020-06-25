@@ -7,7 +7,8 @@ import '~/assets/style/index.scss'
 // import DefaultLayout from '~/layouts/Default.vue'
 
 // Disqus
-import VueDisqus from 'vue-disqus'
+// import VueDisqus from 'vue-disqus'
+import 'disqusjs/dist/disqusjs.css'
 
 // Pagination
 import { Pager } from 'gridsome'
@@ -98,7 +99,6 @@ export default function(Vue, { router, head, isClient }) {
 
   // notifications
   Vue.use(Notifications)
-  Vue.use(VueDisqus)
 
   router.beforeEach((to, from, next) => {
     if (from.name !== null) {

@@ -48,8 +48,7 @@
     </div>
 
     <div class="post-comments">
-      <!-- Add comment widgets here -->
-      <Disqus shortname="spencerwoo" :identifier="$page.post.path" />
+      <div id="disqus_thread" />
     </div>
 
     <transition name="fade">
@@ -70,6 +69,7 @@
 import PostMeta from '~/components/PostMeta'
 import PostTags from '~/components/PostTags'
 import Author from '~/components/Author.vue'
+import DisqusJS from 'disqusjs'
 
 export default {
   components: {
@@ -126,6 +126,17 @@ export default {
         duration: 10000,
       })
     }
+
+    // Initialize post comment by DisqusJS
+    const disqusjs = new DisqusJS({
+      shortname: 'spencerwoo',
+      siteName: "Spencer's Blog",
+      identifier: this.$page.post.path,
+      apikey:
+        'F6hHeFWtfmWW5n4RVf4hjgazRj8y0ERfQdeQPIGKr79yajw6glnmTqrgYHTC8XaS',
+      admin: 'spencerwoo',
+      adminLabel: 'Admin',
+    })
   },
 }
 </script>
