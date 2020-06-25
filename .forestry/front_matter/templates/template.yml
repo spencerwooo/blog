@@ -28,5 +28,6 @@ fields:
   label: description
 pages:
 - content/posts/debugging-netlify-static-site.md
+- content/posts/hit-count-google-analytics-vercel-serverless.md
 - content/posts/nesterov-accelerated-gradient-and-scale-invariance-for-adversarial-attacks.md
 - content/posts/that-eureka-moment.md
