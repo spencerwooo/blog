@@ -1,8 +1,8 @@
 ---
 title: Hit count：用 Google Analytics + Vercel Serverless 为文章添加浏览量统计
-date: 2020-06-25T17:00:00+08:00
+date: 2020-06-25T17:00:00.000+08:00
 published: false
-slug: vercel-ga-hit-count-api
+slug: serverless-ga-hit-count-api
 tags:
 - Tech
 - Server
