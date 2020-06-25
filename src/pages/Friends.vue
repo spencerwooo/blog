@@ -76,6 +76,12 @@ export default {
           avatar: 'https://avatars3.githubusercontent.com/u/26199342?s=160',
           style: 'color: #fff; background-color: #26498e',
         },
+        {
+          id: '@Patrick Wu',
+          link: 'https://patrickwu.space/',
+          avatar: 'https://avatars0.githubusercontent.com/u/15316889?s=160',
+          style: 'color: #fff; background-color: #61a3cf'
+        },
       ],
     }
   },
