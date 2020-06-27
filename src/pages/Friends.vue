@@ -80,22 +80,24 @@ export default {
           id: '@Patrick Wu',
           link: 'https://patrickwu.space/',
           avatar: 'https://avatars0.githubusercontent.com/u/15316889?s=160',
-          style: 'color: #fff; background-color: #61a3cf'
+          style: 'color: #fff; background-color: #61a3cf',
         },
       ],
     }
   },
   mounted() {
     // Initialize post comment by DisqusJS
-    const disqusjs = new DisqusJS({
-      shortname: 'spencerwoo',
-      siteName: "Spencer's Blog",
-      identifier: 'spencer-blog-guestbook',
-      apikey:
-        'F6hHeFWtfmWW5n4RVf4hjgazRj8y0ERfQdeQPIGKr79yajw6glnmTqrgYHTC8XaS',
-      admin: 'spencerwoo',
-      adminLabel: 'Admin',
-    })
+    if (process.env.NODE_ENV === 'production') {
+      const disqusjs = new DisqusJS({
+        shortname: 'spencerwoo',
+        siteName: "Spencer's Blog",
+        identifier: 'spencer-blog-guestbook',
+        apikey:
+          'F6hHeFWtfmWW5n4RVf4hjgazRj8y0ERfQdeQPIGKr79yajw6glnmTqrgYHTC8XaS',
+        admin: 'spencerwoo',
+        adminLabel: 'Admin',
+      })
+    }
   },
 }
 </script>

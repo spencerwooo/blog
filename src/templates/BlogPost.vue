@@ -9,6 +9,9 @@
     <div class="post-title">
       <h1 class="post-title__text">
         {{ $page.post.title }}
+        <span class="post-title__publish-icon" v-if="!$page.post.published"
+          >DRAFT</span
+        >
       </h1>
 
       <PostMeta :post="$page.post" />
@@ -128,15 +131,17 @@ export default {
     }
 
     // Initialize post comment by DisqusJS
-    const disqusjs = new DisqusJS({
-      shortname: 'spencerwoo',
-      siteName: "Spencer's Blog",
-      identifier: this.$page.post.path,
-      apikey:
-        'F6hHeFWtfmWW5n4RVf4hjgazRj8y0ERfQdeQPIGKr79yajw6glnmTqrgYHTC8XaS',
-      admin: 'spencerwoo',
-      adminLabel: 'Admin',
-    })
+    if (process.env.NODE_ENV === 'production') {
+      const disqusjs = new DisqusJS({
+        shortname: 'spencerwoo',
+        siteName: "Spencer's Blog",
+        identifier: this.$page.post.path,
+        apikey:
+          'F6hHeFWtfmWW5n4RVf4hjgazRj8y0ERfQdeQPIGKr79yajw6glnmTqrgYHTC8XaS',
+        admin: 'spencerwoo',
+        adminLabel: 'Admin',
+      })
+    }
   },
 }
 </script>
@@ -156,6 +161,7 @@ query Post ($id: ID!, $previousElement: ID!, $nextElement: ID!) {
       path
     }
     description
+    published
     content
     cover_image (width: 1280, blur: 10)
   }
@@ -198,6 +204,18 @@ query Post ($id: ID!, $previousElement: ID!, $nextElement: ID!) {
 .post-title {
   padding: var(--space) 0 var(--space);
   text-align: center;
+
+  &__publish-icon {
+    vertical-align: top;
+    background-color: #F7B955;
+    display: inline-block;
+    font-size: 14px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 3px;
+    padding: 0 6px;
+    color: #fff;
+  }
 }
 
 .post-meta {
