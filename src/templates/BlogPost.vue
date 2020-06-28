@@ -207,7 +207,7 @@ query Post ($id: ID!, $previousElement: ID!, $nextElement: ID!) {
 
   &__publish-icon {
     vertical-align: top;
-    background-color: #F7B955;
+    background-color: #f7b955;
     display: inline-block;
     font-size: 14px;
     height: 18px;
