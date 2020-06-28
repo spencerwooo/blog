@@ -5,6 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 const marked = require('marked')
+const yaml = require('js-yaml')
 
 module.exports = {
   siteUrl: 'https://blog.spencerwoo.com',
@@ -78,6 +79,11 @@ module.exports = {
       ],
       config: {
         footnotes: true,
+      },
+      grayMatter: {
+        engines: {
+          yaml: s => yaml.safeLoad(s, { schema: yaml.JSON_SCHEMA }),
+        },
       },
     },
   },
