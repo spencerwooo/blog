@@ -80,11 +80,11 @@ module.exports = {
       config: {
         footnotes: true,
       },
-      grayMatter: {
-        engines: {
-          yaml: s => yaml.safeLoad(s, { schema: yaml.JSON_SCHEMA }),
-        },
-      },
+      // grayMatter: {
+      //   engines: {
+      //     yaml: s => yaml.safeLoad(s, { schema: yaml.JSON_SCHEMA }),
+      //   },
+      // },
     },
   },
 }
