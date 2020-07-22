@@ -1,11 +1,5 @@
 <template>
   <div>
-    <notifications
-      class="notify-style"
-      position="bottom right"
-      width="var(--toast-width)"
-    />
-
     <div class="post-title">
       <h1 class="post-title__text">
         {{ $page.post.title }}
@@ -24,6 +18,14 @@
           v-if="$page.post.cover_image"
           :src="$page.post.cover_image"
         />
+      </div>
+
+      <div class="admonition admonition-warning" v-if="publishedDays >= 180">
+        <p style="margin-bottom: 0;">
+          🌶 <strong>过期警告：</strong> 本页面距今已有
+          {{ publishedDays }}
+          天未更新，年久失修，内容可能有所偏颇，还请仔细甄别！
+        </p>
       </div>
 
       <div class="post__content" v-html="$page.post.content" />
@@ -94,6 +96,7 @@ export default {
   data() {
     return {
       scrolledDist: 0,
+      publishedDays: 0,
     }
   },
   methods: {
@@ -114,21 +117,13 @@ export default {
     }
   },
   mounted() {
-    // Add post outdated notification
+    // Add post outdated notification banner
     const today = new Date()
     const publishTime = new Date(this.$page.post.date)
     const publishedDays = Math.ceil(
       (today - publishTime) / (1000 * 60 * 60 * 24)
     )
-
-    // console.log(publishedDays)
-    if (publishedDays >= 180) {
-      this.$notify({
-        type: 'info',
-        text: `📢 本页面距今已有 ${publishedDays} 天未更新，年久失修，内容可能有所偏颇，还请仔细甄别！`,
-        duration: 10000,
-      })
-    }
+    this.publishedDays = publishedDays
 
     // Initialize post comment by DisqusJS
     if (process.env.NODE_ENV === 'production') {

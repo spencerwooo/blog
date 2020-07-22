@@ -54,10 +54,6 @@ library.add(
   faSpinner
 )
 
-// notifications
-import Notifications from 'vue-notification/dist/ssr'
-import '~/assets/style/notification.scss'
-
 // back to top
 import VueScrollTo from 'vue-scrollto'
 
@@ -96,9 +92,6 @@ export default function(Vue, { router, head, isClient }) {
     x: false,
     y: true,
   })
-
-  // notifications
-  Vue.use(Notifications)
 
   router.beforeEach((to, from, next) => {
     if (from.name !== null) {
