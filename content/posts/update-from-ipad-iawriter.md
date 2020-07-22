@@ -4,7 +4,7 @@ date: 2019-11-14
 published: true
 slug: update-from-ipad-iawriter
 tags: ['iPad', 'Git']
-cover_image: ./images/update-from-ipad-iawriter.png
+cover_image: "./images/update-from-ipad-iawriter.png"
 canonical_url: false
 description: "我又开始玩我的 iPad 了"
 ---
@@ -19,7 +19,7 @@ description: "我又开始玩我的 iPad 了"
 
 另外，我还专门问了问开发者为什么 Listed 不支持评论：
 
-![和 Listed/Standard Notes 作者的交流](https://i.loli.net/2019/11/14/Cm4Lc78TPbZrkBe.png)
+![和 Listed/Standard Notes 作者的交流](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220619.png)
 
 // 我猜是开发者被垃圾评论骂怕了 😂
 
@@ -35,19 +35,19 @@ description: "我又开始玩我的 iPad 了"
 
 在 iPad 上面，我尝试使用 iA Writer 来编辑 Markdown 文档，利用 Working Copy 来更新 GitHub 仓库。由于 Working Copy 支持 **Edit in place**，因此我们在 iA Writer 中可以导入 Working Copy 的某个文件夹（比如博文文件夹 `posts`），从而直接编辑其中的 Markdown 文件。
 
-![在 iA Writer 中直接编辑 Working Copy 文件](https://i.loli.net/2019/11/14/jIKmWkgZ1nGwORq.png)
+![在 iA Writer 中直接编辑 Working Copy 文件](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220619-1.png)
 
 ## 更新流程
 
 - 利用 Working Copy 将博客源文件克隆至 iPad 上面
 
-![Working Copy 上面克隆仓库](https://i.loli.net/2019/11/14/cDnlHYPjMryvq3V.png)
+![Working Copy 上面克隆仓库](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220619-2.png)
 
 - 利用 iA Writer 打开 Working Copy 中的博客 `posts` 文件夹
 - 在 iA Writer 中创建新文章、编辑旧博客文章
 - 在 iA Writer 中通过快捷键 `Command + R` 直接预览文章
 
-![iA Writer 编辑文章](https://i.loli.net/2019/11/13/B4Xb32uxqg9cyaZ.png)
+![iA Writer 编辑文章](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220619-3.png)
 
 - 在 Working Copy 中通过 Git 直接将博客同步至 GitHub
 
@@ -57,7 +57,7 @@ iPad 胜在方便，不需要过多的配置即可直接撰写文章。爱了，
 
 除了上面的方法，Forestry.io 也是一个可以的选择。Forestry.io 是一个极度完善的静态博客 CMS 统一管理平台，支持 Hugo、VuePress、Gatsby 等诸多博客引擎。利用 Forestry 在线网页版本的后台管理，我们甚至可以直接的撰写文章内容，并在 Forestry 服务器上面渲染文章并预览。
 
-![Forestry 的文章编辑界面](https://i.loli.net/2019/11/14/XTa63nLopB2KQAR.png)
+![Forestry 的文章编辑界面](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220619-4.png)
 
 Forestry 虽然好用，但是 Forestry 在 iPad 上面的编辑体验并不太好，因为相对小的屏幕，Forestry 的文章编辑界面相当狭窄，令人遗憾。
 

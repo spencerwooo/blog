@@ -23,7 +23,7 @@ description: 借助 Google Analytics 为数据支撑，使用 Vercel Serverless 
 
 Google Analytics 非常强大，能够从非常多的维度来解读你网站的访客来源、浏览量、浏览设备等多种数据。这里当我们进入 Google Analytics 管理后台，在首页我们就可以看到我们网站每个路径在特定时间段之中的浏览数量。
 
-![Google Analytics 管理后台中我的博客上周 7 天的每个路径浏览数](https://i.loli.net/2020/06/25/1pqWdOxtTLK9fsv.png)
+![Google Analytics 管理后台中我的博客上周 7 天的每个路径浏览数](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-213128.png)
 
 实际上我们需要的就是这个数据。幸好，Google Analytics 提供了类似的 API，可以让我们根据页面路径、时间起止等参数来查询浏览数量。不过 Google Analytics 的原始 API 其实还是比较复杂的，而且其本身在国内访问还是不太顺畅，所以为了减轻我们静态网站前端的负担，**我们可以在 Vercel 上面用 Serverless 方案部署一个 API 中转站**，方便我们静态网站调用，从而实现「文章浏览量显示」的功能。
 
@@ -32,10 +32,10 @@ Google Analytics 非常强大，能够从非常多的维度来解读你网站的
 我们在 Google Analytics 中调用自己网站的分析数据时，需要首先开启 Google Analytics API，获取到鉴权密钥，才可以正常调用 API。我们可以根据 Google 官方教程：[Analytics Reporting API v4 - Enable the API](https://developers.google.com/analytics/devguides/reporting/core/v4/quickstart/service-py#1_enable_the_api)，或按照下面的办法来开启我们账户的 Google Analytics API：
 
 * 首先，前往官方 API 的 [setup tools](https://console.developers.google.com/start/api?id=analyticsreporting.googleapis.com&credential=client_key) 并根据提示进行设置，选择一个项目（或创建新的项目，比如 `ga-hit-count`），之后选择 Continue，就可以为我们这一项目开启 Google API 了；
-  ![为我们的项目开启 Google API](https://i.loli.net/2020/06/25/p1gf3sRLmWQn7N4.png)
+  ![为我们的项目开启 Google API](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-213128-1.png)
 * 接下来，我们会进入 Google API 的 Credentials 设置页面，这里我们首先设置 API 为 Analytics Reporting API，并选择 API 调用方为 Web server，再选择调用数据类型为 Application data，最后选择「不会使用 App Engine 或 Compute Engine」即可；
-  ![设置 Google API 类型](https://i.loli.net/2020/06/25/cH614VBCxrKnOPR.png)
-* 最后，我们设置基本信息，获取 Credentials 文件。我们设置 Service account name 的名字（比如 `blog-analytics`），设置 Role 为 `Service Account User`，选择 Key type 为 JSON，即可获取 API 凭证，点击 Continue 之后你就可以下载到这一 JSON 格式的 API 凭证文件了。 ![设置 API 凭证信息](https://i.loli.net/2020/06/25/AO8t72E4FV1YpSG.png)
+  ![设置 Google API 类型](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-213128-2.png)
+* 最后，我们设置基本信息，获取 Credentials 文件。我们设置 Service account name 的名字（比如 `blog-analytics`），设置 Role 为 `Service Account User`，选择 Key type 为 JSON，即可获取 API 凭证，点击 Continue 之后你就可以下载到这一 JSON 格式的 API 凭证文件了。 ![设置 API 凭证信息](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-213128-3.png)
 
 我们获取到的 JSON 文件里面应该包含有以下的重要信息：
 
@@ -51,7 +51,7 @@ Google Analytics 非常强大，能够从非常多的维度来解读你网站的
 
 其中，我们重点关注的就是这三个 API 凭证信息：项目 ID `project_id`、凭证私钥 `private_key` 以及客户邮箱 `client_email`。其中 `private_key` 是我们 API 访问的重要凭证，需要妥善保管，也一定不能签入 `git`。另外，我们需要将 `client_email` 定义的邮箱**作为新用户加入 Google Analytics 后台**，从而让这一邮箱访问到我们 Google Analytics 的数据。详见：[Add, edit, and delete users and user groups](https://support.google.com/analytics/answer/1009702)。
 
-![将 client_email 的邮箱加入 Google Analytics 后台](https://i.loli.net/2020/06/25/bjGvsiwk1c7UHhI.png)
+![将 client_email 的邮箱加入 Google Analytics 后台](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-213128-4.png)
 
 ## 使用 Vercel 自己部署 Serverless API 用于前端显示
 
@@ -77,7 +77,7 @@ export default {
 其中，这些内容我们都需要一一进行设置：
 
 * `viewId`：是你的 Google Analytics 视图 ID，可以在 Google Analytics 后台的 Admin » View » View Settings 中找到；
-  ![Google Analytics 视图 ID 的设定位置](https://i.loli.net/2020/06/25/VIWUvCqSyX23jed.png)
+  ![Google Analytics 视图 ID 的设定位置](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-213128-5.png)
 * `projectId`：是刚刚凭证 JSON 文件中的 `project_id`，直接按照刚刚的凭证填写即可；
 * `privateKey`：是通过 Vercel 环境变量获取到的 API 凭证私钥，**这里不要更改**；
 * `clientEmail`：是刚刚凭证 JSON 文件中的 `client_email`，直接按照刚刚的凭证填写即可；
@@ -104,7 +104,7 @@ afROdsafbliOjPA==1Hk3mdsafEdBa
 
 我们复制这一私钥，再粘贴进入刚刚新建的 `PRIVATE_KEY` 的值。
 
-![在 Vercel 项目的设置中添加环境变量 PRIVATE_KEY，并存入我们的私钥凭证](https://i.loli.net/2020/06/25/XbiO8D1q34NTFPm.png)
+![在 Vercel 项目的设置中添加环境变量 PRIVATE_KEY，并存入我们的私钥凭证](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-213128-6.png)
 
 之后，我们需要重新触发一次部署（比如随便向 GitHub 仓库中 commit 并 push 一些东西），完成后我们即可通过 Vercel 给我们提供的域名 `https://{VERCEL_DOMAIN_NAME}.vercel.app` 访问我们的 API。
 
@@ -112,7 +112,7 @@ afROdsafbliOjPA==1Hk3mdsafEdBa
 
 默认情况下，当我们直接访问 `https://{VERCEL_DOMAIN_NAME}.vercel.app` 时，因为没有设定 `index.html`，所以 Vercel 会将当前列表下的文件列出。
 
-![默认情况下直接访问 Vercel 上部署的 Serverless API 域名](https://i.loli.net/2020/06/25/QFWT31dfj6ClvaO.png)
+![默认情况下直接访问 Vercel 上部署的 Serverless API 域名](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-213128-7.png)
 
 我们 API 的根域名实际上就是 `https://{VERCEL_DOMAIN_NAME}.vercel.app`。我们可以通过下面的默认请求（添加在 API 根域名后面）来访问 API：
 
@@ -167,6 +167,6 @@ afROdsafbliOjPA==1Hk3mdsafEdBa
 
 那么在此基础上，我们即可借助自己在 Vercel 上面部署的 API，来请求 Google Analytics 给我们当前路径的浏览量记录了。利用 `axios` 或者类似的前端 HTTP 请求库，我们可以非常轻松的请求我们部署的 Serverless API，并将结果进行处理，显示在我们的网站里面。你正在浏览的我的博客，就是利用这样的原理实现访问数据的显示。
 
-![用这样的方法在我自己博客上面显示文章的浏览量](https://i.loli.net/2020/06/25/uqOC3P5HTg9VG1W.png)
+![用这样的方法在我自己博客上面显示文章的浏览量](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-213128-8.png)
 
 到此，我们借助 Google Analytics 和 Vercel Serverless 为文章添加浏览量统计的功能就大功告成了。希望大家能用上本文的办法，为自己的静态博客网站快速添加上文章阅读量统计。感谢阅读 🍒

@@ -34,11 +34,11 @@ In this work, from the perspective of regarding the adversarial example generati
 
 首先，论文将「Transfer-based 黑盒对抗攻击」的过程和「常规训练图像分类模型」的过程，看作是一致的优化过程 — Optimization process。在常规训练模型的过程中，我们通常有这样的步骤：
 
-![常规图像分类模型训练过程](https://i.loli.net/2020/05/21/mpCSdHKG9ZvrX46.png)
+![常规图像分类模型训练过程](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-214137.png)
 
 那么，与之相对应的，在 Transfer-based 黑盒对抗攻击中，我们同样有这样的步骤：
 
-![Transfer-based 黑盒攻击过程](https://i.loli.net/2020/05/21/W6zUSHRFg2tcoIX.png)
+![Transfer-based 黑盒攻击过程](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-214137-1.png)
 
 非常容易发现，在这两个过程中：
 
@@ -102,7 +102,7 @@ $$
 
 将 SIM 和 NI-FGSM 结合，就得到了 SI-NI-FGSM 攻击，基本算法如下。
 
-![SI-NI-FGSM 算法](https://i.loli.net/2020/05/21/3WD2e7qTxCn18fm.png)
+![SI-NI-FGSM 算法](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-214137-2.png)
 
 ## 评估方法与实验数据
 
@@ -112,7 +112,7 @@ $$
 
 首先论文随机选择 1000 张 ImageNet 的原始图片，将缩放比例设置为 `[0.1, 2.0]`、步长 `0.1`。缩放后图像作为输入送入测试模型 Inc-v3、Inc-v4、IncRes-2 和 Res-101 中，得到 1000 张图片的平均损失：
 
-![不同缩放比例下模型 Inc-v3、Inc-v4、IncRes-2 和 Res-101 的平均 loss](https://i.loli.net/2020/05/21/K94IgUF2jph1vyD.png)
+![不同缩放比例下模型 Inc-v3、Inc-v4、IncRes-2 和 Res-101 的平均 loss](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-214137-3.png)
 
 论文发现损失在缩放比例为 `[0.1, 1.3]` 之间时是稳定平滑的，即原图和缩放 `[0.1, 1.3]` 倍数后图像相比损失相近。为了能够在优化对抗扰动过程中利用模型 Scale-invariant 性质，实验控制图像的缩放比例在 `[0.1, 1.3]` 之间。
 
@@ -120,7 +120,7 @@ $$
 
 论文将 SI-NI-FGSM 和基准攻击 TIM、DIM、TI-DIM 分别依次整合，并比较单模型攻击设定下黑盒攻击的成功率（%），得到如下的实验结果。
 
-![攻击单个模型的成功率](https://i.loli.net/2020/05/21/EtK3kFyXer1jupo.png)
+![攻击单个模型的成功率](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-214137-4.png)
 
 可以发现：
 
@@ -131,7 +131,7 @@ $$
 
 论文继续使用论文（TIM、SI-NI-TIM；DIM、SI-NI-DIM；TI-DIM、SI-NI-TI-DIM）攻击方法分别同时攻击一组相同 ensemble 权重的集成模型（Inc-v3、Inc-v4、IncRes-v2 和 Res-101）：
 
-![攻击集成模型的成功率](https://i.loli.net/2020/05/21/QR1Ll8kPWZw97AC.png)
+![攻击集成模型的成功率](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-214137-5.png)
 
 可以发现：
 
@@ -147,7 +147,7 @@ $$
 
 论文将 SI-NI-TI-DIM 和 MI-FGSM、TI-DIM（目前性能最好的基于迁移的黑盒攻击）进行对比，使用这三种攻击分别在 Inc-v3、Inc-v4、IncRes-v2 和 Res-101 集成模型上生成对抗样本，并用生成的对抗样本攻击上面的防御模型。
 
-![攻击其他防御模型](https://i.loli.net/2020/05/21/cJRraZpz3LfYMUG.png)
+![攻击其他防御模型](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-214137-6.png)
 
 最终实验表明：SI-NI-TI-DIM 达到平均 90.3% 的攻击成功率，比目前先进的攻击手段高出 14.7%.
 
@@ -155,7 +155,7 @@ $$
 
 论文进一步对比了 NI-FGSM 和 MI-FGSM，使用 Inc-v3 模型迭代 4 至 16 次生成对抗样本，迁移攻击 Inc-v4 和 IncRes-v2 模型的成功率。
 
-![NI-FGSM 和 MI-FGSM迭代 4 至 16 次生成对抗样本迁移攻击成功率](https://i.loli.net/2020/05/21/VqsJh1IUnLxDG3K.png)
+![NI-FGSM 和 MI-FGSM迭代 4 至 16 次生成对抗样本迁移攻击成功率](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-214137-7.png)
 
 分析发现：NI-FGSM 在相同的迭代次数下能获得比 MI-FGSM 更高的攻击成功率。也就是，NI-FGSM 用更少的迭代次数就能达到和 MI-FGSM 相近的性能。
 
@@ -167,7 +167,7 @@ $$
 
 同时，论文还和 FGSM、I-FGSM、PGD 和 C&W 传统攻击进行了对比，实验表明 NI-FGSM 和 SI-NI-FGSM 在白盒设定下和 C&W 一样能够达到 100% 的攻击成功率，黑盒设定下性能远远超越其他攻击。
 
-![和传统攻击算法性能对比](https://i.loli.net/2020/05/21/VX5MSzUnafwg8AB.png)
+![和传统攻击算法性能对比](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-214137-8.png)
 
 ## 结论
 

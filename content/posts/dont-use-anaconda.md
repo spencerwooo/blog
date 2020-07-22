@@ -4,7 +4,7 @@ date: 2020-02-08
 published: true
 slug: dont-use-anaconda
 tags: ['Dev Environment', 'Machine Learning', 'Medium']
-cover_image: ./images/dont-use-anaconda.png
+cover_image: "./images/dont-use-anaconda.png"
 canonical_url: false
 description: "Don’t use Anaconda: How to setup a decent machine learning environment?"
 ---

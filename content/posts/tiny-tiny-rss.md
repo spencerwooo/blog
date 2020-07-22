@@ -4,7 +4,7 @@ date: 2019-11-18
 published: true
 slug: tiny-tiny-rss
 tags: ['RSS', 'Tech', 'Server']
-cover_image: ./images/tiny-tiny-rss.png
+cover_image: "./images/tiny-tiny-rss.png"
 canonical_url: false
 description: "使用 Awesome TTRSS 部署 Tiny Tiny RSS 的 Docker 镜像"
 ---
@@ -21,7 +21,7 @@ description: "使用 Awesome TTRSS 部署 Tiny Tiny RSS 的 Docker 镜像"
 
 ## Tiny Tiny RSS 的搭建
 
-![使用 Feedly 主题的 Tiny Tiny RSS 服务端](https://i.loli.net/2019/11/19/aCty2KspU5f1gHr.jpg)
+![使用 Feedly 主题的 Tiny Tiny RSS 服务端](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220309.jpg)
 
 Tiny Tiny RSS 是一个非常优秀的开源免费 RSS 服务引擎，可以直接部署在我们自己的服务器上面，借助于 Docker 优秀方便的容器技术和 Let’s Encrypt 异常简单的 SSL 证书签署机器人 `certbot`，我们几分钟之内就可以部署上线属于我们自己的 RSS 服务，运行在我们可控的服务器上，环境稳定，刷新及时，并且完全免费。👍（当然，除了服务器需要一定的费用。）
 
@@ -31,7 +31,7 @@ Tiny Tiny RSS 是一个非常优秀的开源免费 RSS 服务引擎，可以直�
 
 在开始之前，首先我们需要准备一个位于公网的服务器，以及一个可以通过 SSH 连接到服务器上的本地设备。这里我使用我同（bai）学（piao）的已经备案的阿里云服务器作为运行 Tiny Tiny RSS 的服务器，并使用 iPad 和 Blink Shell（一个支持 SSH 协议的 iOS 终端 App）作为我的操作设备。Blink Shell 是 iPad 上面最好用的 SSH/Mosh 工具，推荐大家使用。我们在 Blink Shell 中配置好服务器私钥，通过 SSH 登录服务器。
 
-![利用 Blink Shell 登录至服务器](https://i.loli.net/2019/11/19/iyk8KrUBYzodPqS.jpg)
+![利用 Blink Shell 登录至服务器](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220309-1.jpg)
 
 ## 利用 Docker 部署 Tiny Tiny RSS
 
@@ -51,7 +51,7 @@ sudo systemctl start docker
 
 然后，我们检查一下 Docker 是否启动成功。我们执行命令：`sudo systemctl status docker`：
 
-![检查 Docker 服务状态](https://i.loli.net/2019/11/20/L6VicoJy8OCBpxq.jpg)
+![检查 Docker 服务状态](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220309-2.jpg)
 
 看到如上的输出，说明我们 Docker 服务启动成功。
 
@@ -77,7 +77,7 @@ chmod +x /usr/local/bin/docker-compose
 
 最后我们运行 `docker-compose --version` 来检查安装是否成功。如果有如下输出，说明我们的 `docker-compose` 安装成功：
 
-![检查 docker-compose 安装情况](https://i.loli.net/2019/11/20/6j3QgG1FszTPp5Y.jpg)
+![检查 docker-compose 安装情况](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220309-3.jpg)
 
 ### 安装 Tiny Tiny RSS 及其周边服务
 
@@ -93,7 +93,7 @@ curl -fLo docker-compose.yml https://github.com/HenryQW/Awesome-TTRSS/raw/master
 
 修改 docker-compose.yml 里面的内容：
 
-![修改 docker-compose 配置文件](https://i.loli.net/2019/11/20/sn4MP8uvb3WIzDt.png)
+![修改 docker-compose 配置文件](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220309-4.png)
 
 - 在配置文件的第 7 行和第 23 行，将 PostgreSQL 数据库的默认密码进行修改。暴露在公网的数据库使用默认密码非常危险。
 - 在配置文件的第 18 行，将 Tiny Tiny RSS 服务的部署网址修改。比如我的部署网址是 `https://ttrss.tenkeyseven.com/`
@@ -108,7 +108,7 @@ docker-compose up -d
 
 等待脚本执行完成，如果一切没有问题，那么接下来输入 `docker ps`，我们应该看到类似下面的结果：
 
-![查看正在运行的 Docker 容器](https://i.loli.net/2019/11/20/AxTdoa7YJCgI5i4.jpg)
+![查看正在运行的 Docker 容器](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220309-5.jpg)
 
 上面内容表示我们开启了四个 Docker 容器，分别是：
 
@@ -158,7 +158,7 @@ sudo systemctl start nginx
 sudo systemctl status nginx
 ```
 
-![检查 Nginx 运行状态](https://i.loli.net/2019/11/20/gakiyznx5NhXT16.jpg)
+![检查 Nginx 运行状态](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220309-6.jpg)
 
 ### 签署 SSL 证书，部署 HTTPS
 
@@ -184,13 +184,13 @@ sudo systemctl restart nginx
 
 此时我们如果直接访问这一域名，应该就可以看到带有 HTTPS 的 Nginx 默认网站：
 
-![HTTPS 配置成功的 Nginx 默认网站](https://i.loli.net/2019/11/20/jWwRplvBD8oOczJ.jpg)
+![HTTPS 配置成功的 Nginx 默认网站](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220309-7.jpg)
 
 接下来，我们修改 Nginx 的配置文件，配置 Nginx 反向代理，将访问 `https://ttrss.tenkeyseven.com` 的请求指向我们刚刚部署好的 Tiny Tiny RSS 服务，对服务器来说，也就是 `127.0.0.1:181` 这一地址。（如果你没有更改 Tiny Tiny RSS 的端口号的话。）
 
 Nginx 的配置文件位于 `/etc/nginx/nginx.conf`，我们打开这一文件：
 
-![Nginx 配置文件](https://i.loli.net/2019/11/20/J9yaSejPN1iLnkO.png)
+![Nginx 配置文件](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220309-8.png)
 
 - 在 `http` 项下，`server` 项前定义 `upstream` 服务：
 
@@ -201,7 +201,7 @@ Nginx 的配置文件位于 `/etc/nginx/nginx.conf`，我们打开这一文件�
 	}
 	```
 
-	![Nginx upstream 服务声明](https://i.loli.net/2019/11/20/XLAlTsegadr5cPE.jpg)
+	![Nginx upstream 服务声明](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220309-9.jpg)
 
 - 在刚刚 `certbot` 为我们生成好的响应域名 `server` 项下，注释掉第一行定义 `root` 的内容，并将 `location /` 项修改为：
 
@@ -227,7 +227,7 @@ Nginx 的配置文件位于 `/etc/nginx/nginx.conf`，我们打开这一文件�
 	}
 	```
 
-	![Nginx 配置文件：反向代理配置](https://i.loli.net/2019/11/20/LVXAFOfywRB2inr.jpg)
+	![Nginx 配置文件：反向代理配置](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220309-10.jpg)
 
 这样，我们再次执行 `sudo systemctl restart nginx` 重启 Nginx 服务，一切顺利的话，我们就可以通过我们刚刚签署 SSL 证书的域名访问我们部署好的 Tiny Tiny RSS 服务了！鼓掌 👏
 
@@ -235,7 +235,7 @@ Tiny Tiny RSS 的默认管理员账户密码是 admin 和 password，请在第�
 
 ## 配置 Tiny Tiny RSS
 
-![Tiny Tiny RSS 配置、主题](https://i.loli.net/2019/11/20/cis6yUboY2KStEn.jpg)
+![Tiny Tiny RSS 配置、主题](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220309-11.jpg)
 
 如果上面步骤没有问题的话，我们在服务器上面所部署的 Tiny Tiny RSS 本身就已经包含了：
 

@@ -24,7 +24,7 @@ Dev on Windows with WSL 是我目前维护比较频繁的一个文档，它介�
     DOMException: Failed to execute 'appendChild' on 'Node': This node type does not support this method.
         at Object.appendChild (https://deploy-preview-54--dowww.netlify.app/a...
 
-![刷新页面，即可看到 Console 报错](https://i.loli.net/2020/05/12/ELSOZk4YmoHn81h.png)
+![刷新页面，即可看到 Console 报错](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215425.png)
 
 另外，在这一状态下，点击左侧的导航侧边栏，VuePress 不仅无法渲染出顺滑滚动的效果，我们甚至无法直接进行页面导航，点不开下拉菜单，偶尔也根本打不开任何其他页面，我们只能手动再次进入文档主页，重新定位刚刚的位置才能正常阅读。🎃
 
@@ -47,7 +47,7 @@ Dev on Windows with WSL 是我目前维护比较频繁的一个文档，它介�
 
 报错只发生于部署得到的 Netlify 网站上面，所以我们直接进入文档内部一页，点击刷新，待页面加载成功之后开启 Chrome Debugger 捕获 Exception。在这一状态下，bug 的复现非常简单，只需要点击任意一个侧边栏链接，我们就可以看到 Chrome Debugger 捕获到了相应的错误：
 
-![使用 Chrome Debugger 捕获出错位置](https://i.loli.net/2020/05/12/CsaWuSQ3k4rvAnt.png)
+![使用 Chrome Debugger 捕获出错位置](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215425-1.png)
 
 可以看到，出错的代码是：
 
@@ -105,7 +105,7 @@ Netlify 强制使用小写 URL 路径的方法是将直接访问包含有大写�
 curl -I https://deploy-preview-54--dowww.netlify.app/1.1/4-Advanced/4-2-LxRunOffline.html
 ```
 
-![请求 Netlify 上包含有大写字母 URL 的路径](https://i.loli.net/2020/05/08/sLYNtWo7D16wU3q.png)
+![请求 Netlify 上包含有大写字母 URL 的路径](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215425-2.png)
 
 可以看到 Netlify 是返回了一个 HTTP 301，并转发到了相应的小写字母 URL 对应的 location。而当我们直接请求小写字母版本的 URL 时：
 
@@ -113,7 +113,7 @@ curl -I https://deploy-preview-54--dowww.netlify.app/1.1/4-Advanced/4-2-LxRunOff
 curl -I https://deploy-preview-54--dowww.netlify.app/1.1/4-advanced/4-2-lxrunoffline.html
 ```
 
-![请求对应只有小写字母的 URL 路径](https://i.loli.net/2020/05/08/q5RBnexLKyUzNQO.png)
+![请求对应只有小写字母的 URL 路径](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215425-3.png)
 
 一切都恢复正常了。由于 VuePress 生成的静态文件的文件名都是按照我 Markdown 文件名来的，所以当我们直接的访问一个包含大写字母 URL 的内部页面时，由于 Netlify 的处理，我们实际上进入了一个全为小写字母 URL 的页面，此时 VuePress 自己就迷惑了，也就出现导航至其他页面时可能触发的 bug。
 

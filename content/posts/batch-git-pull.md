@@ -4,7 +4,7 @@ date: 2019-11-13
 published: true
 slug: batch-git-pull
 tags: ['Git', 'Tech']
-cover_image: ./images/batch-git-pull.png
+cover_image: "./images/batch-git-pull.png"
 canonical_url: false
 description: "如何一次更新多个 Git 仓库"
 ---
@@ -71,7 +71,7 @@ find . -maxdepth 3 -name .git -type d
 * `-name .git` 就是搜索名称为 `.git` 的内容
 * `-type d` 则指明了我们搜索的范畴：Directories（目录）
 
-![搜索 .git 文件夹](https://i.loli.net/2019/10/29/IVMEzwDqGpXK8me.png)
+![搜索 .git 文件夹](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-214839.png)
 
 一目了然，我们下面就这样对每个命令进行分解和解释。
 
@@ -89,7 +89,7 @@ find . -maxdepth 3 -name .git -type d
 2. `cut -c 6-`：我们利用 `cut` 工具将路径进行裁剪，`-c` 表示删减的是字符（Characters），`6-` 表示我们删去路径的前 6 个字符（即：`.git`）
 3. `rev`：将处理好的字符串反转回来
 
-![裁剪路径](https://i.loli.net/2019/10/29/KDFIBpGXTmcz8qv.png)
+![裁剪路径](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-214839-1.png)
 
 ### 利用 `xargs` 执行带参数的 `git pull`
 
@@ -101,7 +101,7 @@ xargs -I {} git -C {} pull
 
 由于 `git` 并不支持传入目录等参数，因此我们需要借助于 `xargs` 来给 `git` 传入拉取路径。上面的命令简明易懂，就相当于 `xargs` 告诉 `git` 拉取以上目录下的全部 Git 仓库。我们来看一看效果：
 
-![脚本效果](https://i.loli.net/2019/10/29/oCxk1O9SEP34RhW.gif)
+![脚本效果](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-214839-2.gif)
 
 b(￣▽￣)d 👍 成功\~
 

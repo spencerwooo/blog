@@ -4,7 +4,7 @@ date: 2020-03-16
 published: true
 slug: substats
 tags: ['Tech', 'Server', 'Serverless', 'Cloudflare']
-cover_image: ./images/substats.png
+cover_image: "./images/substats.png"
 canonical_url: false
 description: 'Subscriber statistics：专注提供各个网站和社区里用户的订阅者、关注者、粉丝数量的 Serverless API'
 ---

@@ -4,7 +4,7 @@ date: 2020-01-23
 published: true
 slug: cli-app-in-rust
 tags: ['Tech', 'Rust', 'CLI']
-cover_image: ./images/cli-app-in-rust.png
+cover_image: "./images/cli-app-in-rust.png"
 canonical_url: false
 description: "Rust 是如何保证「内存安全」的"
 ---
@@ -17,7 +17,7 @@ description: "Rust 是如何保证「内存安全」的"
 
 我决定自己尝试实现这个命令行工具，当然，我也相信 Python、Node.js、Ruby 等脚本语言一定适合做这些事情，毕竟 `cloc` 本身就是使用 Perl 实现的。不过，Rust 作为一门高效的、静态的、可以直接编译到三个操作系统的底层语言，还是很有吸引力的。因此我才决定使用 Rust 开新坑。
 
-![使用 Rust 实现的 cwim - Count words in Markdown](https://i.loli.net/2020/01/23/g1q5amsOedyE7op.png)
+![使用 Rust 实现的 cwim - Count words in Markdown](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215236.png)
 
 另外：cwim 的第一个小版本我已经编译并发布 Release 版本，有兴趣的同学可以前往 GitHub 查看：[spencerwooo/cwim](https://github.com/spencerwooo/cwim).
 
@@ -69,7 +69,7 @@ cargo --version
 
 VS Code 是一个通用的文本 / 代码编辑器，能够通过插件支持多种语言环境下代码的编写任务。我们下载 Rust 官方提供的 VS Code 插件：[Visual Studio Code Marketplace | Rust (rls)](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust)
 
-![Visual Studio Code Marketplace | Rust (rls)](https://i.loli.net/2020/01/24/QR4GTfrbq2DCHK8.png)
+![Visual Studio Code Marketplace | Rust (rls)](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215236-1.png)
 
 之后，我们用 Cargo 创建一个新的项目 `hello-rust`：
 
@@ -95,7 +95,7 @@ hello-rust      # 根目录
 
 用 VS Code 打开这一目录，我们即可开始 Rust 项目的编写。
 
-![使用 VS Code 撰写 Rust 项目](https://i.loli.net/2020/01/24/3gZDyvY95UHAtiC.png)
+![使用 VS Code 撰写 Rust 项目](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215236-2.png)
 
 使用下面命令即可运行项目：
 
@@ -119,7 +119,7 @@ Rust 的 Ownership（所有权）是保证 Rust 程序「内存安全」的重�
 
 Rust 是使用「栈」和「堆」这两种数据结构来对这两种内存分配形式进行划分的。为了更好的理解 Rust 的 Ownership 的工作机制，我们首先看看 Rust 是如何利用「栈」和「堆」进行内存分配。
 
-![使用「栈」和「堆」进行内存分配](https://i.loli.net/2020/01/25/qb3QyEH4euULclY.png)
+![使用「栈」和「堆」进行内存分配](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215236-3.png)
 
 首先，「栈」从实现上来说是一种效率非常高的数据结构，因为「栈」拥有「后进先出」的数据存储特点（LIFO），使得最后压入栈顶的元素会被最先从栈顶移出。这种数据结构的优势在于：当我们用「栈」来维护内存数据时，**我们只需要维护「栈顶」元素的信息即可**。同时，Rust 内存管理的「栈」在编译时即可知道其具体大小，静态分配内存空间即可[^3]。
 
@@ -167,17 +167,17 @@ fn main() {
 
 此时，编译器会报出 `error[E0382]: borrow of moved value: 's1'` 的错误。可以发现，当我们使用 String 存储字符串时，Rust 不会将变量的值「复制」，而是会将变量「移动」到目标变量中。这种情况下，Rust 会认为前一个变量 `s1` 已经不再有效（no longer valid），因此，当我们在之后试图访问 `s1` 时，Rust 就会报出这一错误。
 
-![error[E0382] 报错](https://i.loli.net/2020/01/25/VJ943b2TDswRB7N.png)
+![error[E0382] 报错](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215236-4.png)
 
 为什么 Rust 在使用「堆」进行动态内存分配时，会 move 而不 copy 呢？一方面是因为 copy 的消耗是比 move 大得多的；另一方面，Rust 这一设计恰好帮助我们避免了 C 语言中非常可能遇到的一种内存泄露的问题：**double free 异常**[^4]。
 
 Double free 异常是如何发生的？当我们使用 `String` 类型来存储字符串时，我们实际上存储了以下三个 field 的值：`ptr`、`len`、`capacity`。`ptr` 指向存储字符串内容的内存空间。比如 `let s1 = String::from("Hello");` 即声明了如下的存储方式：
 
-![String 的存储方式](https://i.loli.net/2020/01/25/7iJ18PQdtqfUcNz.png)
+![String 的存储方式](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215236-5.png)
 
 我们如果使用 `copy` 将 String `s1` 复制给 `s2`，我们实际上就将三个 field 的值 `ptr`、`len` 和 `capacity` 全部复制，也就是我们的 `ptr` 指针实际上指向上一块地址空间，如下图所示：
 
-![使用 copy 将 s1 复制给 s2](https://i.loli.net/2020/01/25/RKb2kyXjLS87VFT.png)
+![使用 copy 将 s1 复制给 s2](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215236-6.png)
 
 前面我们提到了，_对于一个「值」来说，当程序离开「值」的 owner 所在的 scope 之后，这一「值」就会被释放掉_，那么当我们离开 `s1` 和 `s2` 所在的 scope 之后，程序则会试图将这两个「值」的内存空间全部释放，而此时 `s1` 和 `s2` 指向同一块地址空间，**这种情况下就会出现 double free 异常的情况**。
 
@@ -185,11 +185,11 @@ Double free 异常是如何发生的？当我们使用 `String` 类型来存储�
 
 而我们 Rust 就通过「所有权」规避了这一问题，如下图所示，Rust 在上述过程中，实际上是将 `s1` 的值移动到了 `s2` 上，在 `s2` 的指针指向对应的内存空间时，Rust 会认为 `s1` 此时已经无用了，从而直接 invalidate 掉 `s1`，那么当我们程序离开当前 scope 后，valid 的「值」只有 `s2`，Rust 就只会将 `s2` 释放，从而避免出现 double free 异常的情况。
 
-![Rust 中 s1 move 给 s2 之后，s1 被认为 invalid](https://i.loli.net/2020/01/25/n6DWijACRFa43Bw.png)
+![Rust 中 s1 move 给 s2 之后，s1 被认为 invalid](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215236-7.png)
 
 不过，如果我们此时一定要访问 `s1` 的内容怎么办？Rust 有一个专门的方法，让 `s2` 创建时，不 move 而是深度拷贝 `s1` 的全部内容，如下图所示：
 
-![Rust 中将 s1 deep copy 给 s2](https://i.loli.net/2020/01/25/XxrfdiQBzt4MNFY.png)
+![Rust 中将 s1 deep copy 给 s2](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215236-8.png)
 
 这里 Rust 所做的事情类似于其他语言中的 deep copy —— 花费更大的开销，将 `s1` 字符串对应的「堆」复制一个，再分配内存空间存储复制出来的 `s1` 并将之赋给 `s2`。在 Rust 中我们可以用 `<VARIABLE>.clone()` 来表示这一功能：
 

@@ -4,7 +4,7 @@ date: 2020-03-12
 published: true
 slug: remote-jupyter-lab
 tags: ['Machine Learning', 'Jupyter', 'Server', 'Dev Environment']
-cover_image: ./images/remote-jupyter-lab.png
+cover_image: "./images/remote-jupyter-lab.png"
 canonical_url: false
 description: "Remote Jupyter Lab: how to utilize Jupyter Lab to its fullest on a remote server?"
 ---

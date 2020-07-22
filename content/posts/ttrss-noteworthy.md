@@ -4,7 +4,7 @@ date: 2020-03-13
 published: true
 slug: ttrss-noteworthy
 tags: ['Server', 'RSS', 'Tech']
-cover_image: ./images/ttrss-noteworthy.png
+cover_image: "./images/ttrss-noteworthy.png"
 canonical_url: false
 description: 'Tiny Tiny RSS 部署踩坑'
 ---
@@ -27,7 +27,7 @@ description: 'Tiny Tiny RSS 部署踩坑'
 
 首先明确一下，更新 Awesome TTRSS 至最新版时，实际上更新了全部组件，包括 Tiny Tiny RSS 本体、主题、插件等等。比如这次更新（2020 年 2 月更新）就将 [Feedly 主题](https://github.com/levito/tt-rss-feedly-theme) 最新的更新中加入的 `feedly-cozy.css`、`feedly-sepia.css` 等等主题全部加入了。
 
-![更新之后加入的最新的 Feedly 主题](https://i.loli.net/2020/03/13/N2rpKWhFJ7RuUMa.png)
+![更新之后加入的最新的 Feedly 主题](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220455.png)
 
 我推荐大家手动执行更新。更新 Tiny Tiny RSS 本体：
 
@@ -64,7 +64,7 @@ docker-compose up -d
 
 通常，为了适配第三方 RSS 阅读器比如 Reeder，我们需要使用 Fever Emulation API 进行「登录」。首先我们必须开启 Tiny Tiny RSS 外部 API 访问的权限。在 Preference » General » Enable API 处开启：
 
-![设置允许通过外部 API 访问 Tiny Tiny RSS](https://i.loli.net/2020/03/13/XjfVUsYgFc89eAN.png)
+![设置允许通过外部 API 访问 Tiny Tiny RSS](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220455-1.png)
 
 Fever Emulation 的 API 包含有三个部分：
 
@@ -74,14 +74,14 @@ Fever Emulation 的 API 包含有三个部分：
 
 在 Preferences » Personal data / Authentication » Personal data » Full name 处设置的用户名就是你 **Fever API 的用户名**：
 
-![找到你的用户名](https://i.loli.net/2020/03/13/VMza6fixXUPs3g2.png)
+![找到你的用户名](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220455-2.png)
 
 在 Preferences » Fever Emulation 处你可以找到：
 
 1. Fever API 地址
 2. 设置 Fever API 密码的地方
 
-![获取 Fever API 地址并设置 Fever Emulation 密码](https://i.loli.net/2020/03/13/NXdxu4rbYR3vklc.png)
+![获取 Fever API 地址并设置 Fever Emulation 密码](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220455-3.png)
 
 要知道，设置 Fever API 的密码时点击 Set Password 并不会提示「成功」，不过你可以从 XHR 请求中看到 Password saved 的 response，**所以其实你的密码已经保存啦**。用这里设置的 API 地址、用户名和密码，我们就能成功登录 Reeder 等 RSS 阅读器了。
 
@@ -91,15 +91,15 @@ Fever Emulation 的 API 包含有三个部分：
 
 1. 在 Preferences » Preferences » Articles 中关闭 Combined mode 的设置：
 
-   ![关闭 Combined mode](https://i.loli.net/2020/03/13/5onYuC3lBRbja4y.png)
+   ![关闭 Combined mode](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220455-4.png)
 
 2. 回到主界面，在右上角的汉堡键 » Toggle widescreen mode 处点击打开宽屏模式：
 
-   ![打开宽屏模式](https://i.loli.net/2020/03/13/pTdZRzKOHmMjoru.png)
+   ![打开宽屏模式](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220455-5.png)
 
 这样 Tiny Tiny RSS 就会以分栏视图显示文章列表和文章内容了。
 
-![Tiny Tiny RSS 分栏视图](https://i.loli.net/2020/03/13/2wLi7d1hn5SjRtE.png)
+![Tiny Tiny RSS 分栏视图](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220455-6.png)
 
 另外，我的基于 Feedly 修改的主题配置文件：[GitHub - Gist](https://gist.github.com/spencerwooo/7a373a3c921a50953ec12f329452ee27)
 
@@ -107,7 +107,7 @@ Fever Emulation 的 API 包含有三个部分：
 
 如果你使用了 Awesome TTRSS 中包含的 Mercury 全文抓取和 OpenCC 繁简转换 API，那么你应该在 `docker ps` 的输出中看到这两个服务的身影：
 
-![docker ps 的输出](https://i.loli.net/2020/03/13/1gqOBVUvX5h7M63.png)
+![docker ps 的输出](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220455-7.png)
 
 如果你这两个服务的配置和原配置一致：
 
@@ -131,15 +131,14 @@ service.opencc:
 
 那么，你只需要在 Tiny Tiny RSS 的 Preferences 中开启这两个插件，并将 API 地址依次设置为如下即可。（Docker 会自动探索相应的服务 API 地址。）
 
-|        Mercury         |        OpenCC         |
-| :--------------------: | :-------------------: |
-| `service.mercury:3000` | `service.opencc:3000` |
-
-![Mercury 全文抓取和 OpenCC 繁简转换 API 设置](https://i.loli.net/2020/03/13/Svf5Kc6wHu8kPLz.png)
+|                                               Mercury                                               |                                               OpenCC                                               |
+| :-------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------: |
+|                                       `service.mercury:3000`                                        |                                       `service.opencc:3000`                                        |
+| ![Mercury 全文抓取](https://cdn.spencer.felinae98.cn/blog/2020/07/Snipaste_2020-07-22_22-13-39.png) | ![OpenCC 繁简转换](https://cdn.spencer.felinae98.cn/blog/2020/07/Snipaste_2020-07-22_22-14-10.png) |
 
 注意，你需要在每一个订阅源中明确指定使用 Mercury 或 OpenCC 服务（右键编辑），才可以真正保证服务的准确运行。
 
-![编辑订阅源，开启 Mercury 或 OpenCC 服务](https://i.loli.net/2020/03/13/8Y6uIm3Wi1flDqJ.png)
+![编辑订阅源，开启 Mercury 或 OpenCC 服务](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220455-9.png)
 
 ## 如何调试、查看 Tiny Tiny RSS 与其他容器服务的 log
 
@@ -150,7 +149,7 @@ Docker 容器的 log 查看非常简单。如果我们想用 `docker-compose` �
 docker-compose logs --tail 5
 ```
 
-![查看 docker-compose 启动的全部服务的 log](https://i.loli.net/2020/03/13/yQkgol9RceNnJXA.png)
+![查看 docker-compose 启动的全部服务的 log](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220455-10.png)
 
 我们可以用下面的命令查看单个服务的 log：
 
@@ -159,7 +158,7 @@ docker-compose logs --tail 5
 docker logs mercury --tail 5
 ```
 
-![查看 Mercury 全文抓取的 log](https://i.loli.net/2020/03/13/czJECQs8nrIU5qm.png)
+![查看 Mercury 全文抓取的 log](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220455-11.png)
 
 另外，我们也可以用下面的命令查看实时更新的 log：
 
@@ -168,7 +167,7 @@ docker logs mercury --tail 5
 docker logs mercury --tail 10 -f
 ```
 
-![查看实时更新的 Mercury 服务](https://i.loli.net/2020/03/13/yiaoMZ8QnI91hzc.png)
+![查看实时更新的 Mercury 服务](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220455-12.png)
 
 ## 如何持久化 Tiny Tiny RSS 图标
 
@@ -191,6 +190,6 @@ sudo chmod -R 777 feed-icons
 
 这样，Tiny Tiny RSS 下载的 favicon 就全部挂载到本机，更新 Docker 容器也不会对这些内容造成任何影响了。
 
-![将订阅源的 icon 挂载到容器外部](https://i.loli.net/2020/03/13/tkAfWmMXYLITcS9.png)
+![将订阅源的 icon 挂载到容器外部](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-220455-13.png)
 
 感谢阅读。🙇‍♂️

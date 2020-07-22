@@ -4,14 +4,14 @@ date: 2019-12-29
 published: true
 slug: bitweb-auto-login
 tags: ['Automation', 'Shortcuts', 'BIT']
-cover_image: ./images/bitweb-auto-login.png
+cover_image: "./images/bitweb-auto-login.png"
 canonical_url: false
 description: "自动化登录 BIT-Web 的最佳实践"
 ---
 
 BIT-Web 是北京理工大学校园 Wi-Fi，专门用于笔记本等桌面设备，另外还有 BIT-Mobile 用于移动设备。但是，BIT-Mobile 有时候并没有 BIT-Web 稳定，自动登录不是那么靠谱，我们也不能通过 BIT-Mobile 登录使用免费运营商宽带，这些场景下我们都需要在移动设备上连接至 BIT-Web 进行手动登录。
 
-![BIT-Web 和 BIT-Mobile 的对比](https://i.loli.net/2019/12/03/3V7DesynEPc4zdk.png)
+![BIT-Web 和 BIT-Mobile 的对比](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215042.png)
 
 最近我的同学跟我说，BIT-Web 的登录页面在移动端（尤其是 Android 平台）上不能正常的显示「密码管理器」，也就不能直接填充密码，每次都需要手动输入。这令人非常烦恼，如何才能实现在连接到 BIT-Web 上之后自动发送登录认证请求来连接至校园网呢？
 
@@ -25,7 +25,7 @@ BIT-Web 是北京理工大学校园 Wi-Fi，专门用于笔记本等桌面设备
 
 在这背后，我们事实上是给学校校园网登录认证服务器发送了一个带有我们「账号」和「密码」的登录请求（实际来说可能是账号密码组合出的加密认证令牌），之后校园网认证服务器核实我们的身份，并反馈我们认证结果，给予上网权限。
 
-![连接至 BIT-Web 并进行认证过程发送的网络请求](https://i.loli.net/2019/12/29/LzhZjYvgDCxVHby.png)
+![连接至 BIT-Web 并进行认证过程发送的网络请求](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215042-1.png)
 
 这样来说，我们事实上就只需要在每次连接至 BIT-Web 网络时，自动发送这一请求，即可实现自动登录校园网的功能。在 iOS 平台，我们有相当方便的工具来制作发送请求的脚本：快捷指令 Shortcuts，利用 Shortcuts 我们可以定制一个「动作」，实现自动登录的功能。
 
@@ -72,7 +72,7 @@ curl --request POST \
 >
 > 这里如果登录失败，校园网认证服务器会直接返回登录失败的原因。比如：已欠费、密码错误等。按照错误信息进行相应的调试即可。
 
-![cURL 测试登录 BIT-Web 效果](https://i.loli.net/2019/12/29/4LtWYlVFU6fpnAb.png)
+![cURL 测试登录 BIT-Web 效果](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215042-2.png)
 
 上面的 HTTP 请求我来简单分解介绍一下。首先，请求是 `POST` 的方法，格式为 `application/x-www-form-urlencoded`，请求地址（即 url 地址）为 `http://10.0.0.55:801/include/auth_action.php`，参数分别为：
 
@@ -91,9 +91,9 @@ curl --request POST \
 
 首先，在 Shortcuts 里面创建新动作，并搜索加入模块「Get contents of URL」。点击模块下部的 Show More，在其中按下图进行配置：
 
-<!-- ![BIT-Web 登录认证请求模块](https://i.loli.net/2019/12/29/dKnXm2GWcAeRHrD.png) -->
+<!-- ![BIT-Web 登录认证请求模块](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215042-3.png) -->
 
-<p><img src="https://i.loli.net/2019/12/29/dKnXm2GWcAeRHrD.png" alt="BIT-Web 登录认证请求模块" width="500px"></p>
+<p><img src="https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215042-3.png" alt="BIT-Web 登录认证请求模块" width="500px"></p>
 
 - URL 设置为：`http://10.0.0.55:801/include/auth_action.php`
 - Method 设置为：`POST`
@@ -108,24 +108,24 @@ curl --request POST \
 
 在模块「Get contents of URL」下方添加模块「Text」，**将「Text」的值设置为「Contents of URL」**，也就是上一步网络请求的返回结果。
 
-<!-- ![将返回数据用 Text 模块规格化](https://i.loli.net/2019/12/29/c1DTOqN8vQJgpGL.jpg) -->
+<!-- ![将返回数据用 Text 模块规格化](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215042-4.jpg) -->
 
-<p><img src="https://i.loli.net/2019/12/29/c1DTOqN8vQJgpGL.jpg" alt="将返回数据用 Text 模块规格化" width="500px"></p>
+<p><img src="https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215042-4.jpg" alt="将返回数据用 Text 模块规格化" width="500px"></p>
 
 继续，在下面添加模块「If」，用来判断我们登录成功与否。将 If 模块的判断条件设置为「contains」，包含字符设置为 `login_ok`：
 
 - 如果匹配成功：说明登录 BIT-Web 成功，发送登录成功通知
 - 如果匹配失败（进入 Otherwise 部分）：说明登录 BIT-Web 失败，发送登录失败通知以及失败的请求返回的数据
 
-<!-- ![BIT-Web 登录返回数据处理模块](https://i.loli.net/2019/12/29/W3ePoZXzOkjsqpQ.jpg) -->
+<!-- ![BIT-Web 登录返回数据处理模块](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215042-5.jpg) -->
 
-<p><img src="https://i.loli.net/2019/12/29/W3ePoZXzOkjsqpQ.jpg" alt="BIT-Web 登录返回数据处理模块" width="500px"></p>
+<p><img src="https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215042-5.jpg" alt="BIT-Web 登录返回数据处理模块" width="500px"></p>
 
 之后，我们测试。将手机连接至校园网 BIT-Web，尝试执行这一 Shortcuts 动作。如果一切顺利，那么你应该可以登录成功，得到如下通知：
 
-<!-- ![BIT-Web 登录成功](https://i.loli.net/2019/12/29/KRnBAS9ygtz4lQb.jpg) -->
+<!-- ![BIT-Web 登录成功](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215042-6.jpg) -->
 
-<p><img src="https://i.loli.net/2019/12/29/KRnBAS9ygtz4lQb.jpg" alt="BIT-Web 登录成功" width="500px"></p>
+<p><img src="https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215042-6.jpg" alt="BIT-Web 登录成功" width="500px"></p>
 
 ### 定义动作触发条件
 
@@ -133,15 +133,15 @@ curl --request POST \
 
 我们点击 Shortcuts 中间菜单「Automation」，点击上方加号，选择 Create Personal Automation。之后，在菜单中选择 WLAN，在下方菜单中点击 Choose 并选择 BIT-Web。
 
-![配置连接至 BIT-Web 的自动触发器](https://i.loli.net/2019/12/29/as4dlTP6xqKHieG.png)
+![配置连接至 BIT-Web 的自动触发器](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215042-7.png)
 
 之后，点击右上角 Next，在添加动作模块的页面点击加号，添加一个「Run Shortcut」的模块。
 
-![添加 Run Shortcut 的模块](https://i.loli.net/2019/12/29/U7QO8EF5J1gNRca.jpg)
+![添加 Run Shortcut 的模块](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215042-8.jpg)
 
 接下来，将「Run Shortcut」模块的执行动作设置为我们刚刚制作的 BIT-Web Shortcut 动作。其他内容无需改动。
 
-![配置自动执行上一步制作的 BIT-Web Shortcut 动作](https://i.loli.net/2019/12/29/GhiWC1arb9uwQeV.png)
+![配置自动执行上一步制作的 BIT-Web Shortcut 动作](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215042-9.png)
 
 之后，点击 Next > Done 保存动作。
 
@@ -155,6 +155,6 @@ curl --request POST \
 
 另外，如果上面的触发总是无法成功，那么你也可以直接将 BIT-Web Shortcut 动作固定在主屏幕，每次连接到 BIT-Web 之后手动点击执行快捷指令即可。这肯定比跳转登录认证页面输入账号密码登录方便许多。
 
-![直接将 BIT-Web 登录快捷指令固定到主屏幕](https://i.loli.net/2019/12/29/uEm2ZR5gdKXW9iL.jpg)
+![直接将 BIT-Web 登录快捷指令固定到主屏幕](https://cdn.spencer.felinae98.cn/blog/2020/07/20200722-215042-10.jpg)
 
 自动化的操作比人力重复无效劳动要方便许多，打卡、签到，日复一日的登录、提醒，都可以利用「自动化」的思路进行完成。本文就介绍到这里，感谢阅读。
