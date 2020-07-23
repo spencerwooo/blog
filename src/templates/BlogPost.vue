@@ -174,28 +174,6 @@ query Post ($id: ID!, $previousElement: ID!, $nextElement: ID!) {
 </page-query>
 
 <style lang="scss">
-.vue-notification {
-  border-radius: var(--radius);
-  margin: 0 calc(var(--space) / 3) calc(var(--space) / 3) 0;
-}
-
-.notify-style {
-  // box-shadow: var(--shadow-small);
-  border-radius: var(--radius);
-  z-index: 5000;
-  transition: all 0.4s ease;
-
-  .notification-content {
-    padding: calc(var(--space) / 12) calc(var(--space) / 6);
-    font-size: var(--base-font-size);
-  }
-
-  .info {
-    background: var(--link-color);
-    border-left: none;
-  }
-}
-
 .post-title {
   padding: var(--space) 0 var(--space);
   text-align: center;
