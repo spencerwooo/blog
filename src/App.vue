@@ -89,7 +89,7 @@ export default {
   padding: 0 calc(var(--space) / 2);
   top: 0;
   z-index: 10;
-  backdrop-filter: blur(16px);
+  // backdrop-filter: blur(16px);
 
   &__left,
   &__right {
