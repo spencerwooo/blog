@@ -1,7 +1,7 @@
 ---
 title: YADM：我是如何同步并管理我的 Dotfiles 的？
-date: 2020-07-24T21:20:00+08:00
-published: false
+date: 2020-07-24T21:45:00+08:00
+published: true
 slug: how-i-manage-my-dotfiles
 tags:
 - CLI
