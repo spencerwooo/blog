@@ -1,5 +1,5 @@
 ---
-title: YADM：我是如何同步并管理我的 Dotfiles 的？
+title: Yadm：我是如何同步并管理我的 Dotfiles 的？
 date: 2020-07-24T21:45:00+08:00
 published: true
 slug: how-i-manage-my-dotfiles
@@ -9,7 +9,7 @@ tags:
 - Terminal
 cover_image: "./images/how-i-manage-my-dotfiles.gif"
 canonical_url: false
-description: Yet Another Dotfiles Manager，基于 Git 的 Dotfile 管理器。
+description: Yet Another Dotfiles Manager，基于 Git 的 Dotfiles 管理器。
 
 ---
 没想到啊，[我的 dotfiles 仓库](https://github.com/spencerwooo/dotfiles "我的 dotfiles 仓库")竟然是目前我 GitHub 上面星星数量最多的单仓库。
@@ -126,7 +126,7 @@ fi
 
 ### 其他功能
 
-除了上面简单的 dotfile 同步与版本管理、bootstrap 自动环境部署等功能外，`yadm` 还可以：
+除了上面简单的 dotfiles 同步与版本管理、bootstrap 自动环境部署等功能外，`yadm` 还可以：
 
 * 对敏感文件（比如 SSH 密钥、SSH `config` 文件……）进行加密、解密，提供私有仓库以外的额外一层保护：[yadm Docs - Encryption](https://yadm.io/docs/encryption)；
 * 针对不同的操作系统、不同的环境以及不同的电脑维护不同种类的同一软件 / 插件的 dotfile 文件：[yadm Docs - Alternate Files](https://yadm.io/docs/alternates)、[yadm Docs - Templates](https://yadm.io/docs/templates)；
