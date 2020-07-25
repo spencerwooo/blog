@@ -145,6 +145,6 @@ export default {
   padding: calc(var(--space) / 2);
   max-width: var(--content-width);
   margin: 0 auto;
-  font-family: Lato, sans-serif;
+  font-family: var(--base-font-family);
 }
 </style>
