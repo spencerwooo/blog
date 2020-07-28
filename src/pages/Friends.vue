@@ -59,6 +59,12 @@ export default {
           style: 'color: #fff; background-color: #595058',
         },
         {
+          id: '@ash0ne',
+          link: 'https://blog.ash0ne.com/',
+          avatar: 'https://avatars3.githubusercontent.com/u/28522665?s=160',
+          style: 'color: #fff; background-color: #9f8cd1',
+        },
+        {
           id: '@FKY',
           link: 'http://blog.fkynjyq.com/',
           avatar: 'https://avatars2.githubusercontent.com/u/16451516?s=160',
