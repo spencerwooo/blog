@@ -1,6 +1,6 @@
 ---
 title: Quit using nvm：快删掉这个占据 Zsh 启动时间一半的怪物！
-date: 2020-07-27T22:00:00+08:00
+date: 2020-07-28T14:30:00+08:00
 published: false
 slug: remove-nvm-to-speed-up-zsh
 tags:
