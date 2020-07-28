@@ -27,15 +27,17 @@
         target="_blank"
         style="color: #F5A623;"
         ><font-awesome :icon="['fas', 'rss']"/></a
+      ><g-link to="/timeline" style="color: var(--title-color);"
+        ><font-awesome :icon="['fas', 'archive']"/></g-link
       ><g-link to="/friends" style="color: #06a878;"
         ><font-awesome :icon="['fas', 'comment-dots']"/></g-link
       >/
-      <a
+      <!-- <a
         href="//medium.com/spencerweekly"
         target="_blank"
         style="color: var(--title-color);"
         ><font-awesome :icon="['fab', 'medium']"
-      /></a>
+      /></a> -->
       <a
         href="//twitter.com/realSpencerWoo"
         target="_blank"

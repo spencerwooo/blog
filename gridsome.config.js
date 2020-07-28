@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 const marked = require('marked')
-const yaml = require('js-yaml')
+// const yaml = require('js-yaml')
 
 module.exports = {
   siteUrl: 'https://blog.spencerwoo.com',

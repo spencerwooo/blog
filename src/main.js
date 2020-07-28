@@ -25,6 +25,7 @@ import {
   faCaretSquareUp,
   faArrowUp,
   faCommentDots,
+  faArchive,
   faSpinner,
 } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -51,6 +52,7 @@ library.add(
   faCaretSquareUp,
   faArrowUp,
   faCommentDots,
+  faArchive,
   faSpinner
 )
 

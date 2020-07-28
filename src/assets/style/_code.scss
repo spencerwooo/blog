@@ -30,7 +30,7 @@ code {
 
 code[class*='language-'],
 pre[class*='language-'] {
-  font-family: 'Fira Code', SF Mono, Consolas, Monaco, 'Ubuntu Mono', monospace;
+  font-family: var(--monospace-font-family);
   text-align: left;
   white-space: pre-wrap;
   word-spacing: normal;
