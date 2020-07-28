@@ -60,7 +60,7 @@ time zsh -i -c exit
 
 经过一番搜索，我发现 Zsh 内部就有一个能够 benchmark 并 profile Zsh 自己启动过程时间使用的工具：`zprof`。如果你学过软件工程，你应该知道评价软件质量的一个重要工具：Profiler，用于衡量软件各个部分各个模块具体执行时间的评测工具。
 
-> A _profile_ is a set of statistics that describes how often and for how long various parts of the program executed. [^1](https://docs.python.org/3/library/profile.html)
+> A _profile_ is a set of statistics that describes how often and for how long various parts of the program executed. [^1]
 
 常见的语言环境都有原生的 Profiler，比如 Python 内置的 `cProfile`、Node.js 内置的功能 `node --prof`……部分 IDE 比如 Visual Studio 也有类似的工具，这些 Profiler 在优化软件的执行速度上起到了举足轻重的作用。
 
@@ -154,3 +154,5 @@ export PATH="$PATH:/mnt/c/Users/Spencer/AppData/Local/Programs/Microsoft VS Code
 ## 小结
 
 文章到这里就介绍完毕啦，**这里我只是为大家提供给 Zsh 启动过程进行时间测量和 profile benchmark 的标准方法**，如果各位也想加速自己 Zsh 的启动过程，那么可能除了删掉 `nvm` 换用 `n`，还需要结合自己的实际情况，删除、懒加载部分插件或工具。个人认为优化到 1s 以内就是比较合理的、可以接受的冷启动时间啦。就酱，感谢阅读。(*/ω＼*)
+
+[^1]: <https://docs.python.org/3/library/profile.html>
