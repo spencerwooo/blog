@@ -7,8 +7,7 @@ import '~/assets/style/index.scss'
 // import DefaultLayout from '~/layouts/Default.vue'
 
 // Disqus
-// import VueDisqus from 'vue-disqus'
-import 'disqusjs/dist/disqusjs.css'
+import '~/assets/style/disqusjs.scss'
 
 // Pagination
 import { Pager } from 'gridsome'
