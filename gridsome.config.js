@@ -34,7 +34,7 @@ module.exports = {
       },
     },
     {
-      use: 'gridsome-plugin-feed',
+      use: '@microflash/gridsome-plugin-feed',
       options: {
         contentTypes: ['Post'],
         feedOptions: {
@@ -50,7 +50,7 @@ module.exports = {
         filterNodes: node => node.published,
         nodeToFeedItem: node => ({
           title: node.title,
-          date: node.date || node.fields.date,
+          date: node.date,
           content: marked(node.content),
         }),
       },
