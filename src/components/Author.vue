@@ -18,16 +18,15 @@
     </p>
 
     <p class="author__links">
-      <!-- <g-link to="/"><font-awesome :icon="['fas', 'home']"/></g-link> -->
-      <a href="//spencerwoo.com" target="_blank"
+      <g-link href="//spencerwoo.com" target="_blank"
         ><font-awesome :icon="['fas', 'id-badge']"
-      /></a>
-      <a
+      /></g-link>
+      <g-link
         href="//blog.spencerwoo.com/posts/index.xml"
         target="_blank"
         style="color: #F5A623;"
-        ><font-awesome :icon="['fas', 'rss']"/></a
-      ><g-link to="/timeline" style="color: var(--title-color);"
+        ><font-awesome :icon="['fas', 'rss']"/></g-link
+      ><g-link to="/archives" style="color: var(--title-color);"
         ><font-awesome :icon="['fas', 'archive']"/></g-link
       ><g-link to="/friends" style="color: #06a878;"
         ><font-awesome :icon="['fas', 'comment-dots']"/></g-link

@@ -1,6 +1,6 @@
 <template>
   <div :show-logo="false">
-    <h1 class="text-center space-bottom">Timeline</h1>
+    <h1 class="text-center space-bottom">Archives</h1>
 
     <div class="posts content-box">
       <p style="opacity: 0.6;">
@@ -47,7 +47,7 @@ query {
 <script>
 export default {
   metaInfo: {
-    title: 'Timeline',
+    title: 'Archives',
   },
   data() {
     return {
