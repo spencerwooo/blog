@@ -1,7 +1,7 @@
 ---
 title: VS Code Math to Image：在不支持 LaTeX 的地方插入数学公式
-date: 2020-08-04T13:00:00+08:00
-published: false
+date: 2020-08-04T13:50:00+08:00
+published: true
 slug: vscode-math-to-image
 tags:
 - Automation
@@ -13,7 +13,7 @@ description: 为了解决 GitHub 无法渲染 LaTeX 数学公式的问题，我�
 
 ---
 :::note 🛹 同步发布
-* **在少数派上阅读本文** — [不支持 LaTeX 也能插入数学公式，这个小插件帮你实现「徒手渲染」](https://sspai.com/post/61877)
+* **在少数派上阅读本文** — [不支持 LaTeX 也能插入数学公式，这个小插件帮你实现「徒手渲染」](https://sspai.com/post/61877)。
 * **Read the English version on Medium** — [VS Code Math to Image: Write LaTeX Math Equations in GitHub Markdown the Easy Way!](https://medium.com/spencerweekly/vs-code-math-to-image-write-latex-math-equations-in-github-markdown-the-easy-way-9fa8b81dc910?source=friends_link&sk=cff035b443fb81f5b20a47370f23aed3)
 :::
 
@@ -84,7 +84,7 @@ $$
 ```
 
 $$
-P(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{\frac{-(x-\mu)^2}{2\sigma^2}}
+\Large P(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{\frac{-(x-\mu)^2}{2\sigma^2}}
 $$
 
 我们可以借助插件直接将其转换为用 GitHub 服务器渲染的 SVG 图片，并用 `<img>` 标签插入 Markdown 之中：
@@ -95,7 +95,10 @@ $$
 
 这样，我们原公式就被替换为用 GitHub 服务器渲染好的 SVG 图片：
 
-![标准正态分布公式（GitHub LaTeX 渲染服务器渲染得到的 SVG 图片）](https://cdn.spencer.felinae98.cn/blog/2020/08/200804_134758.png)
+<figure>
+  <img src="https://cdn.spencer.felinae98.cn/blog/2020/08/200804_134758.png" alt="标准正态分布公式（GitHub LaTeX 渲染服务器渲染得到的 SVG 图片）" width="300px" >
+  <figcaption>标准正态分布公式（GitHub LaTeX 渲染服务器渲染得到的 SVG 图片）</figcaption>
+</figure>
 
 同时，由于渲染服务器正好是 GitHub 自己的，所以肯定不会出现被屏蔽、无法访问的现象，非常靠谱。
 
@@ -111,7 +114,10 @@ SVG 这一格式非常强大，不仅是矢量图的格式标准，我们还可�
 <div align="center"><img src="svg/e40qQ5G9jw.svg"/></div>
 ```
 
-![标准正态分布（本地使用 MathJax 渲染得到的 SVG 图片）](https://cdn.spencer.felinae98.cn/blog/2020/08/200804_134658.png)
+<figure>
+  <img src="https://cdn.spencer.felinae98.cn/blog/2020/08/200804_134658.png" alt="标准正态分布（本地使用 MathJax 渲染得到的 SVG 图片）" width="300px" >
+  <figcaption>标准正态分布（本地使用 MathJax 渲染得到的 SVG 图片）</figcaption>
+</figure>
 
 ## 小结
 
