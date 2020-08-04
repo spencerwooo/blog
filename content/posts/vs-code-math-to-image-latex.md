@@ -56,44 +56,57 @@ $$
 
 ## 工作原理
 
-所以，我们插件是如何将一个纯文本格式的 LaTeX 数学公式渲染为 SVG 图片的呢？前面提到的 ​remote​ 和 ​local​ 又有怎样的区别呢？这里，我就简单讲解一下插件的渲染和工作原理。
+所以，我们插件是如何将一个纯文本格式的 LaTeX 数学公式渲染为 SVG 图片的呢？前面提到的 `remote` 和 `local` 又有怎样的区别呢？这里，我就简单讲解一下插件的渲染和工作原理。
 
-首先，插件的工作原理非常简单、极易理解，我们实际上就是通过某种方式，解析 LaTeX 撰写的数学公式并将之渲染为 SVG， ​remote​ 和 ​local​ 的不同之处就在于：
+首先，插件的工作原理非常简单、极易理解，我们实际上就是通过某种方式，解析 LaTeX 撰写的数学公式并将之渲染为 SVG， `remote` 和 `local` 的不同之处就在于：
 
-前者是借助服务器渲染公式，生成的 SVG 存在于云端；
-后者是直接在本地渲染公式，生成的 SVG 当然也保存于本地；
- 
+* 前者是借助服务器渲染公式，生成的 SVG 存在于云端；
+* 后者是直接在本地渲染公式，生成的 SVG 当然也保存于本地；
 
+![VSCode Math to Image 插件的简单工作原理](https://cdn.spencer.felinae98.cn/blog/2020/08/200804_133452.png)
 
-VSCode Math to Image 插件的简单工作原理
-将公式借助服务器渲染为云端 SVG 图片
-虽然 GitHub 的 README 等 Markdown 文件里面并不支持 LaTeX 数学公式的渲染，但是：GitHub 确实会在 Jupyter notebook 里面解析并正常渲染 LaTeX 数学公式！那既然 GitHub 并没有引用第三方的渲染服务，它们究竟是怎样渲染数学公式的呢？答案是：GitHub 有自己的 LaTeX 渲染服务器，我们给这一服务器一个格式正确的 LaTeX 公式，服务器会直接给我们返回渲染好的 SVG 图片。
+### 将公式借助服务器渲染为云端 SVG 图片
 
-嚯，我们要的正好就是这个服务啊！所以，我们插件的 ​remote​ 选项，就是借助 GitHub 官方的 LaTeX 渲染服务器，将我们的 LaTeX 数学公式转换为云端 SVG 图片。简单来说，比如下面这个标准正态分布公式：
+虽然 GitHub 的 README 等 Markdown 文件里面并不支持 LaTeX 数学公式的渲染，但是：**GitHub 确实会在 Jupyter notebook 里面解析并正常渲染 LaTeX 数学公式！**那既然 GitHub 并没有引用第三方的渲染服务，它们究竟是怎样渲染数学公式的呢？答案是：GitHub 有自己的 LaTeX 渲染服务器，我们给这一服务器一个格式正确的 LaTeX 公式，服务器会直接给我们返回渲染好的 SVG 图片。
+
+嚯，我们要的正好就是这个服务啊！所以，我们插件的 `remote` 选项，就是借助 GitHub 官方的 LaTeX 渲染服务器，将我们的 LaTeX 数学公式转换为云端 SVG 图片。简单来说，比如下面这个标准正态分布公式：
+
+```latex
+$$
+P(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{\frac{-(x-\mu)^2}{2\sigma^2}}
+$$
+```
 
 $$
 P(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{\frac{-(x-\mu)^2}{2\sigma^2}}
 $$
-我们可以借助插件直接将其转换为用 GitHub 服务器渲染的 SVG 图片，并用 ​<img>​ 标签插入 Markdown 之中：
 
+我们可以借助插件直接将其转换为用 GitHub 服务器渲染的 SVG 图片，并用 `<img>` 标签插入 Markdown 之中：
+
+```html
 <div align="center"><img src="https://render.githubusercontent.com/render/math?math=P(x)%20%3D%20%5Cfrac%7B1%7D%7B%5Csigma%5Csqrt%7B2%5Cpi%7D%7D%20e%5E%7B%5Cfrac%7B-(x-%5Cmu)%5E2%7D%7B2%5Csigma%5E2%7D%7D%0D"></div>
+```
+
 这样，我们原公式就被替换为用 GitHub 服务器渲染好的 SVG 图片：
 
+![标准正态分布公式（GitHub LaTeX 渲染服务器渲染得到的 SVG 图片）](https://cdn.spencer.felinae98.cn/blog/2020/08/200804_133610.png)
 
-标准正态分布公式（GitHub LaTeX 渲染服务器渲染得到的 SVG 图片）
 同时，由于渲染服务器正好是 GitHub 自己的，所以肯定不会出现被屏蔽、无法访问的现象，非常靠谱。
 
-将公式在本地渲染并直接保存为 SVG 图片
+### 将公式在本地渲染并直接保存为 SVG 图片
+
 SVG 这一格式非常强大，不仅是矢量图的格式标准，我们还可以在其中添加动画等高级功能。所以实际上，SVG 格式的图片会给网站带来一些安全隐患，也正因为 SVG 的这一特点，导致并非所有的地方都支持外部 SVG 的引用。为了规避这一问题，也为了让 SVG 文件的存在更可控（服务器还是有宕机的风险），我们也实现了 LaTeX 公式「本地渲染」的功能。
 
-我们插件的 ​local​ 功能实际上就是借助 MathJax 在本地直接将 LaTeX 公式渲染为本地 SVG 图片。这样，我们就可以将这个保存于本地的 SVG 直接在 Markdown 文件里面引用显示，同样方便。
+我们插件的 `local` 功能实际上就是借助 MathJax 在本地直接将 LaTeX 公式渲染为本地 SVG 图片。这样，我们就可以将这个保存于本地的 SVG 直接在 Markdown 文件里面引用显示，同样方便。
 
-继续用上面标准正态分布的公式，我们可以将公式渲染为存储于本地的 SVG：​svg/e40qQ5G9jw.svg​，并直接保存在 Markdown 文件相邻的一个 ​svg​ 文件夹中。这样，我们就可以继续用 ​<img>​ 标签将这个本地 SVG 插入我们的 Markdown 之中：
+继续用上面标准正态分布的公式，我们可以将公式渲染为存储于本地的 SVG：`svg/e40qQ5G9jw.svg`，并直接保存在 Markdown 文件相邻的一个 `svg` 文件夹中。这样，我们就可以继续用 `<img>` 标签将这个本地 SVG 插入我们的 Markdown 之中：
 
+```html
 <div align="center"><img src="svg/e40qQ5G9jw.svg"/></div>
- 
+```
 
+![标准正态分布（本地使用 MathJax 渲染得到的 SVG 图片）](https://cdn.spencer.felinae98.cn/blog/2020/08/200804_133700.png)
 
-标准正态分布（本地使用 MathJax 渲染得到的 SVG 图片）
-小结
-以上就是 VS Code Math to Image 这个 VS Code 插件的简单介绍，两种方法（​remote​ 和 ​local​）都可以帮我们渲染出高质量的 SVG 公式图片，这样我们就可以解决 GitHub 等平台不支持数学公式渲染的一大难题啦！如果你觉得我们的插件非常有用，那么一定要去 GitHub 给我们点上一个 Star，如果能去 VS Marketplace 给我们个五星好评 那就更棒啦。
+## 小结
+
+以上就是 VS Code Math to Image 这个 VS Code 插件的简单介绍，两种方法（`remote` 和 `local`）都可以帮我们渲染出高质量的 SVG 公式图片，这样我们就可以解决 GitHub 等平台不支持数学公式渲染的一大难题啦！如果你觉得我们的插件非常有用，那么 [一定要去 GitHub 给我们点上一个 Star](https://github.com/TeamMeow/vscode-math-to-image)，如果 [能去 VS Marketplace 给我们个五星好评](https://marketplace.visualstudio.com/items?itemName=MeowTeam.vscode-math-to-image&ssr=false#review-details) 那就更棒啦。
