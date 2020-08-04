@@ -95,7 +95,7 @@ $$
 
 这样，我们原公式就被替换为用 GitHub 服务器渲染好的 SVG 图片：
 
-![标准正态分布公式（GitHub LaTeX 渲染服务器渲染得到的 SVG 图片）](https://cdn.spencer.felinae98.cn/blog/2020/08/200804_133610.png)
+![标准正态分布公式（GitHub LaTeX 渲染服务器渲染得到的 SVG 图片）](https://cdn.spencer.felinae98.cn/blog/2020/08/200804_134758.png)
 
 同时，由于渲染服务器正好是 GitHub 自己的，所以肯定不会出现被屏蔽、无法访问的现象，非常靠谱。
 
@@ -111,7 +111,7 @@ SVG 这一格式非常强大，不仅是矢量图的格式标准，我们还可�
 <div align="center"><img src="svg/e40qQ5G9jw.svg"/></div>
 ```
 
-![标准正态分布（本地使用 MathJax 渲染得到的 SVG 图片）](https://cdn.spencer.felinae98.cn/blog/2020/08/200804_133700.png)
+![标准正态分布（本地使用 MathJax 渲染得到的 SVG 图片）](https://cdn.spencer.felinae98.cn/blog/2020/08/200804_134658.png)
 
 ## 小结
 
