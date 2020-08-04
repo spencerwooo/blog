@@ -4,6 +4,7 @@ date: 2020-08-04T13:00:00+08:00
 published: false
 slug: vscode-math-to-image
 tags:
+- Automation
 - Tech
 - VS Code
 cover_image: "./images/vscode-math-to-image.png"
@@ -28,7 +29,7 @@ description: 为了解决 GitHub 无法渲染 LaTeX 数学公式的问题，我�
 
 我们在 VS Code 的插件市场搜索 `vscode-math-to-image`，找到 Math to Image 点击安装即可。直接访问 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MeowTeam.vscode-math-to-image) 点击 Install 也可以安装。
 
-![VS Code 插件市场搜索：vscode-math-to-image](https://cdn.spencer.felinae98.cn/blog/2020/08/200804_133058.png)
+![VS Code 插件市场搜索：vscode-math-to-image](https://cdn.spencer.felinae98.cn/blog/2020/08/200804_134114.png)
 
 ## 插件使用
 
@@ -38,7 +39,7 @@ description: 为了解决 GitHub 无法渲染 LaTeX 数学公式的问题，我�
 
 具体来讲，比如上面演示动画里面的公式：
 
-```latex
+```markdown
 $$
 \ell = \sum_{i}^{N}(y_i - \hat{y}_i)^2 - ||w||_2^2
 $$
