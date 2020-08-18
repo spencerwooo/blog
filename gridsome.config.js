@@ -40,6 +40,8 @@ module.exports = {
         feedOptions: {
           title: "Spencer's Blog",
           description: 'Spencer Woo - 开发者 / 设计师 / 少数派 / 学生',
+          image: 'https://blog.spencerwoo.com/av.png',
+          favicon: 'https://blog.spencerwoo.com/av.png'
         },
         rss: {
           enabled: true,
