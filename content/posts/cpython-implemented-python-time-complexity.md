@@ -1,6 +1,6 @@
 ---
 title: Time Complexity：CPython 实现的 Python 操作的时间复杂度
-date: 2020-08-19T23:00:00+08:00
+date: 2020-08-20T09:00:00+08:00
 published: false
 slug: cpython-implemented-python-time-complexity
 tags:
@@ -8,7 +8,7 @@ tags:
 - Python
 cover_image: "./images/cpython-implemented-python-time-complexity.png"
 canonical_url: false
-description: 要对自己写的代码的性能敏感起来！
+description: "「哎！这也能直接用！那也能直接用！快排都不用我手写了！」"
 
 ---
 > 🧊 我算法实在太菜了，本文部分内容可能是小学二年级就应该知道的东西，所以如果各位大佬看到这篇文章的话，就当看个乐呵，还请不要嫌弃 555。(⊙﹏⊙)
