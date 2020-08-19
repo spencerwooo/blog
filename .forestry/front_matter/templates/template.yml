@@ -27,6 +27,7 @@ fields:
   name: description
   label: description
 pages:
+- content/posts/cpython-implemented-python-time-complexity.md
 - content/posts/debugging-netlify-static-site.md
 - content/posts/how-i-manage-my-dotfiles.md
 - content/posts/nesterov-accelerated-gradient-and-scale-invariance-for-adversarial-attacks.md
