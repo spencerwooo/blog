@@ -1,7 +1,7 @@
 ---
 title: Time Complexity：CPython 实现的 Python 操作的时间复杂度
-date: 2020-08-20T09:00:00+08:00
-published: false
+date: 2020-08-20T11:00:00+08:00
+published: true
 slug: cpython-implemented-python-time-complexity
 tags:
 - Algorithm
@@ -13,7 +13,7 @@ description: "「哎！这也能直接用！那也能直接用！快排都不用
 ---
 > 🧊 我算法实在太菜了，本文部分内容可能是小学二年级就应该知道的东西，所以如果各位大佬看到这篇文章的话，就当看个乐呵，还请不要嫌弃 555。(⊙﹏⊙)
 
-这篇文章起源于各大 OJ 平台可能是最经典的第一题：[Two Sum（两数之和）](https://leetcode.com/problems/two-sum)。我已经**很久很久**（可能已经有两年了）没做算法题了，由于我之前的项目里面其实很少涉及到一些比较复杂的算法，各个语言和框架的封装也让我对具体程序逻辑的优化放松了警惕，导致我对我写的代码的性能非常不敏感。于是我在前几天准备秒掉 TwoSums 的时候，就出现了极为尴尬的情况：
+这篇文章起源于各大 OJ 平台可能是最经典的一道题：[Two Sum（两数之和）](https://leetcode.com/problems/two-sum)。我已经**很久很久**（可能已经有两年了）没做算法题了，由于我之前的项目里面其实很少涉及到一些比较复杂的算法，各个语言和框架的封装也让我对具体程序逻辑的优化放松了警惕，导致我对我写的代码的性能非常不敏感。于是我在前几天准备秒掉 TwoSums 的时候，就出现了极为尴尬的情况（提交顺序自下而上）：
 
 ![嗯，第一发正式比赛应该直接就 TLE 了，真实的菜](https://cdn.spencer.felinae98.cn/blog/2020/08/200819_223330.png)
 
@@ -138,9 +138,9 @@ else:
 * 我们如果直接用 `d[k]` 访问一个不存在的 `k`，那么运行时 Python 会 raise 一个 `KeyError` 的错误，而 `d.get(k)` 则会优雅的返回 `None`；
 * 我们可以通过 `d.get(k, default_value)` 的语法来设定一个默认值，当 `k` 不存在时返回这一值即可；
 
-习惯于「优雅的解决方法一定更好」的我，在算法题里面同样用了 `d.get(k)` 来获取字典中的 value，但是我发现这样的方法要比同样的 `d[k]` 慢很多：
+习惯于「优雅的解决方法一定更好」的我，在算法题里面同样用了 `d.get(k)` 来获取字典中的 value，但是我发现这样的方法要比同样的 `d[k]` 慢很多（提交顺序自下而上）：
 
-![80ms 的提交使用的是 .get(k)，而 48ms 的提交使用的是传统方法 d[k]](https://cdn.spencer.felinae98.cn/blog/2020/08/200820_010904.png)
+![80ms 的提交使用的是 .get(k)，而 48ms 的提交使用的是传统方法 d\[k\]](https://cdn.spencer.felinae98.cn/blog/2020/08/200820_010904.png)
 
 当然，不用说我们也知道主要因为 Python 的 `d.get(k)` 实现中需要处理更多的事情，同时 `get()` 还是一个函数调用，需要入栈出栈，肯定会消耗更多的时间。因此，这里更需要我们注意，如果我们希望编写效率最高的代码，那么一定需要考虑这些会触发性能瓶颈的问题。
 
@@ -150,11 +150,11 @@ else:
 
 ## 小结
 
-最初的时候我做算法题大部分都是用 C++ 编写的，从来都没尝试过用像 Python 这种抽象程度这么高的语言来做算法题。因此如果想要追求高性能，除了对数据结构有充分的了解，还需要对自己所使用语言的内部实现有所认知。因此我们在某些算法中，使用很多封装好的方法时，都需要对算法和实现二者更深刻的认识才能最大化的发挥他们的功力。当然，使用 Python 来写算法题更多的还是快乐，比如：「哎！这也能直接用！那也能直接用！快排都不用我手写了！」开心 ~ 好啦，文章就到这里，感谢大家的阅读！
+最初的时候我做算法题大部分都是用 C++ 编写的，从来都没尝试过用像 Python 这种抽象程度这么高的语言来做算法题。因此如果想要追求高性能，除了对数据结构有充分的了解，还需要对自己所使用语言的内部实现有所认知。我们在使用高级语言实现某些算法中，使用很多封装好的方法时，都需要对「算法本身」和「所使用的方法实现」这二者更深刻的认识才能最大化的发挥他们的功力。当然，使用 Python 来写算法题更多的还是快乐，比如：「哎！这也能直接用！那也能直接用！快排都不用我手写了！」开心 \~ 好啦，文章就到这里，感谢大家的阅读！
 
 [^1]: https://wiki.python.org/moin/TimeComplexity
 [^2]: https://stackoverflow.com/questions/3917574/how-is-pythons-list-implemented
 [^3]: https://github.com/python/cpython/blob/master/Objects/dictobject.c
 [^4]: https://morepypy.blogspot.com/2015/01/faster-more-memory-efficient-and-more.html
 [^5]: https://stackoverflow.com/questions/11041405/why-dict-getkey-instead-of-dictkey
-[^6]: https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt
+[^6]: https://www.ics.uci.edu/\~pattis/ICS-33/lectures/complexitypython.txt
