@@ -152,9 +152,9 @@ else:
 
 最初的时候我做算法题大部分都是用 C++ 编写的，从来都没尝试过用像 Python 这种抽象程度这么高的语言来做算法题。因此如果想要追求高性能，除了对数据结构有充分的了解，还需要对自己所使用语言的内部实现有所认知。我们在使用高级语言实现某些算法中，使用很多封装好的方法时，都需要对「算法本身」和「所使用的方法实现」这二者更深刻的认识才能最大化的发挥他们的功力。当然，使用 Python 来写算法题更多的还是快乐，比如：「哎！这也能直接用！那也能直接用！快排都不用我手写了！」开心 \~ 好啦，文章就到这里，感谢大家的阅读！
 
-[^1]: https://wiki.python.org/moin/TimeComplexity
-[^2]: https://stackoverflow.com/questions/3917574/how-is-pythons-list-implemented
-[^3]: https://github.com/python/cpython/blob/master/Objects/dictobject.c
-[^4]: https://morepypy.blogspot.com/2015/01/faster-more-memory-efficient-and-more.html
-[^5]: https://stackoverflow.com/questions/11041405/why-dict-getkey-instead-of-dictkey
-[^6]: https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt
+[^1]: [Python.org Wiki - TimeComplexity](https://wiki.python.org/moin/TimeComplexity)
+[^2]: [StackOverflow - How is Python's List implemented?](https://stackoverflow.com/questions/3917574/how-is-pythons-list-implemented)
+[^3]: [GitHub - python/cpython - dictobject.c](https://github.com/python/cpython/blob/master/Objects/dictobject.c)
+[^4]: [Faster, more memory efficient and more ordered dictionaries on PyPy](https://morepypy.blogspot.com/2015/01/faster-more-memory-efficient-and-more.html)
+[^5]: [StackOverflow - Why dict.get(key) instead of dict[key]?](https://stackoverflow.com/questions/11041405/why-dict-getkey-instead-of-dictkey)
+[^6]: [Complexity of Python Operations](https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt)
