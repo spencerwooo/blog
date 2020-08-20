@@ -157,4 +157,4 @@ else:
 [^3]: https://github.com/python/cpython/blob/master/Objects/dictobject.c
 [^4]: https://morepypy.blogspot.com/2015/01/faster-more-memory-efficient-and-more.html
 [^5]: https://stackoverflow.com/questions/11041405/why-dict-getkey-instead-of-dictkey
-[^6]: https://www.ics.uci.edu/\~pattis/ICS-33/lectures/complexitypython.txt
+[^6]: https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt
