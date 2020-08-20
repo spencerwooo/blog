@@ -6,9 +6,6 @@ import '~/assets/style/index.scss'
 // ! will not reflect correctly. See: https://github.com/gridsome/gridsome/issues/835
 // import DefaultLayout from '~/layouts/Default.vue'
 
-// Disqus
-import '~/assets/style/disqusjs.scss'
-
 // Pagination
 import { Pager } from 'gridsome'
 
@@ -63,17 +60,13 @@ import axios from 'axios'
 
 // NProgress
 import NProgress from 'nprogress'
-import '~/assets/style/nprogress.scss'
-
-// container
-import '~/assets/style/container.scss'
 
 // katex
 import 'katex/dist/katex.min.css'
 
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
-export default function(Vue, { router, head, isClient }) {
-  NProgress.configure({ easing: 'ease', speed: 500, showSpinner: true })
+export default function (Vue, { router, head, isClient }) {
+  NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false, parent: '#nprogress-container' })
 
   // Set default layout as a global component
   // Vue.component('Layout', DefaultLayout)
@@ -96,7 +89,7 @@ export default function(Vue, { router, head, isClient }) {
 
   router.beforeEach((to, from, next) => {
     if (from.name !== null) {
-      NProgress.start()
+      NProgress.set(0.1)
     }
     next()
   })

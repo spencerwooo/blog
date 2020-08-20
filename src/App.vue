@@ -1,14 +1,16 @@
 <template>
   <div id="app">
-    <header class="header">
-      <div class="header__left">
-        <Logo v-if="showLogo" />
-      </div>
+    <div id="nprogress-container">
+      <header class="header">
+        <div class="header__left">
+          <Logo v-if="showLogo" />
+        </div>
 
-      <div class="header__right">
-        <ToggleTheme />
-      </div>
-    </header>
+        <div class="header__right">
+          <ToggleTheme />
+        </div>
+      </header>
+    </div>
 
     <main class="main">
       <!-- <slot /> -->
@@ -81,27 +83,33 @@ export default {
   scroll-behavior: smooth;
 }
 
-.header {
+#nprogress-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   min-height: var(--header-height);
   padding: 0 calc(var(--space) / 2);
   top: 0;
+  backdrop-filter: blur(32px);
   z-index: 10;
-  // backdrop-filter: blur(16px);
+
+  @media screen and (min-width: 1300px) {
+    // Make header sticky for large screens
+    position: sticky;
+    width: 100%;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 
   &__left,
   &__right {
     display: flex;
     align-items: center;
     font-family: var(--base-font-family);
-  }
-
-  @media screen and (min-width: 1300px) {
-    //Make header sticky for large screens
-    position: sticky;
-    width: 100%;
   }
 }
 
