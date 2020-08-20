@@ -73,7 +73,7 @@ import 'katex/dist/katex.min.css'
 
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 export default function(Vue, { router, head, isClient }) {
-  NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false })
+  NProgress.configure({ easing: 'ease', speed: 500, showSpinner: true })
 
   // Set default layout as a global component
   // Vue.component('Layout', DefaultLayout)
