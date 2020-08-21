@@ -89,6 +89,8 @@ export default {
   min-height: var(--header-height);
   padding: 0 calc(var(--space) / 2);
   top: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba($color: var(--bg-color-rgb), $alpha: 0.6);
   backdrop-filter: blur(32px);
   z-index: 10;
 
