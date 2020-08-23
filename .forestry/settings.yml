@@ -6,9 +6,11 @@ webhook_url:
 sections:
 - type: directory
   path: content/posts
-  label: Blog Posts
-  create: all
+  label: Posts
+  create: documents
   match: "**/*"
+  templates:
+  - template
 upload_dir: content/posts/images
 public_path: "./images"
 front_matter_path: ''
