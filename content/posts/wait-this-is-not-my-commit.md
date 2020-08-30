@@ -218,6 +218,6 @@ $ curl https://keybase.io/spencerwoo/pgp_keys.asc | gpg --import
 ```
 
 - 我的 Keybase 地址：[keybase.io/spencerwoo](https://keybase.io/spencerwoo)
-- 我的 GPG 公钥：`ASCtXMcCY0UpKPF6NpoLlwJT3xXsD5nzunxF2ei4gBRBkgo`
+- 我的 GPG 公钥：ASCtXMcCY0UpKPF6NpoLlwJT3xXsD5nzunxF2ei4gBRBkgo
 
 感谢大家的阅读，希望大家都不会遭遇被冒充的情况！
