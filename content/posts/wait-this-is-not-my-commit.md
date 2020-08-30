@@ -1,7 +1,7 @@
 ---
 title: 震惊！竟然有人在 GitHub 上冒充我的身份！
-date: 2020-08-30T17:30:00+08:00
-published: false
+date: 2020-08-30T17:50:00+08:00
+published: true
 slug: wait-this-is-not-my-commit
 tags:
 - Security
@@ -220,4 +220,4 @@ $ curl https://keybase.io/spencerwoo/pgp_keys.asc | gpg --import
 - 我的 Keybase 地址：[keybase.io/spencerwoo](https://keybase.io/spencerwoo)
 - 我的 GPG 公钥：`ASCtXMcCY0UpKPF6NpoLlwJT3xXsD5nzunxF2ei4gBRBkgo`
 
-感谢大家的阅读！希望大家都不会遭遇被冒充的情况！
+感谢大家的阅读，希望大家都不会遭遇被冒充的情况！
