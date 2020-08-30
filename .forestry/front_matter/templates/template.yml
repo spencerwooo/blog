@@ -29,6 +29,7 @@ fields:
 pages:
 - content/posts/cpython-implemented-python-time-complexity.md
 - content/posts/debugging-netlify-static-site.md
+- content/posts/github.md
 - content/posts/how-i-manage-my-dotfiles.md
 - content/posts/nesterov-accelerated-gradient-and-scale-invariance-for-adversarial-attacks.md
 - content/posts/plotting-with-matplotlib.md
