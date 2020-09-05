@@ -1,6 +1,6 @@
 ---
 title: Quit using nvm：快删掉这个占据 Zsh 启动时间一半的怪物！
-date: 2020-07-28T14:30:00+08:00
+date: 2020-07-28T14:30:00.000+08:00
 published: true
 slug: remove-nvm-to-speed-up-zsh
 tags:
@@ -12,6 +12,16 @@ canonical_url: false
 description: 没想到啊 nvm，竟然是你这个浓眉大眼的让我 Zsh 开一次足足等 2 秒！
 
 ---
+✍ Edit Sept.5 2020:
+
+今天尝试了一下 [zinit](https://github.com/zdharma/zinit)，这个作者跟 Powerlevel10k 的想法非常类似，都是对 Zsh 的插件进行懒加载，导致其 Turbo mode 加载 Zsh 速度快的飞起！
+
+![使用 zinit 加载插件，启动时间仅需 0.6s，但实际上打开瞬间 Zsh 就已经可以交互了](https://cdn.spencer.felinae98.cn/blog/2020/09/200905_212629.png)
+
+另外，看到 `zplug` 的 GitHub 上一次提交时间还是今年 2 月份，而且 issue 区已经出现寻找 Maintainer 的请求了，而 `zinit` 最近更新得非常频繁，因此这里推荐大家使用 `zinit` 作为 Zsh 的插件管理器。
+
+---
+
 我实在是受不了了。我这 10 代 i7 的顶配 ThinkPad 在 WSL 2 里面打开一个 Shell，竟然每次都需要在心里面默念 2 个数才能敲进去字。淦啊 (╬▔皿▔)╯
 
 ## 我管理 Zsh 配置的方法
