@@ -12,7 +12,7 @@ canonical_url: false
 description: 没想到啊 nvm，竟然是你这个浓眉大眼的让我 Zsh 开一次足足等 2 秒！
 
 ---
-✍ Edit Sept.5 2020:
+> ✍ Sept 5. 2020 的更新：
 
 今天尝试了一下 [zinit](https://github.com/zdharma/zinit)，这个作者跟 Powerlevel10k 的想法非常类似，都是对 Zsh 的插件进行懒加载，导致其 Turbo mode 加载 Zsh 速度快的飞起！
 
@@ -21,6 +21,8 @@ description: 没想到啊 nvm，竟然是你这个浓眉大眼的让我 Zsh 开�
 另外，看到 `zplug` 的 GitHub 上一次提交时间还是今年 2 月份，而且 issue 区已经出现寻找 Maintainer 的请求了，而 `zinit` 最近更新得非常频繁，因此这里推荐大家使用 `zinit` 作为 Zsh 的插件管理器。
 
 ---
+
+> 🍳 July 28. 2020 的原文章：
 
 我实在是受不了了。我这 10 代 i7 的顶配 ThinkPad 在 WSL 2 里面打开一个 Shell，竟然每次都需要在心里面默念 2 个数才能敲进去字。淦啊 (╬▔皿▔)╯
 
