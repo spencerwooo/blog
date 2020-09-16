@@ -63,8 +63,10 @@ In this work, from the perspective of regarding the adversarial example generati
 Nesterov Accelerated Gradient 是普通梯度下降法（Stochastic gradient descent）的轻微修改，可以有效加速训练过程，大幅度增强收敛能力。NAG 可以看作是基于 Momentum 的优化的改良版：
 
 $$
-v_{t+1}=\mu \cdot v_t + \nabla_{\theta_t}\mathcal{J}(\theta_t-\alpha\cdot\mu\cdot v_t)\\
-\theta_{t+1}=\theta_t-\alpha\cdot v_{t+1}
+\begin{aligned}
+v_{t+1}&=\mu \cdot v_t + \nabla_{\theta_t}\mathcal{J}(\theta_t-\alpha\cdot\mu\cdot v_t) \\
+\theta_{t+1}&=\theta_t-\alpha\cdot v_{t+1}
+\end{aligned}
 $$
 
 论文发现普通基于梯度的迭代攻击（I-FGSM）非常容易陷入局部最优，导致比单步攻击（FGSM）可迁移性差。实验表明向迭代攻击中引入 Momentum 可以有效解决这一问题（MI-FGSM）。于是，论文考虑向迭代过程中引入 NAG 实施优化过程：
@@ -75,9 +77,11 @@ $$
 具体实现：
 
 $$
-x_t^{nes} = x_t^{adv} + \alpha \cdot \mu \cdot g_t\\
-g_{t+1}=\mu\cdot g_t +\frac{\nabla_x\mathcal{J}(x_t^{nes},y^{true})}{\|\nabla_x\mathcal{J}(x_t^{nes},y^{true})\|_1}\\
-x_{t+1}^{adv}=\textrm{Clip}_x^{\epsilon}\{x_t^{adv}+\alpha\cdot\textrm{sign}(g_{t+1})\}
+\begin{aligned}
+x_t^{nes} &= x_t^{adv} + \alpha \cdot \mu \cdot g_t \\
+g_{t+1}&=\mu\cdot g_t +\frac{\nabla_x\mathcal{J}(x_t^{nes},y^{true})}{\|\nabla_x\mathcal{J}(x_t^{nes},y^{true})\|_1} \\
+x_{t+1}^{adv}&=\textrm{Clip}_x^{\epsilon}\{x_t^{adv}+\alpha\cdot\textrm{sign}(g_{t+1})\}
+\end{aligned}
 $$
 
 其中，$g_t$ 表示第 $t$ 次迭代时累积的梯度，$\mu$ 表示 $g_t$ 的衰减系数。
@@ -92,8 +96,7 @@ $$
 综上，论文提出了 Scale-Invariant attack Method（SIM）：
 
 $$
-\underset{x^{adv}}{argmax}\frac{1}{m}\sum_{i=0}^{m}\mathcal{J}(S_i(x^{adv},y^{true})),\\
-\textrm{s.t.}\ \|x^{adv}-x\|_\infty\leq\epsilon
+\underset{x^{adv}}{\text{argmax}}\frac{1}{m}\sum_{i=0}^{m}\mathcal{J}(S_i(x^{adv},y^{true})),\ \textrm{s.t.}\ \|x^{adv}-x\|_\infty\leq\epsilon
 $$
 
 其中，$S_i(x)=x/{2^i}$ 表示输入图像 $x$ 在缩放系数 $1/{2^i}$ 下得到的缩放图像。这样，我们利用 SIM 就可以用尽可能小的开销实现模型增强，有效开展同时针对多个模型的 ensemble attack。同时，还可以让白盒模型避免过拟合问题，生成具备更好迁移性的对抗样本。
