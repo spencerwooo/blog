@@ -22,7 +22,7 @@
         ><font-awesome :icon="['fas', 'id-badge']"
       /></g-link>
       <g-link
-        href="//blog.spencerwoo.com/posts/index.xml"
+        href="/feed.xml"
         target="_blank"
         style="color: #F5A623;"
         ><font-awesome :icon="['fas', 'rss']"/></g-link
