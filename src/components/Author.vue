@@ -14,6 +14,7 @@
     </h1>
 
     <p class="author__intro">
+      <!-- eslint-disable-next-line -->
       阿巴阿巴 o((>ω< ))o
     </p>
 
