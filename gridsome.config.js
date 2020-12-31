@@ -45,7 +45,15 @@ module.exports = {
         },
         rss: {
           enabled: true,
-          output: '/posts/index.xml',
+          output: '/feed.xml',
+        },
+        atom: {
+          enabled: true,
+          output: '/feed.atom'
+        },
+        json: {
+          enabled: true,
+          output: '/feed.json'
         },
         htmlFields: ['description', 'content'],
         enforceTrailingSlashes: false,
