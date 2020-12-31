@@ -14,6 +14,7 @@
     </h1>
 
     <p class="author__intro">
+      <!-- eslint-disable-next-line -->
       阿巴阿巴 o((>ω< ))o
     </p>
 
@@ -22,7 +23,7 @@
         ><font-awesome :icon="['fas', 'id-badge']"
       /></g-link>
       <g-link
-        href="//blog.spencerwoo.com/posts/index.xml"
+        href="/feed.xml"
         target="_blank"
         style="color: #F5A623;"
         ><font-awesome :icon="['fas', 'rss']"/></g-link

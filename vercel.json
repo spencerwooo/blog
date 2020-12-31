@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/posts/index.xml", "destination": "/feed.xml" }
+  ]
+}
