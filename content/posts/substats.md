@@ -77,10 +77,10 @@ GET /?source={SOURCE}&queryKey={QUERY}&source={SOURCE}&queryKey={QUERY} ....
 
 ### 单个请求
 
-Substats 最初就是为了请求 RSS 订阅者数量，我们先来请求一波 Feedly 的订阅数量。我自己博客（也就是本博客）的 RSS 订阅链接是 `https://blog.spencerwoo.com/posts/index.xml`，那么，我们就可以用下面的 URL 构造请求：
+Substats 最初就是为了请求 RSS 订阅者数量，我们先来请求一波 Feedly 的订阅数量。我自己博客（也就是本博客）的 RSS 订阅链接是 `https://blog.spencerwoo.com/feed.xml`，那么，我们就可以用下面的 URL 构造请求：
 
 ```http
-GET /?source=feedly&queryKey=https://blog.spencerwoo.com/posts/index.xml
+GET /?source=feedly&queryKey=https://blog.spencerwoo.com/feed.xml
 ```
 
 这一请求会返回如下的数据：
@@ -100,7 +100,7 @@ GET /?source=feedly&queryKey=https://blog.spencerwoo.com/posts/index.xml
 
 - `data type` 选择：`json`
 - `label` 填入：Feedly RSS Subscribes
-- `data url` 填入：`https://api.spencerwoo.com/substats/?source=feedly&queryKey=https://blog.spencerwoo.com/posts/index.xml`
+- `data url` 填入：`https://api.spencerwoo.com/substats/?source=feedly&queryKey=https://blog.spencerwoo.com/feed.xml`
 - `query` 填入：`$.data.totalSubs`
 - `color` 填入：`2bb24c`（Feedly 的强调色）
 
@@ -133,7 +133,7 @@ https://img.shields.io/badge/dynamic/json?color=2bb24c&label=Feedly%20RSS%20Subs
 当然，我们可以用 `|` 串联多个请求，比如我同时请求 Feedly、Inoreader 中订阅我 RSS 链接的用户数量：
 
 ```http
-GET /?source=feedly|inoreader&queryKey=https://blog.spencerwoo.com/posts/index.xml
+GET /?source=feedly|inoreader&queryKey=https://blog.spencerwoo.com/feed.xml
 ```
 
 我们会得到如下数据（截至发文 Inoreader 的 API 尚未实现，我正在咨询 Inoreader 平台方是否提供 API 接口）：

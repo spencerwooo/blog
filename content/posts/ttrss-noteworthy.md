@@ -19,7 +19,7 @@ description: 'Tiny Tiny RSS 部署踩坑'
 :::warning RSS 订阅
 另外，订阅我博客 RSS 的同学（来自 Feedly 的数据）已经达到了惊人的 10 个！谢谢各位的关注，没有用 RSS 订阅的同学可以点击下方徽章直接在 Feedly 中订阅。🙇‍♂️
 
-<a href="https://blog.spencerwoo.com/posts/index.xml"><img src="https://img.shields.io/badge/subscribe%20via-RSS-ffa500?logo=rss&style=for-the-badge" alt="" style="display: inline; margin: 0 0.1rem 0 0; width: auto;"></a>
+<a href="https://blog.spencerwoo.com/feed.xml"><img src="https://img.shields.io/badge/subscribe%20via-RSS-ffa500?logo=rss&style=for-the-badge" alt="" style="display: inline; margin: 0 0.1rem 0 0; width: auto;"></a>
 <a href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fblog.spencerwoo.com%2Fposts%2Findex.xml"><img src="https://img.shields.io/badge/dynamic/json?color=2bb24c&amp;label=subscribers&amp;query=%24.source.subscribers&amp;url=https%3A%2F%2Ffeedly.com%2Fv3%2Frecommendations%2Ffeeds%2Ffeed%252Fhttps%253A%252F%252Fblog.spencerwoo.com%252Fposts%252Findex.xml&amp;logo=feedly&style=for-the-badge" alt="" style="display: inline; margin: 0 0.1rem 0 0; width: auto;"></a>
 :::
 
