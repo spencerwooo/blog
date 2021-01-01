@@ -26,6 +26,7 @@
     "gridsome-remark-katex": "^0.1.1",
     "marked": "^0.8.0",
     "nprogress": "^0.2.0",
+    "v-tooltip": "^2.1.1",
     "vue-scrollto": "^2.18.1",
     "word-count": "^0.2.2"
   },

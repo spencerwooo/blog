@@ -52,8 +52,11 @@ library.add(
   faSpinner
 )
 
-// back to top
+// Scroll to top of page
 import VueScrollTo from 'vue-scrollto'
+
+// Tooltip popovers
+import VTooltip from 'v-tooltip'
 
 // HTTP API
 import axios from 'axios'
@@ -61,7 +64,7 @@ import axios from 'axios'
 // NProgress
 import NProgress from 'nprogress'
 
-// katex
+// KaTeX styles
 import 'katex/dist/katex.min.css'
 
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
@@ -91,6 +94,9 @@ export default function(Vue, { router, head, isClient }) {
     x: false,
     y: true,
   })
+
+  // Popover tooltips
+  Vue.use(VTooltip)
 
   router.beforeEach((to, from, next) => {
     if (from.name !== null) {

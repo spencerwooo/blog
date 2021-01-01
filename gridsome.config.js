@@ -47,14 +47,6 @@ module.exports = {
           enabled: true,
           output: '/feed.xml',
         },
-        atom: {
-          enabled: false,
-          output: '/feed.atom'
-        },
-        json: {
-          enabled: false,
-          output: '/feed.json'
-        },
         htmlFields: ['description', 'content'],
         enforceTrailingSlashes: false,
         filterNodes: node => node.published,
